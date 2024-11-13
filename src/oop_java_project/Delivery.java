@@ -8,6 +8,8 @@ package oop_java_project;
  *
  * @author Thu
  */
-public class Delivery {
-    
+public class Delivery 
+{
+    //để quản lý đơn giao hàng, bao gồm thông tin khách hàng, địa chỉ giao, thời gian giao, và trạng thái giao hàng.
+    //Theo dõi trạng thái đơn hàng: Gồm các trạng thái như "Chưa giao", "Đang giao", "Đã giao" để người dùng dễ dàng theo dõi tiến trình.
 }

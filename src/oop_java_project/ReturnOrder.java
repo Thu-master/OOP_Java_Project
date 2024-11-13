@@ -8,6 +8,8 @@ package oop_java_project;
  *
  * @author Thu
  */
-public class ReturnOrder {
-    
+public class ReturnOrder 
+{
+    //Hỗ trợ quy trình xử lý trả hàng bằng cách lưu trữ chi tiết các đơn trả, lý do trả hàng, và cập nhật lại kho hàng.
+    //Thêm tính năng để khách hàng có thể trả lại sản phẩm không phù hợp hoặc bị lỗi. Sau khi trả hàng, số lượng sản phẩm sẽ được cập nhật trong kho.
 }

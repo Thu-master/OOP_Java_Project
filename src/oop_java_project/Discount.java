@@ -8,6 +8,7 @@ package oop_java_project;
  *
  * @author Thu
  */
-public class Discount {
-    
+public class Discount 
+{
+    // Cho phép áp dụng giảm giá hoặc khuyến mãi cho các sản phẩm hoặc đơn hàng nhất định, theo % hoặc số tiền cụ thể.
 }

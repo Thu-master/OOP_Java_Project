@@ -8,6 +8,7 @@ package oop_java_project;
  *
  * @author Thu
  */
-public class InventoryManager {
-    
+public class InventoryManager 
+{
+    //quản lý kho để theo dõi số lượng sản phẩm, cảnh báo khi hết hàng, hoặc tự động cập nhật số lượng sau mỗi lần bán hàng.
 }

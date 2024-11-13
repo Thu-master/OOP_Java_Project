@@ -8,6 +8,7 @@ package oop_java_project;
  *
  * @author Thu
  */
-public class Product {
-    
+public class Product 
+{
+//Đây là lớp cha chung cho các loại mặt hàng.    
 }

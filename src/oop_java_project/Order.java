@@ -8,6 +8,7 @@ package oop_java_project;
  *
  * @author Thu
  */
-public class Order {
-    
+public class Order 
+{
+    //Để quản lý đơn hàng, để lưu thông tin chi tiết về các mặt hàng trong một đơn hàng cụ thể, số lượng và tính tổng chi phí.
 }

@@ -8,6 +8,7 @@ package oop_java_project;
  *
  * @author Thu
  */
-public class Stationery extends Product {
-    
+public class Stationery extends Product 
+{
+    //Kế thừa từ Product và dùng để lưu trữ thông tin mặt hàng văn phòng phẩm.
 }

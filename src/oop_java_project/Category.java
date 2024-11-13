@@ -8,6 +8,7 @@ package oop_java_project;
  *
  * @author Thu
  */
-public class Category {
-    
+public class Category 
+{
+    //để phân loại các mặt hàng theo thể loại như sách giáo khoa, sách tham khảo, dụng cụ văn phòng, v.v.
 }

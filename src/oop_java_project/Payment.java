@@ -8,6 +8,7 @@ package oop_java_project;
  *
  * @author Thu
  */
-public class Payment {
-    
+public class Payment 
+{
+    //để xử lý thanh toán cho các đơn hàng, hỗ trợ nhiều phương thức thanh toán như tiền mặt, thẻ, ví điện tử.
 }

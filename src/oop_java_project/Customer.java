@@ -8,6 +8,7 @@ package oop_java_project;
  *
  * @author Thu
  */
-public class Customer {
-    
+public class Customer 
+{
+    //Để quản lý thông tin khách hàng, cho phép lưu tên, địa chỉ, và lịch sử mua hàng của khách hàng.
 }
