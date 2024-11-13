@@ -13,8 +13,9 @@ public class OOP_Java_Project {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
-        // TODO code application logic here
+    public static void main(String[] args) 
+    {
+        // main để gọi các class con or blab blab blab
     }
     
 }
