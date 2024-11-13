@@ -11,4 +11,5 @@ package oop_java_project;
 public class Supplier 
 {
     //Lớp này dùng để quản lý thông tin nhà cung cấp, bao gồm tên nhà cung cấp, địa chỉ và danh sách mặt hàng mà họ cung cấp.
+    //dklasjdoisafiosdhnfjkadsnf;kasdhuofhdofhaeo
 }
