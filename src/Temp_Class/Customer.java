@@ -2,13 +2,13 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package oop_java_project;
+package Temp_Class;
 
 /**
  *
  * @author Thu
  */
-public class InventoryManager 
+public class Customer 
 {
-    //quản lý kho để theo dõi số lượng sản phẩm, cảnh báo khi hết hàng, hoặc tự động cập nhật số lượng sau mỗi lần bán hàng.
+    //Để quản lý thông tin khách hàng, cho phép lưu tên, địa chỉ, và lịch sử mua hàng của khách hàng.
 }

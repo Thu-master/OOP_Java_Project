@@ -1,0 +1,7 @@
+SB;100;Cuoc chien lo den;105000.0
+SB;110;Tri thuc ve van vat;220000.0
+SB;104;Lich su van vat;503000.0
+SB;150;Gia thuyet vu no lon;430000.0
+SB;123;Thuyet tuong doi;110000.0
+SB;144;Phat minh vi dai;190000.0
+SB;166;Thiet ke qua cau Dyson;670000.0

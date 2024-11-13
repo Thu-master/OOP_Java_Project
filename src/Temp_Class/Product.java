@@ -2,13 +2,13 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package oop_java_project;
+package Temp_Class;
 
 /**
  *
  * @author Thu
  */
-public class Discount 
+public class Product 
 {
-    // Cho phép áp dụng giảm giá hoặc khuyến mãi cho các sản phẩm hoặc đơn hàng nhất định, theo % hoặc số tiền cụ thể.
+//Đây là lớp cha chung cho các loại mặt hàng.    
 }
