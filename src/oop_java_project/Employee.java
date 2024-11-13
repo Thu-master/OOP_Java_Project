@@ -14,6 +14,4 @@ public class Employee
     //Phân quyền nhân viên: Tùy thuộc vào chức vụ, bạn có thể giới hạn quyền truy cập để chỉ cho phép một số nhân viên nhất định thực hiện các thao tác như nhập hàng, quản lý đơn hàng, hoặc xem báo cáo.
     int sdt, msnv;
     String name;
-    //hello
-    //hello world
 }
