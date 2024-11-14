@@ -16,6 +16,7 @@ public class Book
     //Kế thừa từ Product và bổ sung các thông tin về sách.
     int maSoSach;
     String tenSach;
+    String tacGia;
     double giaSach;
     
     public Book(){
