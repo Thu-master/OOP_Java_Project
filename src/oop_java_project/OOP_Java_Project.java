@@ -19,10 +19,11 @@ public class OOP_Java_Project {
             ScienceBook sb = new ScienceBook();
             sb.inTieuDe();
             sb.docFile();
-            sb.outPut();
+            sb.inDanhSach();
             
             sb.themSach();
             sb.ghiFile();
+            sb.inDanhSach();
     }
     
 }

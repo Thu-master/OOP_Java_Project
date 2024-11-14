@@ -106,4 +106,10 @@ public class ScienceBook extends Book {
         return false;
     }
     
+    public void inDanhSach(){
+        for (Book b: list){
+            
+            System.out.println("SB-" + b.maSoSach + "\t" + b.tenSach + "\t" + b.giaSach);
+        } 
+    }  
 }
