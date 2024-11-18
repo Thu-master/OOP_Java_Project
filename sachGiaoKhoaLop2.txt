@@ -1,7 +1,7 @@
-GK2;201;Tieng Viet Lop 2 Tap 1;30000.0
-GK2;202;Tieng Viet Lop 2 Tap 2;29000.0
-GK2;205;Toan Lop 2 Tap 1;17000.0
-GK2;206;Toan Lop 2 Tap 2;16000.0
+GK2;201;Tieng Viet 2 Tap 1;30000.0
+GK2;202;Tieng Viet 2 Tap 2;29000.0
+GK2;205;Toan 2 Tap 1;17000.0
+GK2;206;Toan 2 Tap 2;16000.0
 GK2;210;Dao Duc 2;12000.0
 GK2;215;Tu nhien va xa hoi 2;21000.0
 GK2;220;Giao duc the chat 2;16000.0

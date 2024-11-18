@@ -16,14 +16,14 @@ public class OOP_Java_Project {
     public static void main(String[] args) 
     {
         // main để gọi các class con or blab blab blab
-            Grade2TextBooks tb2 = new Grade2TextBooks();
-            tb2.inTieuDe();
-            tb2.docFile();
-            tb2.inDanhSach();
+            Grade3TextBooks tb3 = new Grade3TextBooks();
+            tb3.inTieuDe();
+            tb3.docFile();
+            tb3.inDanhSach();
             
-            tb2.themSach();
-            tb2.ghiFile();
-            tb2.inDanhSach();
+            tb3.themSach();
+            tb3.ghiFile();
+            tb3.inDanhSach();
     }
     
 }

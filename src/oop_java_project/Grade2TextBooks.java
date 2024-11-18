@@ -18,7 +18,7 @@ import java.util.Scanner;
  */
 public class Grade2TextBooks extends Book {
     String loaiSach = "GK2";
-    ArrayList<Book> list3 = new ArrayList<Book>();
+    ArrayList<Book> list2 = new ArrayList<Book>();
     
     public Grade2TextBooks()
     {
@@ -39,7 +39,7 @@ public class Grade2TextBooks extends Book {
     
     public void docFile(){
         try{
-            File f = new File ("sachGiaoKhoaCap2.txt");
+            File f = new File ("sachGiaoKhoaLop2.txt");
             FileReader fr = new FileReader(f);
             BufferedReader br = new BufferedReader(fr);
             String line ;
@@ -50,7 +50,7 @@ public class Grade2TextBooks extends Book {
                 String []arr = line.split("[;]+");
                 Grade2TextBooks tb2 = new Grade2TextBooks(arr[0].trim(),
                         Integer.parseInt(arr[1].trim()), arr[2].trim(), Double.parseDouble(arr[3].trim()));
-                list3.add(tb2);
+                list2.add(tb2);
             }
             br.close();
             fr.close();
@@ -60,7 +60,7 @@ public class Grade2TextBooks extends Book {
     }
     
     public void outPut(){
-        for (Book sb: list3){
+        for (Book sb: list2){
             System.out.println(sb);
         }
     }
@@ -71,10 +71,10 @@ public class Grade2TextBooks extends Book {
     
     public void ghiFile(){
         try{
-            File f = new File("sachGiaoKhoaCap2.txt");
+            File f = new File("sachGiaoKhoaLop.txt");
             FileWriter fw = new FileWriter(f);
             PrintWriter pw = new PrintWriter(fw);
-            for(Book tb1: list3){
+            for(Book tb1: list2){
                 pw.println(tb1);
             }
             fw.close();
@@ -92,7 +92,7 @@ public class Grade2TextBooks extends Book {
             tb2.nhapThemSach();
             
             if(!KiemTraMaSo(tb2)){
-                list3.add(tb2);
+                list2.add(tb2);
             }else System.out.println("Ma so trung nhau");
             
             System.out.println("Ban co muon nhap tiep khong: ");
@@ -102,7 +102,7 @@ public class Grade2TextBooks extends Book {
         
     }
     public boolean KiemTraMaSo(Book b){
-        for (Book b1: list3){
+        for (Book b1: list2){
             if(b.maSoSach==b1.maSoSach){
                 return true;
             }
@@ -111,7 +111,7 @@ public class Grade2TextBooks extends Book {
     }
     
     public void inDanhSach(){
-        for (Book b: list3){
+        for (Book b: list2){
             
             System.out.println("GK1-" + b.maSoSach + "\t" + b.tenSach + "\t" + b.giaSach);
         } 

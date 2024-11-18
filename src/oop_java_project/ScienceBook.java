@@ -18,7 +18,7 @@ import java.util.Scanner;
  */
 public class ScienceBook extends Book {
     String loaiSach = "SB";
-    ArrayList<Book> list = new ArrayList<Book>();
+    ArrayList<Book> list13 = new ArrayList<Book>();
     public ScienceBook(){
         
     }
@@ -46,7 +46,7 @@ public class ScienceBook extends Book {
                 String []arr = line.split("[;]+");
                 ScienceBook sb = new ScienceBook(arr[0].trim(),
                         Integer.parseInt(arr[1].trim()), arr[2].trim(), Double.parseDouble(arr[3].trim()));
-                list.add(sb);
+                list13.add(sb);
             }
             br.close();
             fr.close();
@@ -56,7 +56,7 @@ public class ScienceBook extends Book {
     }
     
     public void outPut(){
-        for (Book sb: list){
+        for (Book sb: list13){
             System.out.println(sb);
         }
     }
@@ -70,7 +70,7 @@ public class ScienceBook extends Book {
             File f = new File("sachKhoaHoc.txt");
             FileWriter fw = new FileWriter(f);
             PrintWriter pw = new PrintWriter(fw);
-            for(Book sb: list){
+            for(Book sb: list13){
                 pw.println(sb);
             }
             fw.close();
@@ -88,7 +88,7 @@ public class ScienceBook extends Book {
             sb.nhapThemSach();
             
             if(!KiemTraMaSo(sb)){
-                list.add(sb);
+                list13.add(sb);
             }else System.out.println("Ma so trung nhau");
             
             System.out.println("Ban co muon nhap tiep khong: ");
@@ -98,7 +98,7 @@ public class ScienceBook extends Book {
         
     }
     public boolean KiemTraMaSo(Book b){
-        for (Book b1: list){
+        for (Book b1: list13){
             if(b.maSoSach==b1.maSoSach){
                 return true;
             }
@@ -107,7 +107,7 @@ public class ScienceBook extends Book {
     }
     
     public void inDanhSach(){
-        for (Book b: list){
+        for (Book b: list13){
             
             System.out.println("SB-" + b.maSoSach + "\t" + b.tenSach + "\t" + b.giaSach);
         } 
