@@ -1,0 +1,9 @@
+GK1;201;Tieng Viet Lop 1 Tap 1;30000.0
+GK1;202;Tieng Viet Lop 1 Tap 2;29000.0
+GK1;205;Toan Lop 1 Tap 1;17000.0
+GK1;206;Toan Lop 1 Tap 2;16000.0
+GK1;210;Dao Duc 1;12000.0
+GK1;215;Tu nhien va xa hoi 1;21000.0
+GK1;220;Giao duc the chat;16000.0
+GK1;222;Am nhac va my thuat;11000.0
+GK1;225;Hoat dong va trai nghiem;15000.0

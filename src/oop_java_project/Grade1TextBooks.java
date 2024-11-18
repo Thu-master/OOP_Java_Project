@@ -14,28 +14,33 @@ import java.util.Scanner;
 
 /**
  *
- * @author Thanh
+ * @author Thu
  */
-public class ScienceBook extends Book {
-    String loaiSach = "SB";
-    ArrayList<Book> list = new ArrayList<Book>();
-    public ScienceBook(){
+public class Grade1TextBooks extends Book 
+{
+    String loaiSach = "GK1";
+    ArrayList<Book> list2 = new ArrayList<Book>();
+    
+    public Grade1TextBooks()
+    {
         
     }
-    
-    public ScienceBook(String loaiSach, int maSoSach, String tenSach, double giaSach){
-        super(maSoSach,tenSach,giaSach);
+            
+    public Grade1TextBooks(String loaiSach, int maSoSach, String tenSach, double giaSach)
+    {
+        super(maSoSach, tenSach, giaSach);
         this.loaiSach = loaiSach;
     }
     
     @Override
-    public String toString(){
+    public String toString()
+    {
         return loaiSach + ";" + super.toString();
     }
     
     public void docFile(){
         try{
-            File f = new File ("sachKhoaHoc.txt");
+            File f = new File ("sachGiaoKhoaCap1.txt");
             FileReader fr = new FileReader(f);
             BufferedReader br = new BufferedReader(fr);
             String line ;
@@ -44,9 +49,9 @@ public class ScienceBook extends Book {
                     continue;
                 }
                 String []arr = line.split("[;]+");
-                ScienceBook sb = new ScienceBook(arr[0].trim(),
+                Grade1TextBooks tb1 = new Grade1TextBooks(arr[0].trim(),
                         Integer.parseInt(arr[1].trim()), arr[2].trim(), Double.parseDouble(arr[3].trim()));
-                list.add(sb);
+                list2.add(tb1);
             }
             br.close();
             fr.close();
@@ -56,7 +61,7 @@ public class ScienceBook extends Book {
     }
     
     public void outPut(){
-        for (Book sb: list){
+        for (Book sb: list2){
             System.out.println(sb);
         }
     }
@@ -67,11 +72,11 @@ public class ScienceBook extends Book {
     
     public void ghiFile(){
         try{
-            File f = new File("sachKhoaHoc.txt");
+            File f = new File("sachGiaoKhoaCap1.txt");
             FileWriter fw = new FileWriter(f);
             PrintWriter pw = new PrintWriter(fw);
-            for(Book sb: list){
-                pw.println(sb);
+            for(Book tb1: list2){
+                pw.println(tb1);
             }
             fw.close();
             pw.close();
@@ -83,12 +88,12 @@ public class ScienceBook extends Book {
     public void themSach(){
         String ans = "Y";
         do{
-            ScienceBook sb = new ScienceBook();
+            Grade1TextBooks tb1 = new Grade1TextBooks();
             Scanner sc = new Scanner(System.in);
-            sb.nhapThemSach();
+            tb1.nhapThemSach();
             
-            if(!KiemTraMaSo(sb)){
-                list.add(sb);
+            if(!KiemTraMaSo(tb1)){
+                list2.add(tb1);
             }else System.out.println("Ma so trung nhau");
             
             System.out.println("Ban co muon nhap tiep khong: ");
@@ -98,7 +103,7 @@ public class ScienceBook extends Book {
         
     }
     public boolean KiemTraMaSo(Book b){
-        for (Book b1: list){
+        for (Book b1: list2){
             if(b.maSoSach==b1.maSoSach){
                 return true;
             }
@@ -107,9 +112,9 @@ public class ScienceBook extends Book {
     }
     
     public void inDanhSach(){
-        for (Book b: list){
+        for (Book b: list2){
             
-            System.out.println("SB-" + b.maSoSach + "\t" + b.tenSach + "\t" + b.giaSach);
+            System.out.println("GK1-" + b.maSoSach + "\t" + b.tenSach + "\t" + b.giaSach);
         } 
     }  
 }

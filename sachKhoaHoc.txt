@@ -1,10 +1,8 @@
-SB;100;Cuoc chien lo den;105000.0
-SB;110;Tri thuc ve van vat;220000.0
-SB;104;Lich su van vat;503000.0
-SB;150;Gia thuyet vu no lon;430000.0
-SB;123;Thuyet tuong doi;110000.0
-SB;144;Phat minh vi dai;190000.0
-SB;166;Thiet ke qua cau Dyson;670000.0
-SB;145;Nen van minh cap thien ha;780000.0
-SB;177;Phat minh cua Nikola Tesla;900000.0
-SB;199;Hoc thuyet Darwin;569000.0
+SB;101;Thuyet tuong doi;130000.0
+SB;105;Gia thuyet vu no lon;433000.0
+SB;113;Dong dien xoay chieu;222000.0
+SB;134;Thi nghiem cua Marie Curry;122000.0
+SB;145;Qua tao va Newton;310000.0
+SB;107;Lich su van vat;710000.0
+SB;199;Nghien cuu vi dai cua Hawking;988000.0
+SB;188;Ho den va ho trang;650000.0
