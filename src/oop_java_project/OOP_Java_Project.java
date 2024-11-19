@@ -16,7 +16,7 @@ public class OOP_Java_Project {
     public static void main(String[] args) 
     {
         // main để gọi các class con or blab blab blab
-            Grade3TextBooks tb3 = new Grade3TextBooks();
+            Grade5TextBooks tb3 = new Grade5TextBooks();
             tb3.inTieuDe();
             tb3.docFile();
             tb3.inDanhSach();
