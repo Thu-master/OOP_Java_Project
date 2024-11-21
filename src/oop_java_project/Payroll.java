@@ -11,5 +11,5 @@ package oop_java_project;
 public class Payroll 
 {
     // ý tưởng là tính lương nhân viên với quyền hạn manager, tính lương dùng abstraction
-    
+    //abc
 }
