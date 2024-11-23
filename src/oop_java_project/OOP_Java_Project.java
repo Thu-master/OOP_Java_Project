@@ -4,11 +4,20 @@
  */
 package oop_java_project;
 
+//import Decentralization.Admin;
+//import Decentralization.Employee;
+//import Decentralization.Manager;
+import Decentralization.SystemManager;
+//import Decentralization.User_Management;
+//import Decentralization.User;
+//import java.util.Scanner;
+
 /**
  *
  * @author Thu
  */
-public class OOP_Java_Project {
+public class OOP_Java_Project 
+{
 
     /**
      * @param args the command line arguments
@@ -16,14 +25,42 @@ public class OOP_Java_Project {
     public static void main(String[] args) 
     {
         // main để gọi các class con or blab blab blab
-            Grade5TextBooks tb3 = new Grade5TextBooks();
+        /*    Grade5TextBooks tb3 = new Grade5TextBooks();
             tb3.inTieuDe();
             tb3.docFile();
             tb3.inDanhSach();
             
             tb3.themSach();
             tb3.ghiFile();
-            tb3.inDanhSach();
-    }
+            tb3.inDanhSach();*/
+        
+//        User_Management userManager = new User_Management();
+//
+//        // Đọc danh sách người dùng từ file
+//        String filePath = "List-NV.txt"; // Đường dẫn tới file
+//        userManager.loadUsersFromFile(filePath);
+//
+//        Scanner scanner = new Scanner(System.in);
+//
+//        System.out.print("Nhap ma so nhan vien: ");
+//        String employeeId = scanner.nextLine();
+//
+//        System.out.print("Nhap ho ten cua ban: ");
+//        String fullName = scanner.nextLine();
+//
+//        // Tìm người dùng
+//        User user = userManager.findUserByInfo(employeeId, fullName);
+//        if (user == null) {
+//            System.out.println("Thong tin khong ton tai!");
+//            return;
+//        }
+//
+//        // Hiển thị quyền hạn
+//        System.out.println("Xin chao, " + user.getFullname() + "!");
+//        user.showPermissions();
+        
+        SystemManager systemManager = new SystemManager();
+        systemManager.run();
+    }   
     
 }
