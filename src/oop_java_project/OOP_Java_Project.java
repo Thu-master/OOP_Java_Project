@@ -7,6 +7,8 @@ package oop_java_project;
 //import Decentralization.Admin;
 //import Decentralization.Employee;
 //import Decentralization.Manager;
+import Book_Management.Grade1TextBooks;
+import Book_Management.ScienceBook;
 import Decentralization.SystemManager;
 //import Decentralization.User_Management;
 //import Decentralization.User;
@@ -59,8 +61,28 @@ public class OOP_Java_Project
 //        System.out.println("Xin chao, " + user.getFullname() + "!");
 //        user.showPermissions();
         
-        SystemManager systemManager = new SystemManager();
-        systemManager.run();
+//        SystemManager systemManager = new SystemManager();
+//        systemManager.run();
+        
+        Grade1TextBooks grade1 = new Grade1TextBooks();
+        grade1.readFile("sachGiaoKhoaLop1.txt");
+        grade1.displayBooks();
+
+        grade1.addBook();
+        grade1.writeFile("sachGiaoKhoaLop1.txt");
+        
+        ScienceBook scienceBooks = new ScienceBook();
+        // Đọc dữ liệu từ file
+        scienceBooks.readFile("sachKhoaHoc.txt");
+
+        // Hiển thị danh sách sách khoa học
+        scienceBooks.displayBooks();
+
+        // Thêm sách mới
+        scienceBooks.addBook();
+
+        // Ghi danh sách vào file
+        scienceBooks.writeFile("sachKhoaHoc.txt");
     }   
     
 }

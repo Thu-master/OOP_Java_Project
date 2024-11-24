@@ -4,7 +4,7 @@
  */
 package Temp_Class;
 
-import Temp_Class.Product;
+import Book_Management.Product;
 
 /**
  *
