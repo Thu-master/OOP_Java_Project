@@ -121,8 +121,8 @@ public class Grade6TextBooks extends Book {
 
     public Grade6TextBooks() {}
 
-    public Grade6TextBooks(String id, String name, double price, int quantity, String author) {
-        super(id, name, price, quantity, author);
+    public Grade6TextBooks(String type, String id, String name, double price, int quantity, String author) {
+        super(type, id, name, price, quantity, author);
     }
 
     public void readFile(String filePath) {
@@ -140,7 +140,7 @@ public class Grade6TextBooks extends Book {
                 double price = Double.parseDouble(parts[3].trim()); // Giá sách
 
                 // Tạo đối tượng Book (hoặc lớp con tương ứng)
-                Book book = new Grade1TextBooks(id, name, price, 1, "N/A"); // Quantity = 1, Author = N/A
+                Book book = new Grade1TextBooks(type, id, name, price, 1, "N/A"); // Quantity = 1, Author = N/A
                 list6.add(book);
             } else {
                 System.out.println("Dòng không hợp lệ: " + line);
@@ -163,6 +163,8 @@ public class Grade6TextBooks extends Book {
 
     public void addBook() {
         Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter book type (e.g., GK1, GK2): ");
+        String type = scanner.nextLine();
         System.out.println("Enter book ID: ");
         String id = scanner.nextLine();
         System.out.println("Enter book name: ");
@@ -174,7 +176,7 @@ public class Grade6TextBooks extends Book {
         System.out.println("Enter book author: ");
         String author = scanner.nextLine();
 
-        Book book = new Grade6TextBooks(id, name, price, quantity, author);
+        Book book = new Grade6TextBooks(type, id, name, price, quantity, author);
         list6.add(book);
     }
 
@@ -183,7 +185,7 @@ public class Grade6TextBooks extends Book {
         System.out.println("Type\tID\tName\tPrice\tQuantity\tAuthor");
         for (Book book : list6) 
         {
-            System.out.println(book.getId() + "\t" + book.getName() + "\t" 
+            System.out.println(book.getType() + "\t" + book.getId() + "\t" + book.getName() + "\t" 
                 + book.getPrice() + "\t" + book.getQuantity() + "\t" + book.getAuthor());
         }
     }

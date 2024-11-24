@@ -114,27 +114,43 @@ public class ScienceBook extends Book {
 //        } 
 //    }  
     
-        private ArrayList<Book> list = new ArrayList<>();
+    private ArrayList<Book> list = new ArrayList<>();
 
     public ScienceBook() {}
 
-    public ScienceBook(String id, String name, double price, int quantity, String author) {
-        super(id, name, price, quantity, author);
+    public ScienceBook(String type, String id, String name, double price, int quantity, String author) 
+    {
+        super(type,id, name, price, quantity, author);
     }
-
+    
     // Đọc dữ liệu từ file
-    public void readFile(String filePath) {
-        try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
+    public void readFile(String filePath) 
+    {
+       try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
             String line;
             while ((line = reader.readLine()) != null) {
                 if (line.trim().isEmpty()) continue;
 
                 String[] parts = line.split(";");
-                Book book = new ScienceBook(parts[0].trim(), parts[1].trim(), 
-                    Double.parseDouble(parts[2].trim()), Integer.parseInt(parts[3].trim()), parts[4].trim());
-                list.add(book);
+                if (parts.length == 4) 
+                {
+                    String type = parts[0].trim();   // Loại sách
+                    String id = parts[1].trim();     // Mã sách
+                    String name = parts[2].trim();   // Tên sách
+                    double price = Double.parseDouble(parts[3].trim()); // Giá sách
+
+                   // Tạo đối tượng sách
+                    Book book = new ScienceBook(type, id, name, price, 0, type);
+                    list.add(book);
+                } 
+                else 
+                {
+                    System.out.println("Dòng không hợp lệ: " + line);
+                }
             }
-        } catch (Exception e) {
+        } 
+       catch (Exception e) 
+        {
             System.out.println("Error reading file: " + e.getMessage());
         }
     }
@@ -151,8 +167,11 @@ public class ScienceBook extends Book {
     }
 
     // Thêm sách vào danh sách
-    public void addBook() {
+    public void addBook() 
+    {
         Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter book type (e.g., GK1, GK2): ");
+        String type = scanner.nextLine();
         System.out.println("Enter book ID: ");
         String id = scanner.nextLine();
         System.out.println("Enter book name: ");
@@ -164,15 +183,18 @@ public class ScienceBook extends Book {
         System.out.println("Enter book author: ");
         String author = scanner.nextLine();
 
-        Book book = new ScienceBook(id, name, price, quantity, author);
+        Book book = new ScienceBook(type, id, name, price, quantity, author);
         list.add(book);
     }
 
     // Hiển thị danh sách sách
-    public void displayBooks() {
-        System.out.println("ID\tName\tPrice\tQuantity\tAuthor");
-        for (Book book : list) {
-            System.out.println(book);
-        }
+    public void displayBooks() 
+    {
+       System.out.println("Type\tID\tName\tPrice\tQuantity\tAuthor");
+       for (Book book : list) 
+       {
+          System.out.println(book.getType() + "\t" + book.getId() + "\t" + book.getName() + "\t" 
+               + book.getPrice() + "\t" + book.getQuantity() + "\t" + book.getAuthor());
+       }
     }
 }

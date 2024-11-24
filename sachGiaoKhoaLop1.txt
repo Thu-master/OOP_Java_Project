@@ -1,6 +1,5 @@
 GK1;101;Tieng Viet 1 Tap 1;30000.0
 GK1;102;Tieng Viet 1 Tap 2;29000.0
-GK1;105;Toan 1 Tap 1;17000.0
 GK1;106;Toan 1 Tap 2;16000.0
 GK1;110;Dao Duc 1;12000.0
 GK1;115;Tu nhien va xa hoi 1;21000.0

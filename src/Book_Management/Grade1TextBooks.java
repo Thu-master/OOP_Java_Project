@@ -120,51 +120,69 @@ public class Grade1TextBooks extends Book
     
         private ArrayList<Book> list1 = new ArrayList<>();
 
-    public Grade1TextBooks() {}
-
-    public Grade1TextBooks(String id, String name, double price, int quantity, String author) 
+    public Grade1TextBooks() 
     {
-       super(id,name, price, quantity, author);
+        
     }
-    public void readFile(String filePath) {
-    try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
-        String line;
-        while ((line = reader.readLine()) != null) {
-            if (line.trim().isEmpty()) continue; // Bỏ qua dòng trống
 
-            // Tách thông tin sách theo dấu ";"
-            String[] parts = line.split(";");
-            if (parts.length == 4) {
-                String type = parts[0].trim();    // Loại sách (ví dụ: GK1)
-                String id = parts[1].trim();      // Mã sách
-                String name = parts[2].trim();    // Tên sách
-                double price = Double.parseDouble(parts[3].trim()); // Giá sách
+    public Grade1TextBooks(String type, String id, String name, double price, int quantity, String author) 
+    {
+       super(type, id, name, price, quantity, author);
+    }
+    public void readFile(String filePath) 
+    {
+        try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) 
+        {
+            String line;
+            while ((line = reader.readLine()) != null) 
+            {
+                if (line.trim().isEmpty()) continue;
 
-                // Tạo đối tượng Book (hoặc lớp con tương ứng)
-                Book book = new Grade1TextBooks(id, name, price, 1, "N/A"); // Quantity = 1, Author = N/A
-                System.out.println("Loai sach: " +type+ ", da them sach: " +book.getName());
-                list1.add(book);
-            } else {
-                System.out.println("Dòng không hợp lệ: " + line);
+                String[] parts = line.split(";");
+                if (parts.length == 4) 
+                {
+                    String type = parts[0].trim();   // Loại sách
+                    String id = parts[1].trim();     // Mã sách
+                    String name = parts[2].trim();   // Tên sách
+                    double price = Double.parseDouble(parts[3].trim()); // Giá sách
+
+                    // Tạo đối tượng sách
+                    Book book = new Grade1TextBooks(type, id, name, price, 1, "N/A");
+                    list1.add(book);
+                } 
+                else 
+                {
+                    System.out.println("Dong khong hop le: " + line);
+                }
             }
         }
-    } catch (Exception e) {
-        System.out.println("Error reading file: " + e.getMessage());
-    }
-    }
-
-    public void writeFile(String filePath) {
-        try (PrintWriter writer = new PrintWriter(new FileWriter(filePath))) {
-            for (Book book : list1) {
-                writer.println(book);
-            }
-        } catch (Exception e) {
-            System.out.println("Error writing file: " + e.getMessage());
+        catch (Exception e) 
+        {
+            System.out.println("Error reading file: " + e.getMessage());
         }
     }
 
-    public void addBook() {
+    public void writeFile(String filePath) 
+    {
+        try (PrintWriter writer = new PrintWriter(new FileWriter(filePath))) 
+        {
+             for (Book book : list1) 
+             { // `list1` là danh sách lưu trữ sách
+                 writer.println(book.getType() + ";" + book.getId() + ";" + book.getName() + ";" + book.getPrice());
+             }
+             System.out.println("File updated successfully!");
+        } 
+        catch (Exception e) 
+        {
+             System.out.println("Error writing to file: " + e.getMessage());
+        }
+    }
+
+    public void addBook() 
+    {
         Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter book type (e.g., GK1, GK2): ");
+        String type = scanner.nextLine();
         System.out.println("Enter book ID: ");
         String id = scanner.nextLine();
         System.out.println("Enter book name: ");
@@ -176,7 +194,7 @@ public class Grade1TextBooks extends Book
         System.out.println("Enter book author: ");
         String author = scanner.nextLine();
 
-        Book book = new Grade1TextBooks(id, name, price, quantity, author);
+        Book book = new Grade1TextBooks(type, id, name, price, quantity, author);
         list1.add(book);
     }
 

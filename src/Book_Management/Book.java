@@ -75,26 +75,50 @@ public class Book extends Product
 //       return getId() + ";" + getName() + ";" + getPrice() + ";" + getQuantity() + ";" + author;
 //    }
     
-        private String author;
+    private String author;
+    private String type;
 
-    public Book() {}
-
-    public Book(String id, String name, double price, int quantity, String author) {
-        super(id, name, price, quantity);
-        this.author = author;
+    public Book() 
+    {
+        
     }
 
-    public String getAuthor() { return author; }
-    public void setAuthor(String author) { this.author = author; }
+    public Book(String type, String id, String name, double price, int quantity, String author) 
+    {
+       super(id, name, price, quantity);
+       this.type = type;
+       this.author = author;
+    }
 
-    @Override
-    public void displayInfo() {
-        super.displayInfo();
-        System.out.println("Author: " + author);
+    public String getType()
+    {
+        return type;
+    }
+    
+    public void setType(String type)
+    {
+        this.type = type;
+    }
+    
+    public String getAuthor() 
+    { 
+       return author; 
+    }
+    public void setAuthor(String author) 
+    { 
+       this.author = author; 
     }
 
     @Override
-    public String toString() {
-        return getId() + ";" + getName() + ";" + getPrice() + ";" + getQuantity() + ";" + author;
+    public void displayInfo() 
+    {
+       super.displayInfo();
+       System.out.println("Author: " + author);
+    }
+
+    @Override
+    public String toString() 
+    {
+       return getType() + ";" + getId() + ";" + getName() + ";" + getPrice() + ";" + getQuantity() + ";" + author;
     }
 }

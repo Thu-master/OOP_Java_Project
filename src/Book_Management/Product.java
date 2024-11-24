@@ -28,7 +28,7 @@ public class Product
        this.price = price;
        this.quantity = quantity;
     }
-
+    
     // Getters và setters
     public String getId() 
     { 
