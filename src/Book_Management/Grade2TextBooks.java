@@ -4,6 +4,7 @@
  */
 package Book_Management;
 
+import oop_java_project.Book;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -118,9 +119,10 @@ public class Grade2TextBooks extends Book {
 //    } 
     
     
-        private ArrayList<Book> list2 = new ArrayList<>();
+/*        private ArrayList<Book> list2 = new ArrayList<>();
 
-    public Grade2TextBooks() {}
+    public Grade2TextBooks() {super(arr[0].trim(), Integer.parseInt(arr[1].trim()), arr[2].trim(), Double.parseDouble(arr[3].trim()));
+}
 
     public Grade2TextBooks(String type, String id, String name, double price, int quantity, String author) {
         super(type, id, name, price, quantity, author);
@@ -190,4 +192,5 @@ public class Grade2TextBooks extends Book {
                 + book.getPrice() + "\t" + book.getQuantity() + "\t" + book.getAuthor());
        }
     }
+    */
 }

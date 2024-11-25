@@ -4,6 +4,7 @@
  */
 package Book_Management;
 
+import oop_java_project.Book;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -16,8 +17,8 @@ import java.util.Scanner;
  *
  * @author Thu
  */
-public class Grade1TextBooks extends Book 
-{
+//public class Grade1TextBooks extends Book 
+//{
 //    String loaiSach = "GK1";
 //    ArrayList<Book> list1 = new ArrayList<Book>();
 //    
@@ -118,10 +119,11 @@ public class Grade1TextBooks extends Book
 //        } 
 //    } 
     
-        private ArrayList<Book> list1 = new ArrayList<>();
+    /*    private ArrayList<Book> list1 = new ArrayList<>();
 
     public Grade1TextBooks() 
     {
+            super(arr[0].trim(), Integer.parseInt(arr[1].trim()), arr[2].trim(), Double.parseDouble(arr[3].trim()));
         
     }
 
@@ -206,5 +208,5 @@ public class Grade1TextBooks extends Book
             System.out.println(book.getId() + "\t" + book.getName() + "\t" 
                 + book.getPrice() + "\t" + book.getQuantity() + "\t" + book.getAuthor());
         }
-    }
-}
+    }*/
+//}

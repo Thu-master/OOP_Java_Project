@@ -1,0 +1,47 @@
+GK1;101;Tieng Viet 1 Tap 1;30000.0;45;Bo Giao duc va Dao tao
+GK1;102;Tieng Viet 1 Tap 2;29000.0;45;Bo Giao duc va Dao tao
+GK1;106;Toan 1 Tap 2;16000.0;45;Bo Giao duc va Dao tao
+GK1;110;Dao Duc 1;12000.0;45;Bo Giao duc va Dao tao
+GK1;115;Tu nhien va xa hoi 1;21000.0;45;Bo Giao duc va Dao tao
+GK1;120;Giao duc the chat 1;16000.0;45;Bo Giao duc va Dao tao
+GK1;122;Am nhac va my thuat 1;11000.0;45;Bo Giao duc va Dao tao
+GK1;125;Hoat dong va trai nghiem 1;15000.0;45;Bo Giao duc va Dao tao
+GK2;201;Tieng Viet 2 Tap 1;30000.0;45;Bo Giao duc va Dao tao
+GK2;202;Tieng Viet 2 Tap 2;29000.0;45;Bo Giao duc va Dao tao
+GK2;205;Toan 2 Tap 1;17000.0;45;Bo Giao duc va Dao tao
+GK2;206;Toan 2 Tap 2;16000.0;45;Bo Giao duc va Dao tao
+GK2;210;Dao Duc 2;12000.0;45;Bo Giao duc va Dao tao
+GK2;215;Tu nhien va xa hoi 2;21000.0;45;Bo Giao duc va Dao tao
+GK2;220;Giao duc the chat 2;16000.0;45;Bo Giao duc va Dao tao
+GK2;222;Am nhac va my thuat 2;11000.0;45;Bo Giao duc va Dao tao
+GK2;225;Hoat dong va trai nghiem 2;15000.0;45;Bo Giao duc va Dao tao
+GK3;303;My thuat 3;15000.0;45;Bo Giao duc va Dao tao
+GK3;366;Tieng Viet 3 Tap 1;17000.0;45;Bo Giao duc va Dao tao
+GK3;367;Tieng Viet 3 Tap 1;16000.0;45;Bo Giao duc va Dao tao
+GK3;388;Hoat dong va trai nghiem 3;19000.0;45;Bo Giao duc va Dao tao
+GK3;377;Toan 3 Tap 1;15000.0;45;Bo Giao duc va Dao tao
+GK3;378;Toan 3 Tap 2;17000.0;45;Bo Giao duc va Dao tao
+GK4;454;Cong nghe 4;17000.0;45;Bo Giao duc va Dao tao
+GK4;400;Tin hoc 4;18000.0;45;Bo Giao duc va Dao tao
+GK4;421;Hoat dong va trai nghiem 4;19000.0;45;Bo Giao duc va Dao tao
+GK4;499;Lich su va Dia ly 4;45000.0;45;Bo Giao duc va Dao tao
+GK4;484;Tieng Viet 4 Tap 1;15000.0;45;Bo Giao duc va Dao tao
+GK4;432;Toan 4 Tap 2;17000.0;45;Bo Giao duc va Dao tao
+GK4;466;Am nhac 4;12000.0;45;Bo Giao duc va Dao tao
+GK4;478;Tieng Viet 4 Tap 2;18000.0;45;Bo Giao duc va Dao tao
+GK5;522;Cong nghe 5;17000.0;45;Bo Giao duc va Dao tao
+GK5;501;Tin hoc 5;18000.0;45;Bo Giao duc va Dao tao
+GK5;567;Hoat dong va trai nghiem 5;19000.0;45;Bo Giao duc va Dao tao
+GK5;588;Lich su va Dia ly 5;55000.0;45;Bo Giao duc va Dao tao
+GK5;586;Tieng Viet 5 Tap 1;15000.0;45;Bo Giao duc va Dao tao
+GK5;535;Toan 5 Tap 2;17000.0;45;Bo Giao duc va Dao tao
+GK5;569;Am nhac 5;12000.0;45;Bo Giao duc va Dao tao
+GK5;578;Tieng Viet 5 Tap 2;18000.0;45;Bo Giao duc va Dao tao
+GK6;692;Cong nghe 6;17000.0;45;Bo Giao duc va Dao tao
+GK6;611;Tin hoc 6;18000.0;45;Bo Giao duc va Dao tao
+GK6;657;Hoat dong va trai nghiem 6;19000.0;45;Bo Giao duc va Dao tao
+GK6;618;Lich su va Dia ly 6;56000.0;45;Bo Giao duc va Dao tao
+GK6;606;Ngu van 6;15000.0;45;Bo Giao duc va Dao tao
+GK6;632;Toan 6;17000.0;45;Bo Giao duc va Dao tao
+GK6;669;Am nhac 6;12000.0;45;Bo Giao duc va Dao tao
+GK6;679;Giao duc cong dan 6;28000.0;45;Bo Giao duc va Dao tao

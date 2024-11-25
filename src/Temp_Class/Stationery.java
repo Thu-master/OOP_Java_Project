@@ -4,7 +4,7 @@
  */
 package Temp_Class;
 
-import Book_Management.Product;
+import oop_java_project.Product;
 
 /**
  *

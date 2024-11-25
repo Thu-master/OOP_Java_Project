@@ -4,4 +4,3 @@ GK3;367;Tieng Viet 3 Tap 1;16000.0
 GK3;388;Hoat dong va trai nghiem 3;19000.0
 GK3;377;Toan 3 Tap 1;15000.0
 GK3;378;Toan 3 Tap 2;17000.0
-GK3;342;Family and Friend 3;25000.0
