@@ -4,7 +4,7 @@
  */
 package Temp_Class;
 
-import oop_java_project.Product;
+import Decentralization.Product;
 
 /**
  *

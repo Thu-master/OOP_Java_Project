@@ -1,8 +1,0 @@
-GK6;692;Cong nghe 6;17000.0
-GK6;611;Tin hoc 6;18000.0
-GK6;657;Hoat dong va trai nghiem 6;19000.0
-GK6;618;Lich su va Dia ly 6;56000.0
-GK6;606;Ngu van 6;15000.0
-GK6;632;Toan 6;17000.0
-GK6;669;Am nhac 6;12000.0
-GK6;679;Giao duc cong dan 6;28000.0

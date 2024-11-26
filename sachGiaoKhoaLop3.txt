@@ -1,6 +1,0 @@
-GK3;303;My thuat 3;15000.0
-GK3;366;Tieng Viet 3 Tap 1;17000.0
-GK3;367;Tieng Viet 3 Tap 1;16000.0
-GK3;388;Hoat dong va trai nghiem 3;19000.0
-GK3;377;Toan 3 Tap 1;15000.0
-GK3;378;Toan 3 Tap 2;17000.0

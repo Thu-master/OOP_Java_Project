@@ -4,6 +4,7 @@
  */
 package Decentralization;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
@@ -12,6 +13,21 @@ import java.util.Scanner;
  */
 public class SystemManager 
 {
+        Book b = new Book();
+        b.docFile();
+        ArrayList<Book> gk1Books = b.getGk1Book();
+        ArrayList<Book> gk2Books = b.getGk2Book();
+        ArrayList<Book> gk3Books = b.getGk3Book();
+        ArrayList<Book> gk4Books = b.getGk4Book();
+        ArrayList<Book> gk5Books = b.getGk5Book();
+        ArrayList<Book> gk6Books = b.getGk6Book();
+        ArrayList<Book> gk7Books = b.getGk7Book();
+        ArrayList<Book> gk8Books = b.getGk8Book();
+        ArrayList<Book> gk9Books = b.getGk9Book();
+        ArrayList<Book> gk10Books = b.getGk10Book();
+        ArrayList<Book> gk11Books = b.getGk11Book();
+        ArrayList<Book> gk12Books = b.getGk12Book();
+    
     private User_Management userManagement; // Quản lý người dùng
     private Scanner scanner;                // Nhập dữ liệu từ bàn phím
 

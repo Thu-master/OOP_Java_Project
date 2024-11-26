@@ -6,13 +6,14 @@ package oop_java_project;
 
 //import Decentralization.Admin;
 
+import Decentralization.Book;
 import java.util.ArrayList;
 
-//import Decentralization.Employee;
-//import Decentralization.Manager;
-//import Book_Management.Grade1TextBooks;
-//import Decentralization.User_Management;
-//import Decentralization.User;
+import Decentralization.Employee;
+import Decentralization.Manager;
+import Decentralization.SystemManager;
+import Decentralization.User_Management;
+import Decentralization.User;
 import java.util.Scanner;
 
 /**
@@ -42,7 +43,7 @@ public class OOP_Java_Project
         ArrayList<Book> gk11Books = b.getGk11Book();
         ArrayList<Book> gk12Books = b.getGk12Book();
         
-        //b.ghiFile(); Ham nay la ham ghi file
+//        b.ghiFile(); //Ham nay la ham ghi file
         
         String ans;
         do{
@@ -157,14 +158,8 @@ public class OOP_Java_Project
             System.out.println("Ban co muon xem tiep khong (Y/N): ");
             ans = sc.nextLine();
         }while(ans.equalsIgnoreCase("Y"));
-        /*    Grade5TextBooks tb3 = new Grade5TextBooks();
-            tb3.inTieuDe();
-            tb3.docFile();
-            tb3.inDanhSach();
-            
-            tb3.themSach();
-            tb3.ghiFile();
-            tb3.inDanhSach();*/
+ 
+        
         
 //        User_Management userManager = new User_Management();
 //
@@ -190,16 +185,9 @@ public class OOP_Java_Project
 //        // Hiển thị quyền hạn
 //        System.out.println("Xin chao, " + user.getFullname() + "!");
 //        user.showPermissions();
+        SystemManager systemManager = new SystemManager();
+        systemManager.run();
         
-//        SystemManager systemManager = new SystemManager();
-//        systemManager.run();
-        
-//        Grade1TextBooks grade1 = new Grade1TextBooks();
- //       grade1.readFile("sachGiaoKhoaLop1.txt");
-//        grade1.displayBooks();
-
-//        grade1.addBook();
-//        grade1.writeFile("sachGiaoKhoaLop1.txt");
     }   
     
 }
