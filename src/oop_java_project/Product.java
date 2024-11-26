@@ -11,10 +11,10 @@ package oop_java_project;
 public class Product 
 {
 //Đây là lớp cha chung cho các loại mặt hàng.  
-    private String id;
-    private String name;
-    private double price;
-    private int quantity;
+    String id;
+    String name;
+    double price;
+    int quantity;
     
     public Product()
     {

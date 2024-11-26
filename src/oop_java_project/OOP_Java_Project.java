@@ -35,6 +35,15 @@ public class OOP_Java_Project
         ArrayList<Book> gk4Books = b.getGk4Book();
         ArrayList<Book> gk5Books = b.getGk5Book();
         ArrayList<Book> gk6Books = b.getGk6Book();
+        ArrayList<Book> gk7Books = b.getGk7Book();
+        ArrayList<Book> gk8Books = b.getGk8Book();
+        ArrayList<Book> gk9Books = b.getGk9Book();
+        ArrayList<Book> gk10Books = b.getGk10Book();
+        ArrayList<Book> gk11Books = b.getGk11Book();
+        ArrayList<Book> gk12Books = b.getGk12Book();
+        
+        //b.ghiFile(); Ham nay la ham ghi file
+        
         String ans;
         do{
             Scanner sc = new Scanner(System.in);
@@ -46,6 +55,12 @@ public class OOP_Java_Project
             System.out.println("4: Giao khoa lop 4");
             System.out.println("5: Giao khoa lop 5");
             System.out.println("6: Giao khoa lop 6");
+            System.out.println("7: Giao khoa lop 7");
+            System.out.println("3: Giao khoa lop 8");
+            System.out.println("4: Giao khoa lop 9");
+            System.out.println("5: Giao khoa lop 10");
+            System.out.println("6: Giao khoa lop 11");
+            System.out.println("7: Giao khoa lop 12");
             System.out.println("Hay nhap so: ");
             try{
                 luachon = Integer.parseInt(sc.nextLine());
@@ -92,6 +107,48 @@ public class OOP_Java_Project
                                 book.getPrice(),book.getQuantity(),book.getAuthor());
                     }
                     break;
+                case 7:
+                    System.out.printf("%-10s %-10s %-30s %-10s %-10s %-10s\n", "Loai", "Ma so", "Ten sach", "Gia", "So luong" , "Tac gia");
+                    for (Book book : gk7Books){
+                    System.out.printf("%-10s %-10s %-30s %-10.2f %-10s %-20s\n", book.getType(), book.getId(), book.getName(), 
+                                book.getPrice(),book.getQuantity(),book.getAuthor());
+                    }
+                    break;
+                case 8:
+                    System.out.printf("%-10s %-10s %-30s %-10s %-10s %-10s\n", "Loai", "Ma so", "Ten sach", "Gia", "So luong" , "Tac gia");
+                    for (Book book : gk8Books){
+                    System.out.printf("%-10s %-10s %-30s %-10.2f %-10s %-20s\n", book.getType(), book.getId(), book.getName(), 
+                                book.getPrice(),book.getQuantity(),book.getAuthor());
+                    }
+                    break;
+                case 9:
+                    System.out.printf("%-10s %-10s %-30s %-10s %-10s %-10s\n", "Loai", "Ma so", "Ten sach", "Gia", "So luong" , "Tac gia");
+                    for (Book book : gk9Books){
+                    System.out.printf("%-10s %-10s %-30s %-10.2f %-10s %-20s\n", book.getType(), book.getId(), book.getName(), 
+                                book.getPrice(),book.getQuantity(),book.getAuthor());
+                    }
+                    break;
+                case 10:
+                    System.out.printf("%-10s %-10s %-30s %-10s %-10s %-10s\n", "Loai", "Ma so", "Ten sach", "Gia", "So luong" , "Tac gia");
+                    for (Book book : gk10Books){
+                    System.out.printf("%-10s %-10s %-30s %-10.2f %-10s %-20s\n", book.getType(), book.getId(), book.getName(), 
+                                book.getPrice(),book.getQuantity(),book.getAuthor());
+                    }
+                    break;
+                case 11:
+                    System.out.printf("%-10s %-10s %-30s %-10s %-10s %-10s\n", "Loai", "Ma so", "Ten sach", "Gia", "So luong" , "Tac gia");
+                    for (Book book : gk11Books){
+                    System.out.printf("%-10s %-10s %-30s %-10.2f %-10s %-20s\n", book.getType(), book.getId(), book.getName(), 
+                                book.getPrice(),book.getQuantity(),book.getAuthor());
+                    }
+                    break;
+                case 12:
+                    System.out.printf("%-10s %-10s %-30s %-10s %-10s %-10s\n", "Loai", "Ma so", "Ten sach", "Gia", "So luong" , "Tac gia");
+                    for (Book book : gk12Books){
+                    System.out.printf("%-10s %-10s %-30s %-10.2f %-10s %-20s\n", book.getType(), book.getId(), book.getName(), 
+                                book.getPrice(),book.getQuantity(),book.getAuthor());
+                    }
+                    break;
                 default: System.out.println("So vua nhap khong hop le"); break;
                 }
             }catch (Exception e){
@@ -99,7 +156,7 @@ public class OOP_Java_Project
             }
             System.out.println("Ban co muon xem tiep khong (Y/N): ");
             ans = sc.nextLine();
-        }while(!ans.equalsIgnoreCase("N"));
+        }while(ans.equalsIgnoreCase("Y"));
         /*    Grade5TextBooks tb3 = new Grade5TextBooks();
             tb3.inTieuDe();
             tb3.docFile();
