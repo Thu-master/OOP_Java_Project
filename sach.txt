@@ -87,3 +87,4 @@ GK12;1242;Hoat dong va trai nghiem 12;29000.0;42;Bo Giao duc va Dao tao
 GK12;1273;Hoa hoc 12;57000.0;54;Bo Giao duc va Dao tao
 GK12;1242;Lich su 12;320000.0;33;Bo Giao duc va Dao tao
 GK12;1281;Dia li 12;44000.0;77;Bo Giao duc va Dao tao
+GK1;300;sach enlish;30000.0;50;Mr.jhoin

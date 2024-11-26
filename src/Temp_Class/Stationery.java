@@ -4,7 +4,7 @@
  */
 package Temp_Class;
 
-import Decentralization.Product;
+import Funtion.Product;
 
 /**
  *
