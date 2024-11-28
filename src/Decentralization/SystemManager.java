@@ -67,18 +67,6 @@ public class SystemManager
 //            showMenu(user); // Hiển thị menu chính
 //            keepRunning = false; // Thoát sau khi xử lý menu
 
-            // Nếu là Employee, hiển thị thông báo phê duyệt
-            if (user.getRole().equals("Employee")) {
-                ArrayList<String> notifications = userManagement.getApprovedNotifications(user.getEmloyeeI());
-                if (!notifications.isEmpty()) {
-                    System.out.println("\n--- Thong bao cua ban ---");
-                    for (String notification : notifications) {
-                        System.out.println(notification);
-                    }
-                    userManagement.clearNotifications(user.getEmloyeeI()); // Xóa thông báo sau khi hiển thị
-                }
-            }
-
             // Chuyển đến menu chính
             boolean backToLogin = showMenu(user);
             if(backToLogin)
@@ -112,6 +100,10 @@ public class SystemManager
                     break;
                 case "Manager":
                     System.out.println("\n--- MENU QUAN LY ---");
+                    int totalPending = userManagement.getPendingRequests().size();
+                    int approved = userManagement.countApprovedRequests(user.getEmloyeeI());
+                    System.out.println("Hien co " + totalPending + " yeu cau dang cho duyet.");
+                    System.out.println("Ban co " + approved + " yeu cau da duoc duyet.");
                     System.out.println("1. Them sach");
                     System.out.println("2. Xoa sach");
                     System.out.println("3. Sua sach");
@@ -119,17 +111,19 @@ public class SystemManager
                     System.out.println("5. Xoa nhan vien");
                     System.out.println("6. Sua nhan vien");
                     System.out.println("7. Xem sach");
-                    System.out.println("8. Thoat");
+                    System.out.println("8. Huy yeu cau them nhan vien");
+                    System.out.println("9. Thoat");
                     System.out.println("10. Quay lai dang nhap");
                     break;
                 case "Admin":
                     System.out.println("\n--- MENU BOSS ---");
-                    System.out.println("Ban co toan quyen trong he thong.");
+                    System.out.println("Bạn đang có " + userManagement.getPendingRequests().size() + " yeu cau them nhan vien can duyet.");
                     System.out.println("1. Quan ly nguoi dung");
                     System.out.println("2. Phe duyet yeu cau them nhan vien");
                     System.out.println("3. Them sach");
                     System.out.println("4. Xem sach");
-                    System.out.println("5. Thoat");
+                    System.out.println("5. Xem lich su duyet");
+                    System.out.println("9. Thoat");
                     System.out.println("10. Quay lai dang nhap");
                     break;
                 default:
@@ -192,10 +186,11 @@ public class SystemManager
                         String fullname = scanner.nextLine();
                         User newEmployee = new Employee(empId, fullname, "Employee");
                         ((Manager) user).requestAddEmployee(userManagement, newEmployee);
+                        ((Manager) user).requestAddEmployeesWithUpdatedMenu(userManagement);
                     }
                     break;
                 case 5:
-                    if (user.getRole().equals("Employee") || user.getRole().equals("Admin")) {
+                    if (user.getRole().equals("Employee")) {
                         keepRunning = false; // Thoát menu
                     } else if (user.getRole().equals("Manager")) 
                     {
@@ -203,7 +198,7 @@ public class SystemManager
                     } 
                     else 
                     {
-                        System.out.println("Chuc nang khong hop le!");
+                        userManagement.viewApprovalHistory();
                     }
                     break;
                 case 6:
@@ -224,10 +219,13 @@ public class SystemManager
                     break;
                 case 8:
                     if (user.getRole().equals("Manager")) {
-                        keepRunning = false; // Thoát menu
+                        ((Manager) user).cancelRequest(userManagement);
                     } else {
                         System.out.println("Chuc nang khong hop le!");
                     }
+                    break;
+                case 9:
+                    keepRunning = false;
                     break;
                 case 10:
                     System.out.println("Quay lai man hinh dang nhap.");
