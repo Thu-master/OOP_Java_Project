@@ -20,4 +20,9 @@ public class Manager extends User
     {
        System.out.println("Quyen han: Them, xoa, sua sach. Them, xoa, sua nhan vien.");
     }
+    
+    public void requestAddEmployee(User_Management userManagement, User newEmployee) 
+    {
+        userManagement.addEmployeeRequest(newEmployee);
+    }
 }
