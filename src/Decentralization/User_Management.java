@@ -25,6 +25,9 @@ public class User_Management
         private ArrayList<User> pendingRequests;
         private HashMap<String, ArrayList<String>> approvedNotifications = new HashMap<>();
         private HashMap<String, String> requestStatuses = new HashMap<>();
+        private HashMap<String, Integer> managerApprovedCounts = new HashMap<>();
+
+
 
 
     public User_Management() {
@@ -125,19 +128,42 @@ if (choice.equalsIgnoreCase("Y")) {
     writeUserToFile(pendingUser, "List-NV.txt");
 
     // Ghi nhận cho Manager nếu có
-    if (pendingUser instanceof Employee) {
+//    if (pendingUser instanceof Employee) {
+//        String managerId = getManagerIdForEmployee(pendingUser.getEmloyeeI());
+//        if (managerId != null) {
+//            addApprovedNotification(managerId, "Yêu cầu của bạn cho nhân viên " + pendingUser.getFullname() + " đã được duyệt.");
+//        }
+//    }
+//    System.out.println("Yeu cau da duoc duyet thanh cong.");
+//} else {
+//    // Từ chối yêu cầu
+//    addApprovedNotification(pendingUser.getEmloyeeI(), "Yeu cau cua ban da bi tu choi.");
+//    pendingRequests.remove(requestIndex);
+//    System.out.println("Yeu cau da bi tu choi.");
+//}
+//
+//if (pendingUser instanceof Employee) {
+//    String managerId = getManagerIdForEmployee(pendingUser.getEmloyeeI());
+//    if (managerId != null) {
+//        addApprovedNotification(managerId, "Yêu cầu của bạn cho nhân viên " + pendingUser.getFullname() + " đã được duyệt.");
+//    }
+//}
+
         String managerId = getManagerIdForEmployee(pendingUser.getEmloyeeI());
-        if (managerId != null) {
-            addApprovedNotification(managerId, "Mot yeu cau cua ban da duoc duyet.");
-        }
-    }
-    System.out.println("Yeu cau da duoc duyet thanh cong.");
-} else {
-    // Từ chối yêu cầu
-    addApprovedNotification(pendingUser.getEmloyeeI(), "Yeu cau cua ban da bi tu choi.");
-    pendingRequests.remove(requestIndex);
-    System.out.println("Yeu cau da bi tu choi.");
+if (managerId != null) {
+    addApprovedNotification(managerId, "Yêu cầu của bạn cho nhân viên " + pendingUser.getFullname() + " đã được duyệt.");
+    
+    // Tăng số lượng yêu cầu đã được duyệt cho Manager
+    managerApprovedCounts.put(managerId, managerApprovedCounts.getOrDefault(managerId, 0) + 1);
 }
+
+        System.out.println("Yeu cau da duoc duyet thanh cong.");
+    } else {
+        // Từ chối yêu cầu
+        addApprovedNotification(pendingUser.getEmloyeeI(), "Yeu cau cua ban da bi tu choi.");
+        pendingRequests.remove(requestIndex);
+        System.out.println("Yeu cau da bi tu choi.");
+    }
 
 }
     
@@ -218,14 +244,43 @@ public void cancelEmployeeRequest(String employeeId) {
     }
 }
         
+//public String getManagerIdForEmployee(String employeeId) {
+//    // Logic tìm Manager liên quan đến Employee (nếu có)
+//    for (User user : users) {
+//        if (user instanceof Manager) {
+//             // Giả định rằng Manager quản lý tất cả nhân viên (tùy logic cụ thể)
+//            return user.getEmloyeeI();
+//        }
+//    }
+//    return null; // Không tìm thấy
+//}
+
+// Đếm số yêu cầu đã được duyệt cho một Manager
+public int countApprovedRequestsByManager(String managerId) {
+    ArrayList<String> notifications = approvedNotifications.getOrDefault(managerId, new ArrayList<>());
+    int count = 0;
+    for (String notification : notifications) {
+        if (notification.contains("duoc Admin duyet")) {
+            count++;
+        }
+    }
+    return managerApprovedCounts.getOrDefault(managerId, 0);
+}
+
 public String getManagerIdForEmployee(String employeeId) {
-    // Logic tìm Manager liên quan đến Employee (nếu có)
+    // Logic tìm Manager liên quan đến Employee (tùy thuộc vào cấu trúc dữ liệu của bạn)
+    // Giả sử mỗi Employee thuộc một Manager duy nhất
     for (User user : users) {
-        if (user instanceof Manager && user.getEmloyeeI().equals(employeeId)) {
-            return user.getEmloyeeI();
+        if (user instanceof Manager) {
+            // Logic kiểm tra nếu Manager liên quan đến Employee (nếu có)
+            // Ví dụ: ID Manager là một phần của ID Employee
+            if (employeeId.startsWith(user.getEmloyeeI())) {
+                return user.getEmloyeeI();
+            }
         }
     }
     return null; // Không tìm thấy
 }
+
 
 }
