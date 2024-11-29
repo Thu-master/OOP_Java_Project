@@ -117,44 +117,26 @@ public void approveRequest() {
     System.out.print("Ban co muon duyet (Y/N)? ");
     String choice = scanner.nextLine();
 
-//if (choice.equalsIgnoreCase("Y")) {
-//    // Phê duyệt yêu cầu
-//    pendingRequests.remove(requestIndex);
-//    users.add(pendingUser); // Thêm vào danh sách nhân viên
-//    addApprovedNotification(pendingUser.getEmloyeeI(), "Yêu cầu của bạn đã được Admin duyệt.");
-//    writeUserToFile(pendingUser, "List-NV.txt");
-//    addRequestStatus(pendingUser.getEmloyeeI(), "Yêu cầu đã được duyệt.");
-//    System.out.println("Yêu cầu đã được duyệt thành công.");
-//     writeApprovalHistory("Admin duyệt yêu cầu của: " + pendingUser.getFullname() + " (" + pendingUser.getEmloyeeI() + ") vào lúc " + java.time.LocalDateTime.now());
-//} else {
-//    // Từ chối yêu cầu
-//    addApprovedNotification(pendingUser.getEmloyeeI(), "Yêu cầu của bạn đã bị từ chối.");
-//    pendingRequests.remove(requestIndex);
-//    addRequestStatus(pendingUser.getEmloyeeI(), "Yêu cầu đã bị từ chối.");
-//    System.out.println("Yêu cầu đã bị từ chối.");
-//    writeApprovalHistory("Admin từ chối yêu cầu của: " + pendingUser.getFullname() + " (" + pendingUser.getEmloyeeI() + ") vào lúc " + java.time.LocalDateTime.now());
-//}
-
 if (choice.equalsIgnoreCase("Y")) {
     // Phê duyệt yêu cầu
     pendingRequests.remove(requestIndex);
     users.add(pendingUser); // Thêm vào danh sách nhân viên
-    addApprovedNotification(pendingUser.getEmloyeeI(), "Yêu cầu của bạn đã được Admin duyệt.");
+    addApprovedNotification(pendingUser.getEmloyeeI(), "Yeu cau cua ban da duoc Admin duyet.");
     writeUserToFile(pendingUser, "List-NV.txt");
 
     // Ghi nhận cho Manager nếu có
     if (pendingUser instanceof Employee) {
         String managerId = getManagerIdForEmployee(pendingUser.getEmloyeeI());
         if (managerId != null) {
-            addApprovedNotification(managerId, "Một yêu cầu của bạn đã được duyệt.");
+            addApprovedNotification(managerId, "Mot yeu cau cua ban da duoc duyet.");
         }
     }
-    System.out.println("Yêu cầu đã được duyệt thành công.");
+    System.out.println("Yeu cau da duoc duyet thanh cong.");
 } else {
     // Từ chối yêu cầu
-    addApprovedNotification(pendingUser.getEmloyeeI(), "Yêu cầu của bạn đã bị từ chối.");
+    addApprovedNotification(pendingUser.getEmloyeeI(), "Yeu cau cua ban da bi tu choi.");
     pendingRequests.remove(requestIndex);
-    System.out.println("Yêu cầu đã bị từ chối.");
+    System.out.println("Yeu cau da bi tu choi.");
 }
 
 }
@@ -175,17 +157,10 @@ if (choice.equalsIgnoreCase("Y")) {
         return pendingRequests;
     }
     
-//    public void addApprovedNotification(String employeeId, String message) {
-//        // Kiểm tra nếu nhân viên chưa có thông báo nào
-//        approvedNotifications.putIfAbsent(employeeId, new ArrayList<>());
-//        approvedNotifications.get(employeeId).add(message);
-//        System.out.println("Thong bao da duoc luu cho nhan vien: " + employeeId);
-//    }
-    
     public void addApprovedNotification(String employeeId, String message) {
     approvedNotifications.putIfAbsent(employeeId, new ArrayList<>());
     approvedNotifications.get(employeeId).add(message);
-    System.out.println("Thông báo đã được lưu cho nhân viên: " + employeeId);
+    System.out.println("Thong bao da duoc luu cho nhân viên: " + employeeId);
 }
 
     
@@ -218,14 +193,14 @@ public String getRequestStatus(String managerId) {
         public int countApprovedRequests(String managerId) {
     return (int) approvedNotifications.getOrDefault(managerId, new ArrayList<>())
                                        .stream()
-                                       .filter(notification -> notification.contains("duyệt"))
+                                       .filter(notification -> notification.contains("duyet"))
                                        .count();
 }
 
 public void viewApprovalHistory() {
     try (BufferedReader reader = new BufferedReader(new FileReader("approval_history.txt"))) {
         String line;
-        System.out.println("\n--- Lịch sử duyệt ---");
+        System.out.println("\n--- Lich su duyet ---");
         while ((line = reader.readLine()) != null) {
             System.out.println(line);
         }
@@ -237,9 +212,9 @@ public void viewApprovalHistory() {
 public void cancelEmployeeRequest(String employeeId) {
     boolean removed = pendingRequests.removeIf(req -> req.getEmloyeeI().equals(employeeId));
     if (removed) {
-        System.out.println("Yêu cầu cho nhân viên ID: " + employeeId + " đã được hủy.");
+        System.out.println("Yeu cau cho nhan vien ID: " + employeeId + " da duoc huy.");
     } else {
-        System.out.println("Không tìm thấy yêu cầu với ID: " + employeeId);
+        System.out.println("Khong tim thay yeu cau voi ID: " + employeeId);
     }
 }
         
