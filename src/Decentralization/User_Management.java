@@ -13,8 +13,6 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.Queue;
 import java.util.Scanner;
 
 /**
@@ -23,32 +21,37 @@ import java.util.Scanner;
  */
 public class User_Management 
 {
-        private ArrayList<User> users;
-        private ArrayList<User> pendingRequests;
-        private HashMap<String, ArrayList<String>> approvedNotifications = new HashMap<>();
-        private HashMap<String, String> requestStatuses = new HashMap<>();
+    private ArrayList<User> users;
+    private ArrayList<User> pendingRequests;
+    private HashMap<String, ArrayList<String>> approvedNotifications = new HashMap<>();
+    private HashMap<String, String> requestStatuses = new HashMap<>();
 
 
-    public User_Management() {
+    public User_Management() 
+    {
         users = new ArrayList<>();
         pendingRequests = new ArrayList<>();
         approvedNotifications = new HashMap<>();
     }
 
     // Đọc danh sách từ file
-    public void loadUsersFromFile(String filePath) {
+    public void loadUsersFromFile(String filePath) 
+    {
         try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) 
         {
             String line;
-            while ((line = reader.readLine()) != null) {
+            while ((line = reader.readLine()) != null) 
+            {
                 String[] parts = line.split("-");
-                if (parts.length == 3) {
+                if (parts.length == 3) 
+                {
                     String employeeId = parts[0].trim();
                     String fullname = parts[1].trim();
                     String role = parts[2].trim();
 
                     // Tạo đối tượng dựa trên chức vụ
-                    switch (role) {
+                    switch (role) 
+                    {
                         case "Admin":
                             users.add(new Admin(employeeId, fullname, role));
                             break;
@@ -63,16 +66,21 @@ public class User_Management
                     }
                 }
             }
-        } catch (IOException e) {
+        }
+        catch (IOException e) 
+        {
             System.out.println("Loi khi doc file: " + e.getMessage());
         }
     }
 
     // Tìm người dùng theo mã số nhân viên và họ tên
-    public User findUserByInfo(String employeeId, String fullName) {
-        for (User user : users) {
-            if (user.getEmloyeeI().equalsIgnoreCase(employeeId) &&
-                user.getFullname().equalsIgnoreCase(fullName)) {
+    public User findUserByInfo(String employeeId, String fullName) 
+    {
+        for (User user : users) 
+        {
+            if(user.getEmloyeeI().equalsIgnoreCase(employeeId) &&
+                user.getFullname().equalsIgnoreCase(fullName)) 
+            {
                 return user;
             }
         }
@@ -85,67 +93,78 @@ public class User_Management
         System.out.println("Yeu cau them nhan vat da duoc gui len sep!\nCho duyet!");
     }
     
-public void approveRequest() {
-    Scanner scanner = new Scanner(System.in);
+    public void approveRequest() 
+    {
+        Scanner scanner = new Scanner(System.in);
 
-    if (pendingRequests.isEmpty()) {
-        System.out.println("Không có yêu cầu nào chờ duyệt.");
-        return;
+        if (pendingRequests.isEmpty()) 
+        {
+            System.out.println("Khong co yeu cau nao cho duyet.");
+            return;
+        }
+
+        System.out.println("\n--- Danh sach cac yeu cau dang cho duyet ---");
+        int index = 1;
+        for(User pendingUser : pendingRequests) 
+        {
+            System.out.println(index + ". Ten: " + pendingUser.getFullname() + ", Ma so: " + pendingUser.getEmloyeeI());
+            index++;
+        }
+
+        System.out.print("\nNhap so thu tu cua yeu cau muon xu ly: ");
+        int requestIndex = Integer.parseInt(scanner.nextLine()) - 1;
+
+        if(requestIndex < 0 || requestIndex >= pendingRequests.size()) 
+        {
+            System.out.println("Lua chon khong hop le!");
+            return;
+        }
+
+        User pendingUser = pendingRequests.get(requestIndex);
+
+        System.out.println("\nThong tin yeu cau:");
+        System.out.println("Ten: " + pendingUser.getFullname() + ", Ma so: " + pendingUser.getEmloyeeI());
+        System.out.print("Ban co muon duyet (Y/N)? ");
+        String choice = scanner.nextLine();
+
+        if (choice.equalsIgnoreCase("Y")) 
+        {
+            pendingRequests.remove(requestIndex);
+            users.add(pendingUser);
+            addApprovedNotification(pendingUser.getEmloyeeI(), "Yeu cau cua ban da duoc Admin duyet.");
+            writeUserToFile(pendingUser, "List-NV.txt");
+
+            // Ghi lịch sử phê duyệt với thời gian thực
+            String approvalMessage = "Admin da duyet nhan vien: " + pendingUser.getFullname() + " (ID: " + pendingUser.getEmloyeeI() + ")";
+            writeApprovalHistory(approvalMessage);
+
+            System.out.println("Yeu cau da duoc duyet thanh cong.");
+        } 
+        else 
+        {
+            pendingRequests.remove(requestIndex);
+
+            // Ghi lịch sử từ chối với thời gian thực
+            String rejectionMessage = "Admin da tu choi nhan vien: " + pendingUser.getFullname() + " (ID: " + pendingUser.getEmloyeeI() + ")";
+            writeApprovalHistory(rejectionMessage);
+
+            System.out.println("Yeu cau da bi tu choi.");
+        }
     }
-
-    System.out.println("\n--- Danh sách các yêu cầu đang chờ duyệt ---");
-    int index = 1;
-    for (User pendingUser : pendingRequests) {
-        System.out.println(index + ". Tên: " + pendingUser.getFullname() + ", Mã số: " + pendingUser.getEmloyeeI());
-        index++;
-    }
-
-    System.out.print("\nNhập số thứ tự của yêu cầu muốn xử lý: ");
-    int requestIndex = Integer.parseInt(scanner.nextLine()) - 1;
-
-    if (requestIndex < 0 || requestIndex >= pendingRequests.size()) {
-        System.out.println("Lựa chọn không hợp lệ!");
-        return;
-    }
-
-    User pendingUser = pendingRequests.get(requestIndex);
-
-    System.out.println("\nThông tin yêu cầu:");
-    System.out.println("Tên: " + pendingUser.getFullname() + ", Mã số: " + pendingUser.getEmloyeeI());
-    System.out.print("Bạn có muốn duyệt (Y/N)? ");
-    String choice = scanner.nextLine();
-
-    if (choice.equalsIgnoreCase("Y")) {
-        pendingRequests.remove(requestIndex);
-        users.add(pendingUser);
-        addApprovedNotification(pendingUser.getEmloyeeI(), "Yêu cầu của bạn đã được Admin duyệt.");
-        writeUserToFile(pendingUser, "List-NV.txt");
-
-        // Ghi lịch sử phê duyệt với thời gian thực
-        String approvalMessage = "Admin đã duyệt nhân viên: " + pendingUser.getFullname() + " (ID: " + pendingUser.getEmloyeeI() + ")";
-        writeApprovalHistory(approvalMessage);
-
-        System.out.println("Yêu cầu đã được duyệt thành công.");
-    } else {
-        pendingRequests.remove(requestIndex);
-
-        // Ghi lịch sử từ chối với thời gian thực
-        String rejectionMessage = "Admin đã từ chối nhân viên: " + pendingUser.getFullname() + " (ID: " + pendingUser.getEmloyeeI() + ")";
-        writeApprovalHistory(rejectionMessage);
-
-        System.out.println("Yêu cầu đã bị từ chối.");
-    }
-}
 
 
     
     // Phương thức ghi nhân viên vào file
-    public void writeUserToFile(User user, String filePath) {
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePath, true))) {
+    public void writeUserToFile(User user, String filePath) 
+    {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePath, true))) 
+        {
             writer.write(user.getEmloyeeI() + "-" + user.getFullname() + "-" + user.getRole());
             writer.newLine(); // Thêm dòng mới
             System.out.println("Thong tin nhan vien moi da duoc ghi vao file.");
-        } catch (IOException e) {
+        } 
+        catch(IOException e) 
+        {
             System.out.println("Loi khi ghi thong tin nhan vien vao file: " + e.getMessage());
         }
     }
@@ -155,82 +174,70 @@ public void approveRequest() {
         return pendingRequests;
     }
     
-    public void addApprovedNotification(String employeeId, String message) {
-    approvedNotifications.putIfAbsent(employeeId, new ArrayList<>());
-    approvedNotifications.get(employeeId).add(message);
-    System.out.println("Thong bao da duoc luu cho nhân viên: " + employeeId);
-}
-
-    
-    public ArrayList<String> getApprovedNotifications(String employeeId) {
-    return approvedNotifications.getOrDefault(employeeId, new ArrayList<>());
-}
-    public void clearNotifications(String employeeId) {
-    approvedNotifications.remove(employeeId); // Xóa tất cả thông báo của nhân viên
-}
-    
-    // Thêm trạng thái yêu cầu
-public void addRequestStatus(String managerId, String message) {
-    requestStatuses.put(managerId, message);
-}
-
-// Lấy trạng thái yêu cầu
-public String getRequestStatus(String managerId) {
-    return requestStatuses.getOrDefault(managerId, "Chưa có trạng thái yêu cầu.");
-}
-
-
-public void writeApprovalHistory(String message) {
-    try (BufferedWriter writer = new BufferedWriter(new FileWriter("approval_history.txt", true))) {
-        // Thêm thời gian vào thông điệp
-        String timestamp = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
-        writer.write("[" + timestamp + "] " + message);
-        writer.newLine();
-        System.out.println("Lịch sử duyệt đã được lưu lại.");
-    } catch (IOException e) {
-        System.out.println("Lỗi khi ghi lịch sử duyệt: " + e.getMessage());
+    public void addApprovedNotification(String employeeId, String message) 
+    {
+        approvedNotifications.putIfAbsent(employeeId, new ArrayList<>());
+        approvedNotifications.get(employeeId).add(message);
+        System.out.println("Thong bao da duoc luu cho nhân viên: " + employeeId);
     }
-}
 
-
-        public int countApprovedRequests(String managerId) {
-    return (int) approvedNotifications.getOrDefault(managerId, new ArrayList<>())
-                                       .stream()
-                                       .filter(notification -> notification.contains("duyet"))
-                                       .count();
-}
-
-public void viewApprovalHistory() {
-    try (BufferedReader reader = new BufferedReader(new FileReader("approval_history.txt"))) {
-        String line;
-        System.out.println("\n--- Lịch sử duyệt ---");
-        while ((line = reader.readLine()) != null) {
-            System.out.println(line);
+    
+    public void writeApprovalHistory(String message) 
+    {
+        try(BufferedWriter writer = new BufferedWriter(new FileWriter("approval_history.txt", true))) 
+        {
+            // Thêm thời gian vào thông điệp
+            String timestamp = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
+            writer.write("[" + timestamp + "] " + message);
+            writer.newLine();
+            System.out.println("Lich su duyet da duoc luu lai.");
+        } 
+        catch(IOException e) 
+        {
+            System.out.println("Loi khi ghi lich su duyet: " + e.getMessage());
         }
-    } catch (IOException e) {
-        System.out.println("Lỗi khi đọc lịch sử duyệt: " + e.getMessage());
     }
-}
+
+    public void viewApprovalHistory() 
+    {
+        try (BufferedReader reader = new BufferedReader(new FileReader("approval_history.txt"))) 
+        {
+            String line;
+            System.out.println("\n--- Lich su duyet ---");
+            while ((line = reader.readLine()) != null) 
+            {
+                System.out.println(line);
+            }
+        } 
+        catch(IOException e) 
+        {
+            System.out.println("Loi khi doc lich su duyet: " + e.getMessage());
+        }
+    }
 
 
-public void cancelEmployeeRequest(String employeeId) {
-    boolean removed = pendingRequests.removeIf(req -> req.getEmloyeeI().equals(employeeId));
-    if (removed) {
-        System.out.println("Yeu cau cho nhan vien ID: " + employeeId + " da duoc huy.");
-    } else {
-        System.out.println("Khong tim thay yeu cau voi ID: " + employeeId);
+    public void cancelEmployeeRequest(String employeeId) 
+    {
+        boolean removed = pendingRequests.removeIf(req -> req.getEmloyeeI().equals(employeeId));
+        if (removed) 
+        {
+            System.out.println("Yeu cau cho nhan vien ID: " + employeeId + " da duoc huy.");
+        } 
+        else 
+        {
+            System.out.println("Khong tim thay yeu cau voi ID: " + employeeId);
+        }
     }
-}
         
-public String getManagerIdForEmployee(String employeeId) {
-    // Logic tìm Manager liên quan đến Employee (nếu có)
-    for (User user : users) {
-        if (user instanceof Manager && user.getEmloyeeI().equals(employeeId)) {
-            return user.getEmloyeeI();
+    public String getManagerIdForEmployee(String employeeId) 
+    {
+        // Logic tìm Manager liên quan đến Employee (nếu có)
+        for (User user : users) {
+            if (user instanceof Manager && user.getEmloyeeI().equals(employeeId)) 
+            {
+                return user.getEmloyeeI();
+            }
         }
+        return null; // Không tìm thấy
     }
-    return null; // Không tìm thấy
-}
-
-
 }

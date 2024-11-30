@@ -23,9 +23,10 @@ public class Admin extends User
        System.out.println("Quyen han: Toan quyen trong he thong.");
     }
     
-    public void approveAddEmployee(User_Management userManagement) {
-    userManagement.approveRequest();
-}
+    public void approveAddEmployee(User_Management userManagement) 
+    {
+        userManagement.approveRequest();
+    }
 
 
 }
