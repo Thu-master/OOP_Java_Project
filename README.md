@@ -67,15 +67,26 @@ Phần mềm được thiết kế đặc biệt để:
 ### 1. Cấu Trúc Thư Mục
 ```
 src/
+├── Book_Management/
+│   ├── Grade1TextBooks.java
+│   └── ScienceBook.java
 ├── Decentralization/
 │   ├── Admin.java
 │   ├── Employee.java
 │   ├── Manager.java
+│   ├── SystemManager.java
 │   ├── User.java
-│   ├── User_Management.java
-│   └── SystemManager.java
-├── Funtion/
-│   └── Book.java
+│   └── User_Management.java
+├── Function/
+│   ├── Book.java
+│   └── Product.java
+├── Temp_Class/
+│   ├── Account.java
+│   ├── ActivityLog.java
+│   ├── BookStore.java
+│   └── ...
+└── oop_java_project/
+    └── OOP_Java_Project.java
 ```
 
 ### 2. Phân Quyền
