@@ -9,6 +9,8 @@ import java.io.BufferedWriter;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedList;
@@ -25,9 +27,6 @@ public class User_Management
         private ArrayList<User> pendingRequests;
         private HashMap<String, ArrayList<String>> approvedNotifications = new HashMap<>();
         private HashMap<String, String> requestStatuses = new HashMap<>();
-        private HashMap<String, Integer> managerApprovedCounts = new HashMap<>();
-
-
 
 
     public User_Management() {
@@ -90,82 +89,55 @@ public void approveRequest() {
     Scanner scanner = new Scanner(System.in);
 
     if (pendingRequests.isEmpty()) {
-        System.out.println("Khong co yeu cau nao cho duyet.");
+        System.out.println("Không có yêu cầu nào chờ duyệt.");
         return;
     }
 
-    // Hiển thị tất cả các yêu cầu
-    System.out.println("\n--- Danh sach cac yeu cau dang cho duyet ---");
+    System.out.println("\n--- Danh sách các yêu cầu đang chờ duyệt ---");
     int index = 1;
     for (User pendingUser : pendingRequests) {
-        System.out.println(index + ". Ten: " + pendingUser.getFullname() + ", Ma so: " + pendingUser.getEmloyeeI());
+        System.out.println(index + ". Tên: " + pendingUser.getFullname() + ", Mã số: " + pendingUser.getEmloyeeI());
         index++;
     }
 
-    // Admin chọn yêu cầu để xử lý
-    System.out.print("\nNhap so thu tu cua yeu cau muon xu ly: ");
+    System.out.print("\nNhập số thứ tự của yêu cầu muốn xử lý: ");
     int requestIndex = Integer.parseInt(scanner.nextLine()) - 1;
 
     if (requestIndex < 0 || requestIndex >= pendingRequests.size()) {
-        System.out.println("Lua chon khong hop le!");
+        System.out.println("Lựa chọn không hợp lệ!");
         return;
     }
 
-    // Lấy yêu cầu được chọn
     User pendingUser = pendingRequests.get(requestIndex);
 
-    // Xác nhận từ Admin
-    System.out.println("\nThong tin yeu cau:");
-    System.out.println("Ten: " + pendingUser.getFullname() + ", Ma so: " + pendingUser.getEmloyeeI());
-    System.out.print("Ban co muon duyet (Y/N)? ");
+    System.out.println("\nThông tin yêu cầu:");
+    System.out.println("Tên: " + pendingUser.getFullname() + ", Mã số: " + pendingUser.getEmloyeeI());
+    System.out.print("Bạn có muốn duyệt (Y/N)? ");
     String choice = scanner.nextLine();
 
-if (choice.equalsIgnoreCase("Y")) {
-    // Phê duyệt yêu cầu
-    pendingRequests.remove(requestIndex);
-    users.add(pendingUser); // Thêm vào danh sách nhân viên
-    addApprovedNotification(pendingUser.getEmloyeeI(), "Yeu cau cua ban da duoc Admin duyet.");
-    writeUserToFile(pendingUser, "List-NV.txt");
-
-    // Ghi nhận cho Manager nếu có
-//    if (pendingUser instanceof Employee) {
-//        String managerId = getManagerIdForEmployee(pendingUser.getEmloyeeI());
-//        if (managerId != null) {
-//            addApprovedNotification(managerId, "Yêu cầu của bạn cho nhân viên " + pendingUser.getFullname() + " đã được duyệt.");
-//        }
-//    }
-//    System.out.println("Yeu cau da duoc duyet thanh cong.");
-//} else {
-//    // Từ chối yêu cầu
-//    addApprovedNotification(pendingUser.getEmloyeeI(), "Yeu cau cua ban da bi tu choi.");
-//    pendingRequests.remove(requestIndex);
-//    System.out.println("Yeu cau da bi tu choi.");
-//}
-//
-//if (pendingUser instanceof Employee) {
-//    String managerId = getManagerIdForEmployee(pendingUser.getEmloyeeI());
-//    if (managerId != null) {
-//        addApprovedNotification(managerId, "Yêu cầu của bạn cho nhân viên " + pendingUser.getFullname() + " đã được duyệt.");
-//    }
-//}
-
-        String managerId = getManagerIdForEmployee(pendingUser.getEmloyeeI());
-if (managerId != null) {
-    addApprovedNotification(managerId, "Yêu cầu của bạn cho nhân viên " + pendingUser.getFullname() + " đã được duyệt.");
-    
-    // Tăng số lượng yêu cầu đã được duyệt cho Manager
-    managerApprovedCounts.put(managerId, managerApprovedCounts.getOrDefault(managerId, 0) + 1);
-}
-
-        System.out.println("Yeu cau da duoc duyet thanh cong.");
-    } else {
-        // Từ chối yêu cầu
-        addApprovedNotification(pendingUser.getEmloyeeI(), "Yeu cau cua ban da bi tu choi.");
+    if (choice.equalsIgnoreCase("Y")) {
         pendingRequests.remove(requestIndex);
-        System.out.println("Yeu cau da bi tu choi.");
-    }
+        users.add(pendingUser);
+        addApprovedNotification(pendingUser.getEmloyeeI(), "Yêu cầu của bạn đã được Admin duyệt.");
+        writeUserToFile(pendingUser, "List-NV.txt");
 
+        // Ghi lịch sử phê duyệt với thời gian thực
+        String approvalMessage = "Admin đã duyệt nhân viên: " + pendingUser.getFullname() + " (ID: " + pendingUser.getEmloyeeI() + ")";
+        writeApprovalHistory(approvalMessage);
+
+        System.out.println("Yêu cầu đã được duyệt thành công.");
+    } else {
+        pendingRequests.remove(requestIndex);
+
+        // Ghi lịch sử từ chối với thời gian thực
+        String rejectionMessage = "Admin đã từ chối nhân viên: " + pendingUser.getFullname() + " (ID: " + pendingUser.getEmloyeeI() + ")";
+        writeApprovalHistory(rejectionMessage);
+
+        System.out.println("Yêu cầu đã bị từ chối.");
+    }
 }
+
+
     
     // Phương thức ghi nhân viên vào file
     public void writeUserToFile(User user, String filePath) {
@@ -207,14 +179,19 @@ public String getRequestStatus(String managerId) {
     return requestStatuses.getOrDefault(managerId, "Chưa có trạng thái yêu cầu.");
 }
 
-    public void writeApprovalHistory(String message) {
+
+public void writeApprovalHistory(String message) {
     try (BufferedWriter writer = new BufferedWriter(new FileWriter("approval_history.txt", true))) {
-        writer.write(message);
+        // Thêm thời gian vào thông điệp
+        String timestamp = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
+        writer.write("[" + timestamp + "] " + message);
         writer.newLine();
+        System.out.println("Lịch sử duyệt đã được lưu lại.");
     } catch (IOException e) {
         System.out.println("Lỗi khi ghi lịch sử duyệt: " + e.getMessage());
     }
 }
+
 
         public int countApprovedRequests(String managerId) {
     return (int) approvedNotifications.getOrDefault(managerId, new ArrayList<>())
@@ -226,7 +203,7 @@ public String getRequestStatus(String managerId) {
 public void viewApprovalHistory() {
     try (BufferedReader reader = new BufferedReader(new FileReader("approval_history.txt"))) {
         String line;
-        System.out.println("\n--- Lich su duyet ---");
+        System.out.println("\n--- Lịch sử duyệt ---");
         while ((line = reader.readLine()) != null) {
             System.out.println(line);
         }
@@ -234,6 +211,7 @@ public void viewApprovalHistory() {
         System.out.println("Lỗi khi đọc lịch sử duyệt: " + e.getMessage());
     }
 }
+
 
 public void cancelEmployeeRequest(String employeeId) {
     boolean removed = pendingRequests.removeIf(req -> req.getEmloyeeI().equals(employeeId));
@@ -244,39 +222,11 @@ public void cancelEmployeeRequest(String employeeId) {
     }
 }
         
-//public String getManagerIdForEmployee(String employeeId) {
-//    // Logic tìm Manager liên quan đến Employee (nếu có)
-//    for (User user : users) {
-//        if (user instanceof Manager) {
-//             // Giả định rằng Manager quản lý tất cả nhân viên (tùy logic cụ thể)
-//            return user.getEmloyeeI();
-//        }
-//    }
-//    return null; // Không tìm thấy
-//}
-
-// Đếm số yêu cầu đã được duyệt cho một Manager
-public int countApprovedRequestsByManager(String managerId) {
-    ArrayList<String> notifications = approvedNotifications.getOrDefault(managerId, new ArrayList<>());
-    int count = 0;
-    for (String notification : notifications) {
-        if (notification.contains("duoc Admin duyet")) {
-            count++;
-        }
-    }
-    return managerApprovedCounts.getOrDefault(managerId, 0);
-}
-
 public String getManagerIdForEmployee(String employeeId) {
-    // Logic tìm Manager liên quan đến Employee (tùy thuộc vào cấu trúc dữ liệu của bạn)
-    // Giả sử mỗi Employee thuộc một Manager duy nhất
+    // Logic tìm Manager liên quan đến Employee (nếu có)
     for (User user : users) {
-        if (user instanceof Manager) {
-            // Logic kiểm tra nếu Manager liên quan đến Employee (nếu có)
-            // Ví dụ: ID Manager là một phần của ID Employee
-            if (employeeId.startsWith(user.getEmloyeeI())) {
-                return user.getEmloyeeI();
-            }
+        if (user instanceof Manager && user.getEmloyeeI().equals(employeeId)) {
+            return user.getEmloyeeI();
         }
     }
     return null; // Không tìm thấy

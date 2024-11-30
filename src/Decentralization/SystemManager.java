@@ -101,10 +101,7 @@ public class SystemManager
                 case "Manager":
                     System.out.println("\n--- MENU QUAN LY ---");
                     int totalPending = userManagement.getPendingRequests().size();
-                    //int approved = userManagement.countApprovedRequests(user.getEmloyeeI());
-                    int approvedCount = userManagement.countApprovedRequestsByManager(user.getEmloyeeI());
                     System.out.println("Hien co " + totalPending + " yeu cau dang cho duyet.");
-                    System.out.println("Ban co " + approvedCount + " yeu cau da duoc duyet.");
                     System.out.println("1. Them sach");
                     System.out.println("2. Xoa sach");
                     System.out.println("3. Sua sach");
