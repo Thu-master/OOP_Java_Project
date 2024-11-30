@@ -364,4 +364,95 @@ public class Book extends Product{
         }
         return false;
     }
+    
+    public void viewBooks() 
+    {
+        Scanner scanner = new Scanner(System.in);
+        Book b = new Book();
+        b.docFile();
+        boolean backToMainMenu = false;
+
+        while (!backToMainMenu) 
+        {
+           System.out.println("\n--- MENU XEM SACH ---");
+           System.out.println("1: Sach giao khoa lop 1");
+           System.out.println("2: Sach giao khoa lop 2");
+           System.out.println("3: Sach giao khoa lop 3");
+           System.out.println("4: Sach giao khoa lop 4");
+           System.out.println("5: Sach giao khoa lop 5");
+           System.out.println("6: Sach giao khoa lop 6");
+           System.out.println("7: Sach giao khoa lop 7");
+           System.out.println("8: Sach giao khoa lop 8");
+           System.out.println("9: Sach giao khoa lop 9");
+           System.out.println("10: Sach giao khoa lop 10");
+           System.out.println("11: Sach giao khoa lop 11");
+           System.out.println("12: Sach giao khoa lop 12");
+           System.out.println("13: Sach khoa hoc");
+           System.out.println("0: Quay lai");
+
+           System.out.print("Chon loai sach: ");
+           int choice = Integer.parseInt(scanner.nextLine());
+
+            switch (choice) 
+            {
+                case 1:
+                   displayBooks(b.getGk1Book());
+                   break;
+                case 2:
+                   displayBooks(b.getGk2Book());
+                   break;
+                case 3:
+                   displayBooks(b.getGk3Book());
+                   break;
+                case 4:
+                   displayBooks(b.getGk4Book());
+                   break;
+                case 5:
+                   displayBooks(b.getGk5Book());
+                   break;
+                case 6:
+                   displayBooks(b.getGk6Book());
+                   break;
+                case 7:
+                   displayBooks(b.getGk7Book());
+                   break;
+                case 8:
+                   displayBooks(b.getGk8Book());
+                   break;
+                case 9:
+                   displayBooks(b.getGk9Book());
+                   break;
+                case 10:
+                   displayBooks(b.getGk10Book());
+                   break;
+                case 11:
+                   displayBooks(b.getGk11Book());
+                   break;
+                case 12:
+                   displayBooks(b.getGk12Book());
+                   break;
+                case 13:
+                   displayBooks(b.getSbBook());
+                   break;
+                case 14:
+                   displayBooks(b.getPsBook());
+                   break;
+                case 0:
+                   backToMainMenu = true;
+                   break;
+                default:
+                   System.out.println("Lua chon khong hop le!");
+            }
+        }
+    }
+
+    public void displayBooks(ArrayList<Book> books) 
+    {
+        System.out.printf("%-10s %-10s %-30s %-10s %-10s %-10s\n", "Loai", "Ma so", "Ten sach", "Gia", "So luong", "Tac gia");
+        for (Book book : books) 
+        {
+            System.out.printf("%-10s %-10s %-30s %-10.2f %-10s %-20s\n",
+                    book.getType(), book.getId(), book.getName(), book.getPrice(), book.getQuantity(), book.getAuthor());
+        }
+    }
 }

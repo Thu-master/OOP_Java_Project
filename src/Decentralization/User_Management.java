@@ -25,6 +25,7 @@ public class User_Management
     private ArrayList<User> pendingRequests;
     private HashMap<String, ArrayList<String>> approvedNotifications = new HashMap<>();
     private HashMap<String, String> requestStatuses = new HashMap<>();
+    private ArrayList<User> deleteRequests = new ArrayList<>();
 
 
     public User_Management() 
@@ -240,4 +241,99 @@ public class User_Management
         }
         return null; // Không tìm thấy
     }
+
+// ----------------------------------------------------------------------------------------------------------------------------------   
+    
+    // Gửi yêu cầu xóa nhân viên
+    public void addDeleteEmployeeRequest(User user) 
+    {
+       deleteRequests.add(user);
+       System.out.println("Yêu cầu xóa nhân viên đã được gửi lên Admin!");
+    }
+
+    // Hủy yêu cầu xóa nhân viên
+    public void cancelDeleteEmployeeRequest(String employeeId) 
+    {
+        boolean removed = deleteRequests.removeIf(req -> req.getEmloyeeI().equals(employeeId));
+        if (removed) 
+        {
+           System.out.println("Yêu cầu xóa nhân viên với ID: " + employeeId + " đã được hủy.");
+        } 
+        else 
+        {
+           System.out.println("Không tìm thấy yêu cầu xóa với ID: " + employeeId);
+        }
+    }
+
+    // Lấy danh sách yêu cầu xóa
+    public ArrayList<User> getDeleteRequests() 
+    {
+       return deleteRequests;
+    }
+
+    private void updateEmployeeFile() {
+    try (BufferedWriter writer = new BufferedWriter(new FileWriter("List-NV.txt"))) {
+        for (User user : users) {
+            writer.write(user.getEmloyeeI() + "-" + user.getFullname() + "-" + user.getRole());
+            writer.newLine(); // Thêm dòng mới
+        }
+        System.out.println("File List-NV.txt đã được cập nhật.");
+    } catch (IOException e) {
+        System.out.println("Lỗi khi cập nhật file: " + e.getMessage());
+    }
+}
+
+    public void approveDeleteEmployee(User_Management userManagement) 
+    {
+        if (deleteRequests.isEmpty()) 
+        {
+           System.out.println("Khong co yeu cau xoa nhan vien nao dang cho.");
+           return;
+        }
+
+        System.out.println("\n--- Danh sach yeu cau xoa nhan vien ---");
+        int index = 1;
+        for (User user : deleteRequests) 
+        {
+            System.out.println(index + ". ID: " + user.getEmloyeeI() + ", Ten: " + user.getFullname());
+            index++;
+        }
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Nhap so thu tu cua yeu cau muon xu ly: ");
+        int choice = Integer.parseInt(scanner.nextLine()) - 1;
+
+        if (choice >= 0 && choice < deleteRequests.size()) {
+            User userToDelete = deleteRequests.get(choice);
+            System.out.println("Ban co chac chan muon xoa nhan vien: " + userToDelete.getFullname() + " (Y/N)?");
+            String confirm = scanner.nextLine();
+            if (confirm.equalsIgnoreCase("Y")) 
+            {
+                //Xóa nhân viên khỏi danh sách
+                deleteRequests.remove(choice);
+                users.removeIf(user -> user.getEmloyeeI().equals(userToDelete.getEmloyeeI()));
+                
+                //Cập nhật file   
+                updateEmployeeFile();  
+                
+                //Ghi lịch sử phê duyệt
+                writeApprovalHistory("Admin đã xóa nhân viên: " + userToDelete.getFullname() + " (ID: " + userToDelete.getEmloyeeI() + ")");
+                System.out.println("Nhan vien da duoc xoa.");
+            } 
+            else 
+            {
+                //Ghi lịch sử từ chối
+                writeApprovalHistory("Admin đã từ chối yêu cầu xóa nhân viên: " + userToDelete.getFullname() + " (ID: " + userToDelete.getEmloyeeI() + ")");
+                System.out.println("Yeu cau khong duoc xu ly.");
+            }
+        } 
+        else 
+        {
+            System.out.println("Lua chon khong hop le.");
+        }
+    }
+
+    
+    
+    
 }
