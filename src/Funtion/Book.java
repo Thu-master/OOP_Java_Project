@@ -34,6 +34,10 @@ public class Book extends Product{
     ArrayList<Book> gk10Book = new ArrayList<Book>();
     ArrayList<Book> gk11Book = new ArrayList<Book>();
     ArrayList<Book> gk12Book = new ArrayList<Book>();
+    ArrayList<Book> sbBook = new ArrayList<Book>();
+    ArrayList<Book> psBook = new ArrayList<Book>();
+    ArrayList<Book> rmBook = new ArrayList<Book>();
+    
     public Book() 
     {
         
@@ -137,6 +141,12 @@ public class Book extends Product{
                         gk11Book.add(b);
                     }else if (type.equals("GK12")){
                         gk12Book.add(b);
+                    }else if (type.equals("SB")){
+                        sbBook.add(b);
+                    }else if (type.equals("PSB")){
+                        psBook.add(b);
+                    }else if (type.equals("RMB")){
+                        rmBook.add(b);
                     }
                 }
             }
@@ -150,7 +160,7 @@ public class Book extends Product{
     public ArrayList<Book> getGk1Book() {
         return gk1Book;
     }
-
+    
     public ArrayList<Book> getGk2Book() {
         return gk2Book;
     }
@@ -193,6 +203,18 @@ public class Book extends Product{
     
     public ArrayList<Book> getGk12Book() {
         return gk12Book;
+    }
+    
+    public ArrayList<Book> getSbBook() {
+        return sbBook;
+    }
+    
+    public ArrayList<Book> getPsBook() {
+        return psBook;
+    }
+    
+    public ArrayList<Book> getRmBook() {
+        return rmBook;
     }
     
     public Book nhapSach() {
@@ -248,6 +270,12 @@ public class Book extends Product{
                     gk11Book.add(newBook);
                 }else if (newBook.getType().equals("GK12")){
                     gk12Book.add(newBook);
+                }else if (newBook.getType().equals("SB")){
+                    sbBook.add(newBook);
+                }else if (newBook.getType().equals("PSB")){
+                    psBook.add(newBook);
+                }else if (newBook.getType().equals("RMB")){
+                    rmBook.add(newBook);
                 }
                 System.out.println("Sach moi da duoc ghi vao file va them vao danh sach.");
             }
@@ -315,6 +343,21 @@ public class Book extends Product{
             }
         }
         for (Book book : gk12Book) {
+            if (book.getId().equalsIgnoreCase(id) || book.getName().equalsIgnoreCase(name)) {
+                return true;
+            }
+        }
+        for (Book book : sbBook) {
+            if (book.getId().equalsIgnoreCase(id) || book.getName().equalsIgnoreCase(name)) {
+                return true;
+            }
+        }
+        for (Book book : psBook) {
+            if (book.getId().equalsIgnoreCase(id) || book.getName().equalsIgnoreCase(name)) {
+                return true;
+            }
+        }
+        for (Book book : rmBook) {
             if (book.getId().equalsIgnoreCase(id) || book.getName().equalsIgnoreCase(name)) {
                 return true;
             }

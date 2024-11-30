@@ -247,18 +247,19 @@ private void viewBooks() {
 
     while (!backToMainMenu) {
         System.out.println("\n--- MENU XEM SACH ---");
-        System.out.println("1: Giao khoa lop 1");
-        System.out.println("2: Giao khoa lop 2");
-        System.out.println("3: Giao khoa lop 3");
-        System.out.println("4: Giao khoa lop 4");
-        System.out.println("5: Giao khoa lop 5");
-        System.out.println("6: Giao khoa lop 6");
-        System.out.println("7: Giao khoa lop 7");
-        System.out.println("8: Giao khoa lop 8");
-        System.out.println("9: Giao khoa lop 9");
-        System.out.println("10: Giao khoa lop 10");
-        System.out.println("11: Giao khoa lop 11");
-        System.out.println("12: Giao khoa lop 12");
+        System.out.println("1: Sach giao khoa lop 1");
+        System.out.println("2: Sach giao khoa lop 2");
+        System.out.println("3: Sach giao khoa lop 3");
+        System.out.println("4: Sach giao khoa lop 4");
+        System.out.println("5: Sach giao khoa lop 5");
+        System.out.println("6: Sach giao khoa lop 6");
+        System.out.println("7: Sach giao khoa lop 7");
+        System.out.println("8: Sach giao khoa lop 8");
+        System.out.println("9: Sach giao khoa lop 9");
+        System.out.println("10: Sach giao khoa lop 10");
+        System.out.println("11: Sach giao khoa lop 11");
+        System.out.println("12: Sach giao khoa lop 12");
+        System.out.println("13: Sach khoa hoc");
         System.out.println("0: Quay lai");
 
         System.out.print("Chon loai sach: ");
@@ -300,6 +301,12 @@ private void viewBooks() {
                 break;
             case 12:
                 displayBooks(b.getGk12Book());
+                break;
+            case 13:
+                displayBooks(b.getSbBook());
+                break;
+            case 14:
+                displayBooks(b.getPsBook());
                 break;
             case 0:
                 backToMainMenu = true;
