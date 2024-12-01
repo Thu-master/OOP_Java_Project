@@ -66,16 +66,25 @@ public class Admin extends User
 
         while (keepManaging) {
             System.out.println("\n--- QUAN LY NGUOI DUNG ---");
+            System.out.println("Ban dang co " + userManagement.getPendingRequests().size() + " yeu cau them nhan vien can duyet.");
+            System.out.println("Ban dang co " + userManagement.getDeleteRequests().size() + " yeu cau xoa nhan vien can duyet.");
             System.out.println("1. Phe duyet yeu cau them nhan vien");
             System.out.println("2. Phe duyet yeu cau xoa nhan vien");
             System.out.println("3. Xem lich su duyet");
             System.out.println("4. Xem danh sach nhan vien hien tai");
             System.out.println("5. Thoat ve menu chinh");
+            System.out.println("0. Thoat chuong trinh");
             System.out.print("Chon chuc nang: ");
 
             int choice = Integer.parseInt(scanner.nextLine());
 
-            switch (choice) {
+            switch (choice) 
+            {
+                case 0:
+                    //Thoát chương trình
+                    System.out.println("Dang thoat chuong trinh... Tam biet!");
+                    System.exit(0);
+                    break;
                 case 1:
                     // Phê duyệt yêu cầu thêm nhân viên
                     approveAddEmployeeRequest(userManagement);

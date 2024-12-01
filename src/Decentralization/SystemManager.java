@@ -115,8 +115,6 @@ public class SystemManager
                    break;
                 case "Admin":
                    System.out.println("\n--- MENU BOSS ---");
-                   System.out.println("Ban dang co " + userManagement.getPendingRequests().size() + " yeu cau them nhan vien can duyet.");
-                   System.out.println("Ban dang co " + userManagement.getDeleteRequests().size() + " yeu cau xoa nhan vien can duyet.");
                    System.out.println("1. Quan ly nguoi dung");
                    System.out.println("2. Phe duyet yeu cau them nhan vien");
                    System.out.println("3. Phe duyet yeu cau xoa nhan vien");
