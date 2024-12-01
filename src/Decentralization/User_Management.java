@@ -38,6 +38,7 @@ public class User_Management
     // Đọc danh sách từ file
     public void loadUsersFromFile(String filePath) 
     {
+        users.clear(); // Làm trống danh sách trước khi tải lại
         try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) 
         {
             String line;
@@ -333,7 +334,13 @@ public class User_Management
         }
     }
 
-    
+// ----------------------------------------------------------------------------------------------------------------------------------  
+    //Admin
+    public ArrayList<User> getUsers() 
+    {
+       return users;
+    }
+
     
     
 }

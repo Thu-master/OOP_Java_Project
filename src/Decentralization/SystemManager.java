@@ -139,6 +139,7 @@ public class SystemManager
             {
                 case 0:
                    keepRunning = false; // Thoát menu
+                   break;
                 case 1:
                     if (user.getRole().equals("Employee") || user.getRole().equals("Manager")) 
                     {
@@ -148,7 +149,8 @@ public class SystemManager
                     } 
                     else 
                     {
-                       System.out.println("Chuc nang khong hop le!");
+                        //Admin quản lý người dùng
+                       ((Admin) user).manageUsersWithMenu(userManagement);
                     }
                     break;
                 case 2:
