@@ -6,6 +6,7 @@ GK1;115;Tu nhien va xa hoi 1;21000.0;55;Bo Giao duc va Dao tao
 GK1;120;Giao duc the chat 1;16000.0;29;Bo Giao duc va Dao tao
 GK1;122;Am nhac va my thuat 1;11000.0;67;Bo Giao duc va Dao tao
 GK1;125;Hoat dong va trai nghiem 1;15000.0;36;Bo Giao duc va Dao tao
+GK1;300;sach enlish;30000.0;50;Mr.jhoin
 GK2;201;Tieng Viet 2 Tap 1;30000.0;61;Bo Giao duc va Dao tao
 GK2;202;Tieng Viet 2 Tap 2;29000.0;33;Bo Giao duc va Dao tao
 GK2;205;Toan 2 Tap 1;17000.0;73;Bo Giao duc va Dao tao
@@ -87,94 +88,93 @@ GK12;1242;Hoat dong va trai nghiem 12;29000.0;42;Bo Giao duc va Dao tao
 GK12;1273;Hoa hoc 12;57000.0;54;Bo Giao duc va Dao tao
 GK12;1242;Lich su 12;320000.0;33;Bo Giao duc va Dao tao
 GK12;1281;Dia li 12;44000.0;77;Bo Giao duc va Dao tao
-GK1;300;sach enlish;30000.0;50;Mr.jhoin
-SB;1301;A Brief History of Time;450000;50;Stephen Hawking
-SB;1302;Cosmos;500000;40;Carl Sagan
-SB;1303;The Selfish Gene;300000;70;Richard Dawkins
-SB;1304;The Origin of Species;600000;30;Charles Darwin
-SB;1305;Sapiens: A Brief History of Humankind;400000;60;Yuval Noah Harari
-SB;1306;The Elegant Universe;700000;35;Brian Greene
-SB;1307;The God Delusion;320000;80;Richard Dawkins
-SB;1308;Astrophysics for People in a Hurry;250000;65;Neil deGrasse Tyson
-SB;1309;Why We Sleep;420000;50;Matthew Walker
-SB;1310;Thinking, Fast and Slow;550000;75;Daniel Kahneman
-SB;1311;A Short History of Nearly Everything;500000;60;Bill Bryson
-SB;1312;On the Shoulders of Giants;480000;45;Stephen Hawking
-SB;1313;The Fabric of the Cosmos;650000;55;Brian Greene
-SB;1314;Life on the Edge;400000;30;Jim Al-Khalili
-SB;1315;The Immortal Life of Henrietta Lacks;350000;70;Rebecca Skloot
-SB;1316;Hidden Figures;450000;40;Margot Lee Shetterly
-SB;1317;The Blind Watchmaker;370000;50;Richard Dawkins
-SB;1318;Genius: The Life and Science of Richard Feynman;580000;25;James Gleick
-SB;1319;The Man Who Knew Infinity;620000;35;Robert Kanigel
-SB;1320;Quantum Reality;470000;60;Nick Herbert
-SB;1321;The Universe in a Nutshell;480000;50;Stephen Hawking
-SB;1322;Einstein's Dreams;370000;40;Alan Lightman
-SB;1323;Superforecasting: The Art and Science of Prediction;320000;60;Philip Tetlock
-SB;1324;A Brief History of Life;450000;45;Andrew H. Knoll
-SB;1325;Chaos: Making a New Science;520000;35;James Gleick
-SB;1326;Quantum: Einstein, Bohr, and the Great Debate about the Nature of Reality;600000;30;Manjit Kumar
-SB;1327;The Ocean of Life;400000;70;Callum Roberts
-SB;1328;Superintelligence: Paths, Dangers, Strategies;350000;80;Nick Bostrom
-SB;1329;The Physicists;480000;55;C.P. Snow
-SB;1330;The Particle at the End of the Universe;430000;65;Sean Carroll
-PSB;1501;Thinking, Fast and Slow;450000;50;Daniel Kahneman
-PSB;1502;The Power of Habit;400000;70;Charles Duhigg
-PSB;1503;Atomic Habits;500000;65;James Clear
-PSB;1504;The Subtle Art of Not Giving a F*ck;370000;80;Mark Manson
-PSB;1505;Man's Search for Meaning;320000;60;Viktor E. Frankl
-PSB;1506;Grit: The Power of Passion and Perseverance;450000;55;Angela Duckworth
-PSB;1507;Mindset: The New Psychology of Success;480000;45;Carol S. Dweck
-PSB;1508;Drive: The Surprising Truth About What Motivates Us;400000;50;Daniel H. Pink
-PSB;1509;The Art of Thinking Clearly;370000;70;Rolf Dobelli
-PSB;1510;The Paradox of Choice;420000;40;Barry Schwartz
-PSB;1511;Quiet: The Power of Introverts in a World That Can't Stop Talking;500000;60;Susan Cain
-PSB;1512;Emotional Intelligence 2.0;430000;75;Travis Bradberry
-PSB;1513;Outliers: The Story of Success;460000;65;Malcolm Gladwell
-PSB;1514;Blink: The Power of Thinking Without Thinking;370000;50;Malcolm Gladwell
-PSB;1515;Flow: The Psychology of Optimal Experience;520000;35;Mihaly Csikszentmihalyi
-PSB;1516;The Happiness Hypothesis;400000;45;Jonathan Haidt
-PSB;1517;Switch: How to Change Things When Change Is Hard;350000;80;Chip Heath, Dan Heath
-PSB;1518;Stumbling on Happiness;400000;50;Daniel Gilbert
-PSB;1519;Influence: The Psychology of Persuasion;550000;40;Robert B. Cialdini
-PSB;1520;Nudge: Improving Decisions About Health, Wealth, and Happiness;480000;55;Richard H. Thaler
-PSB;1521;The Upside of Stress;360000;70;Kelly McGonigal
-PSB;1522;Lost Connections;430000;65;Johann Hari
-PSB;1523;Dare to Lead;420000;60;Brené Brown
-PSB;1524;The Social Animal;520000;30;Elliot Aronson
-PSB;1525;The Confidence Code;390000;45;Katty Kay, Claire Shipman
-PSB;1526;Rework;350000;80;Jason Fried, David Heinemeier Hansson
-PSB;1527;You Are Not So Smart;400000;70;David McRaney
-PSB;1528;Thinking in Bets;450000;50;Annie Duke
-PSB;1529;The Willpower Instinct;480000;65;Kelly McGonigal
-PSB;1530;The Body Keeps the Score;570000;55;Bessel van der Kolk
-RMB;1701;The Fault in Our Stars;350000;60;John Green
-RMB;1702;Pride and Prejudice;250000;70;Jane Austen
-RMB;1703;Me Before You;380000;65;Jojo Moyes
-RMB;1704;The Notebook;290000;80;Nicholas Sparks
-RMB;1705;The Time Traveler's Wife;450000;50;Audrey Niffenegger
-RMB;1706;Love in the Time of Cholera;430000;55;Gabriel García Marquez
-RMB;1707;The Rosie Project;300000;70;Graeme Simsion
-RMB;1708;Outlander;480000;40;Diana Gabaldon
-RMB;1709;A Walk to Remember;330000;75;Nicholas Sparks
-RMB;1710;The Hating Game;400000;60;Sally Thorne
-RMB;1711;The Great Gatsby;280000;50;F. Scott Fitzgerald
-RMB;1712;All the Light We Cannot See;420000;45;Anthony Doerr
-RMB;1713;The Light We Lost;360000;65;Jill Santopolo
-RMB;1714;The Kiss Quotient;370000;55;Helen Hoang
-RMB;1715;It Ends with Us;410000;50;Colleen Hoover
-RMB;1716;The Seven Husbands of Evelyn Hugo;460000;40;Taylor Jenkins Reid
-RMB;1717;Anna Karenina;500000;30;Leo Tolstoy
-RMB;1718;The Nightingale;420000;60;Kristin Hannah
-RMB;1719;Me, You, and Us;350000;80;Katy Regnery
-RMB;1720;Normal People;400000;70;Sally Rooney
-RMB;1721;Red, White & Royal Blue;460000;50;Casey McQuiston
-RMB;1722;Beach Read;390000;75;Emily Henry
-RMB;1723;Big Little Lies;450000;65;Liane Moriarty
-RMB;1724;Before We Were Strangers;370000;60;Renee Carlino
-RMB;1725;Eleanor Oliphant Is Completely Fine;400000;55;Gail Honeyman
-RMB;1726;The Sun Is Also a Star;330000;70;Nicola Yoon
-RMB;1727;Someone Like You;290000;80;Sarah Dessen
-RMB;1728;After;480000;50;Anna Todd
-RMB;1729;Beautiful Disaster;430000;65;Jamie McGuire
-RMB;1730;The Wedding Date;400000;60;Jasmine Guillory
+SB;1301;A Brief History of Time;450000.0;50;Stephen Hawking
+SB;1302;Cosmos;500000.0;40;Carl Sagan
+SB;1303;The Selfish Gene;300000.0;70;Richard Dawkins
+SB;1304;The Origin of Species;600000.0;30;Charles Darwin
+SB;1305;Sapiens: A Brief History of Humankind;400000.0;60;Yuval Noah Harari
+SB;1306;The Elegant Universe;700000.0;35;Brian Greene
+SB;1307;The God Delusion;320000.0;80;Richard Dawkins
+SB;1308;Astrophysics for People in a Hurry;250000.0;65;Neil deGrasse Tyson
+SB;1309;Why We Sleep;420000.0;50;Matthew Walker
+SB;1310;Thinking, Fast and Slow;550000.0;75;Daniel Kahneman
+SB;1311;A Short History of Nearly Everything;500000.0;60;Bill Bryson
+SB;1312;On the Shoulders of Giants;480000.0;45;Stephen Hawking
+SB;1313;The Fabric of the Cosmos;650000.0;55;Brian Greene
+SB;1314;Life on the Edge;400000.0;30;Jim Al-Khalili
+SB;1315;The Immortal Life of Henrietta Lacks;350000.0;70;Rebecca Skloot
+SB;1316;Hidden Figures;450000.0;40;Margot Lee Shetterly
+SB;1317;The Blind Watchmaker;370000.0;50;Richard Dawkins
+SB;1318;Genius: The Life and Science of Richard Feynman;580000.0;25;James Gleick
+SB;1319;The Man Who Knew Infinity;620000.0;35;Robert Kanigel
+SB;1320;Quantum Reality;470000.0;60;Nick Herbert
+SB;1321;The Universe in a Nutshell;480000.0;50;Stephen Hawking
+SB;1322;Einstein's Dreams;370000.0;40;Alan Lightman
+SB;1323;Superforecasting: The Art and Science of Prediction;320000.0;60;Philip Tetlock
+SB;1324;A Brief History of Life;450000.0;45;Andrew H. Knoll
+SB;1325;Chaos: Making a New Science;520000.0;35;James Gleick
+SB;1326;Quantum: Einstein, Bohr, and the Great Debate about the Nature of Reality;600000.0;30;Manjit Kumar
+SB;1327;The Ocean of Life;400000.0;70;Callum Roberts
+SB;1328;Superintelligence: Paths, Dangers, Strategies;350000.0;80;Nick Bostrom
+SB;1329;The Physicists;480000.0;55;C.P. Snow
+SB;1330;The Particle at the End of the Universe;430000.0;65;Sean Carroll
+PSB;1501;Thinking, Fast and Slow;450000.0;50;Daniel Kahneman
+PSB;1502;The Power of Habit;400000.0;70;Charles Duhigg
+PSB;1503;Atomic Habits;500000.0;65;James Clear
+PSB;1504;The Subtle Art of Not Giving a F*ck;370000.0;80;Mark Manson
+PSB;1505;Man's Search for Meaning;320000.0;60;Viktor E. Frankl
+PSB;1506;Grit: The Power of Passion and Perseverance;450000.0;55;Angela Duckworth
+PSB;1507;Mindset: The New Psychology of Success;480000.0;45;Carol S. Dweck
+PSB;1508;Drive: The Surprising Truth About What Motivates Us;400000.0;50;Daniel H. Pink
+PSB;1509;The Art of Thinking Clearly;370000.0;70;Rolf Dobelli
+PSB;1510;The Paradox of Choice;420000.0;40;Barry Schwartz
+PSB;1511;Quiet: The Power of Introverts in a World That Can't Stop Talking;500000.0;60;Susan Cain
+PSB;1512;Emotional Intelligence 2.0;430000.0;75;Travis Bradberry
+PSB;1513;Outliers: The Story of Success;460000.0;65;Malcolm Gladwell
+PSB;1514;Blink: The Power of Thinking Without Thinking;370000.0;50;Malcolm Gladwell
+PSB;1515;Flow: The Psychology of Optimal Experience;520000.0;35;Mihaly Csikszentmihalyi
+PSB;1516;The Happiness Hypothesis;400000.0;45;Jonathan Haidt
+PSB;1517;Switch: How to Change Things When Change Is Hard;350000.0;80;Chip Heath, Dan Heath
+PSB;1518;Stumbling on Happiness;400000.0;50;Daniel Gilbert
+PSB;1519;Influence: The Psychology of Persuasion;550000.0;40;Robert B. Cialdini
+PSB;1520;Nudge: Improving Decisions About Health, Wealth, and Happiness;480000.0;55;Richard H. Thaler
+PSB;1521;The Upside of Stress;360000.0;70;Kelly McGonigal
+PSB;1522;Lost Connections;430000.0;65;Johann Hari
+PSB;1523;Dare to Lead;420000.0;60;Brené Brown
+PSB;1524;The Social Animal;520000.0;30;Elliot Aronson
+PSB;1525;The Confidence Code;390000.0;45;Katty Kay, Claire Shipman
+PSB;1526;Rework;350000.0;80;Jason Fried, David Heinemeier Hansson
+PSB;1527;You Are Not So Smart;400000.0;70;David McRaney
+PSB;1528;Thinking in Bets;450000.0;50;Annie Duke
+PSB;1529;The Willpower Instinct;480000.0;65;Kelly McGonigal
+PSB;1530;The Body Keeps the Score;570000.0;55;Bessel van der Kolk
+RMB;1701;The Fault in Our Stars;350000.0;60;John Green
+RMB;1702;Pride and Prejudice;250000.0;70;Jane Austen
+RMB;1703;Me Before You;380000.0;65;Jojo Moyes
+RMB;1704;The Notebook;290000.0;80;Nicholas Sparks
+RMB;1705;The Time Traveler's Wife;450000.0;50;Audrey Niffenegger
+RMB;1706;Love in the Time of Cholera;430000.0;55;Gabriel García Marquez
+RMB;1707;The Rosie Project;300000.0;70;Graeme Simsion
+RMB;1708;Outlander;480000.0;40;Diana Gabaldon
+RMB;1709;A Walk to Remember;330000.0;75;Nicholas Sparks
+RMB;1710;The Hating Game;400000.0;60;Sally Thorne
+RMB;1711;The Great Gatsby;280000.0;50;F. Scott Fitzgerald
+RMB;1712;All the Light We Cannot See;420000.0;45;Anthony Doerr
+RMB;1713;The Light We Lost;360000.0;65;Jill Santopolo
+RMB;1714;The Kiss Quotient;370000.0;55;Helen Hoang
+RMB;1715;It Ends with Us;410000.0;50;Colleen Hoover
+RMB;1716;The Seven Husbands of Evelyn Hugo;460000.0;40;Taylor Jenkins Reid
+RMB;1717;Anna Karenina;500000.0;30;Leo Tolstoy
+RMB;1718;The Nightingale;420000.0;60;Kristin Hannah
+RMB;1719;Me, You, and Us;350000.0;80;Katy Regnery
+RMB;1720;Normal People;400000.0;70;Sally Rooney
+RMB;1721;Red, White & Royal Blue;460000.0;50;Casey McQuiston
+RMB;1722;Beach Read;390000.0;75;Emily Henry
+RMB;1723;Big Little Lies;450000.0;65;Liane Moriarty
+RMB;1724;Before We Were Strangers;370000.0;60;Renee Carlino
+RMB;1725;Eleanor Oliphant Is Completely Fine;400000.0;55;Gail Honeyman
+RMB;1726;The Sun Is Also a Star;330000.0;70;Nicola Yoon
+RMB;1727;Someone Like You;290000.0;80;Sarah Dessen
+RMB;1728;After;480000.0;50;Anna Todd
+RMB;1729;Beautiful Disaster;430000.0;65;Jamie McGuire
+RMB;1730;The Wedding Date;400000.0;46;Jasmine Guillory

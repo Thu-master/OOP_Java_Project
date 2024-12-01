@@ -145,7 +145,7 @@ public class SystemManager
                     {
                        System.out.println("\n--- Them sach ---");   //Thêm sách 
                        bookManager.docFile();
-                       bookManager.ghiFile();
+                       bookManager.ThemSachVaGhiFile();
                     } 
                     else 
                     {
@@ -218,7 +218,7 @@ public class SystemManager
                     {
                        System.out.println("\n--- Them sach ---");   // Thêm sách
                        bookManager.docFile();
-                       bookManager.ghiFile();
+                       bookManager.ThemSachVaGhiFile();
                     }
                     break;
                 case 8:

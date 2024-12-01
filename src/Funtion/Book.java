@@ -234,7 +234,7 @@ public class Book extends Product{
         return new Book(type, id, name, price, quantity, author);
     }
     
-    public void ghiFile(){
+    public void ThemSachVaGhiFile(){
         try{
             File f = new File("sach.txt");
             FileWriter fw = new FileWriter(f,true);
@@ -453,6 +453,155 @@ public class Book extends Product{
         {
             System.out.printf("%-10s %-10s %-30s %-10.2f %-10s %-20s\n",
                     book.getType(), book.getId(), book.getName(), book.getPrice(), book.getQuantity(), book.getAuthor());
+        }
+    }
+    
+    public void xoaSachTheoIDHoacTen(){//Hàm xóa sách theo id hoặc tên
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Nhap ID hoac ten sach can xoa: ");
+        String input = sc.nextLine().trim();
+
+        boolean found = false;
+        ArrayList<ArrayList<Book>> allBooks = new ArrayList<>();
+        allBooks.add(gk1Book);
+        allBooks.add(gk2Book);
+        allBooks.add(gk3Book);
+        allBooks.add(gk4Book);
+        allBooks.add(gk5Book);
+        allBooks.add(gk6Book);
+        allBooks.add(gk7Book);
+        allBooks.add(gk8Book);
+        allBooks.add(gk9Book);
+        allBooks.add(gk10Book);
+        allBooks.add(gk11Book);
+        allBooks.add(gk12Book);
+        allBooks.add(sbBook);
+        allBooks.add(psBook);
+        allBooks.add(rmBook);
+        
+        for (ArrayList<Book> books : allBooks){
+            for (int i = 0; i < books.size(); i++){
+                Book b = books.get(i);
+                if (b.getId().equalsIgnoreCase(input) || b.getName().equalsIgnoreCase(input)) {
+                    books.remove(i);
+                    found = true;
+                    break;
+                }
+            }
+        }
+
+        if (found){
+            try{
+            
+                File f = new File("sach.txt");
+                FileWriter fw = new FileWriter(f, false);
+                PrintWriter pw = new PrintWriter(fw);
+
+                for (ArrayList<Book> books : allBooks) {
+                    for (Book book : books) {
+                        pw.println(book.toString());
+                    }
+                }
+                pw.close();
+                fw.close();
+                System.out.println("Da xoa sach va cap nhat file thanh cong.");
+            }catch (Exception e){
+                System.out.println("Khong the cap nhat file.");
+            }
+        }else System.out.println("Khong tim thay sach co ID hoac ten nhu vay.");
+    }
+    
+    public void capNhatSachVaGhiFile(){//Hàm yêu cầu nhập id hoặc tên để tìm sách, xong rồi sẽ cập nhật
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Nhap ID hoac ten sach can cap nhat: ");
+        String input = sc.nextLine().trim();
+
+        boolean found = false;
+        ArrayList<ArrayList<Book>> allBooks2 = new ArrayList<>();
+        allBooks2.add(gk1Book);
+        allBooks2.add(gk2Book);
+        allBooks2.add(gk3Book);
+        allBooks2.add(gk4Book);
+        allBooks2.add(gk5Book);
+        allBooks2.add(gk6Book);
+        allBooks2.add(gk7Book);
+        allBooks2.add(gk8Book);
+        allBooks2.add(gk9Book);
+        allBooks2.add(gk10Book);
+        allBooks2.add(gk11Book);
+        allBooks2.add(gk12Book);
+        allBooks2.add(sbBook);
+        allBooks2.add(psBook);
+        allBooks2.add(rmBook);
+
+        for (ArrayList<Book> books : allBooks2){
+            for (Book book : books){
+                if (book.getId().equalsIgnoreCase(input) || book.getName().equalsIgnoreCase(input)) {
+                    System.out.println("Tim thay sach:");
+                    
+                    System.out.printf("%-10s %-10s %-30s %-10s %-10s %-10s\n", "Loai", "Ma so", "Ten sach", "Gia", "So luong", "Tac gia");
+                    
+                    System.out.printf("%-10s %-10s %-30s %-10.2f %-10d %-20s\n",
+                            book.getType(), book.getId(), book.getName(), book.getPrice(), book.getQuantity(), book.getAuthor());
+
+                    System.out.println("Nhap thong tin moi (nhan Enter de giu nguyen gia tri cu):");
+                    System.out.print("Loai sach cu (" + book.getType() + "), nhap loai sach moi: ");
+                    String newType = sc.nextLine().trim();
+                    if(!newType.isEmpty()) book.setType(newType); //Nhấp enter để giữ lại giá trị cũ và nhập loại mới thì sẽ thành loại mới
+
+                    System.out.print("Ma so cu (" + book.getId() + "), nhap ma so moi: ");
+                    String newId = sc.nextLine().trim();
+                    if (!newId.isEmpty()) book.setId(newId);
+
+                    System.out.print("Ten cu (" + book.getName() + "), nhap ten moi: ");
+                    String newName = sc.nextLine().trim();
+                    if (!newName.isEmpty()) book.setName(newName);
+
+                    System.out.print("Gia cu (" + book.getPrice() + "), nhap gia moi: ");
+                    String newPriceStr = sc.nextLine().trim();
+                    if(!newPriceStr.isEmpty()){
+                        double newPrice = Double.parseDouble(newPriceStr);
+                        book.setPrice(newPrice);
+                    }
+
+                    System.out.print("So luong cu (" + book.getQuantity() + "), nhap so luong moi: ");
+                    String newQuantityStr = sc.nextLine().trim();
+                    if (!newQuantityStr.isEmpty()) {
+                        int newQuantity = Integer.parseInt(newQuantityStr);
+                        book.setQuantity(newQuantity);
+                    }
+
+                    System.out.print("Tac gia cu (" + book.getAuthor() + "), nhap tac gio moi: ");
+                    String newAuthor = sc.nextLine().trim();
+                    if (!newAuthor.isEmpty()) book.setAuthor(newAuthor);
+
+                    System.out.println("Cap nhat thong tin thanh cong!");
+                    found = true;
+                    break;
+                }
+            }
+            if (found) break;
+        }
+
+        if (found) {
+            try{
+                File f = new File("sach.txt");
+                FileWriter fw = new FileWriter(f, false);
+                PrintWriter pw = new PrintWriter(fw);
+
+                for (ArrayList<Book> books : allBooks2) {
+                    for (Book book : books) {
+                        pw.println(book.toString());
+                    }
+                }
+                pw.close();
+                fw.close();
+                System.out.println("Cap nhat file thanh cong!");
+            }catch (Exception e){
+                System.out.println("Khong the cap nhat file.");
+            }
+        }else{
+            System.out.println("Khong tim thay sach co ID hoac ten nhu vay.");
         }
     }
 }
