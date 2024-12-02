@@ -2,3 +2,5 @@
 002-a-Manager
 003-Trần Nguyễn Minh Quân-Manager
 004-nguyen van a-Employee
+005-Thanh-Employee
+007-fjrhn-Employee

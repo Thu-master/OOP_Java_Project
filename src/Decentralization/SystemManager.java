@@ -164,7 +164,10 @@ public class SystemManager
                 case 3:
                     if (user.getRole().equals("Employee") || user.getRole().equals("Manager")) 
                     {
-                       System.out.println("Sua sach"); //Chưa có chức năng sửa sách
+                        System.out.println("\n--- Sua sach ---");
+                       bookManager.docFile();
+                       bookManager.capNhatSachVaGhiFile();
+                       //System.out.println("Sua sach"); //Chưa có chức năng sửa sách
                     } 
                     else if (user.getRole().equals("Admin"))
                     {

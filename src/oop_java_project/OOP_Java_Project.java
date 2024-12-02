@@ -20,7 +20,11 @@ public class OOP_Java_Project
     public static void main(String[] args) 
     {
         SystemManager systemManager = new SystemManager();
-        systemManager.run();         
+        systemManager.run(); 
+
+//        Book b = new Book();
+//        b.docFile();
+//        b.TimKiem();
     }   
     
 }

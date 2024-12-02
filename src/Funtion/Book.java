@@ -37,6 +37,7 @@ public class Book extends Product{
     ArrayList<Book> sbBook = new ArrayList<Book>();
     ArrayList<Book> psBook = new ArrayList<Book>();
     ArrayList<Book> rmBook = new ArrayList<Book>();
+    ArrayList<Book> nvBook = new ArrayList<Book>();
     
     public Book() 
     {
@@ -147,6 +148,8 @@ public class Book extends Product{
                         psBook.add(b);
                     }else if (type.equals("RMB")){
                         rmBook.add(b);
+                    }else if (type.equals("NV")){
+                        nvBook.add(b);
                     }
                 }
             }
@@ -217,6 +220,10 @@ public class Book extends Product{
         return rmBook;
     }
     
+    public ArrayList<Book> getNvBook() {
+        return nvBook;
+    }
+    
     public Book nhapSach() {
         Scanner sc = new Scanner(System.in);
         System.out.println("Nhap loai sach:");
@@ -276,6 +283,8 @@ public class Book extends Product{
                     psBook.add(newBook);
                 }else if (newBook.getType().equals("RMB")){
                     rmBook.add(newBook);
+                }else if (newBook.getType().equals("NV")){
+                    nvBook.add(newBook);
                 }
                 System.out.println("Sach moi da duoc ghi vao file va them vao danh sach.");
             }
@@ -286,80 +295,30 @@ public class Book extends Product{
         }
     }
     
-    public boolean kiemTraIdVaTen(String id, String name) {//Ham kiem tra id va ten
-        for (Book book : gk1Book) {
-            if (book.getId().equalsIgnoreCase(id) || book.getName().equalsIgnoreCase(name)) {
-                return true;
-            }
-        }
-        for (Book book : gk2Book) {
-            if (book.getId().equalsIgnoreCase(id) || book.getName().equalsIgnoreCase(name)) {
-                return true;
-            }
-        }
-        for (Book book : gk3Book) {
-            if (book.getId().equalsIgnoreCase(id) || book.getName().equalsIgnoreCase(name)) {
-                return true;
-            }
-        }
-        for (Book book : gk4Book) {
-            if (book.getId().equalsIgnoreCase(id) || book.getName().equalsIgnoreCase(name)) {
-                return true;
-            }
-        }
-        for (Book book : gk5Book) {
-            if (book.getId().equalsIgnoreCase(id) || book.getName().equalsIgnoreCase(name)) {
-                return true;
-            }
-        }
-        for (Book book : gk6Book) {
-            if (book.getId().equalsIgnoreCase(id) || book.getName().equalsIgnoreCase(name)) {
-                return true;
-            }
-        }
-        for (Book book : gk7Book) {
-            if (book.getId().equalsIgnoreCase(id) || book.getName().equalsIgnoreCase(name)) {
-                return true;
-            }
-        }
-        for (Book book : gk8Book) {
-            if (book.getId().equalsIgnoreCase(id) || book.getName().equalsIgnoreCase(name)) {
-                return true;
-            }
-        }
-        for (Book book : gk9Book) {
-            if (book.getId().equalsIgnoreCase(id) || book.getName().equalsIgnoreCase(name)) {
-                return true;
-            }
-        }
-        for (Book book : gk10Book) {
-            if (book.getId().equalsIgnoreCase(id) || book.getName().equalsIgnoreCase(name)) {
-                return true;
-            }
-        }
-        for (Book book : gk11Book) {
-            if (book.getId().equalsIgnoreCase(id) || book.getName().equalsIgnoreCase(name)) {
-                return true;
-            }
-        }
-        for (Book book : gk12Book) {
-            if (book.getId().equalsIgnoreCase(id) || book.getName().equalsIgnoreCase(name)) {
-                return true;
-            }
-        }
-        for (Book book : sbBook) {
-            if (book.getId().equalsIgnoreCase(id) || book.getName().equalsIgnoreCase(name)) {
-                return true;
-            }
-        }
-        for (Book book : psBook) {
-            if (book.getId().equalsIgnoreCase(id) || book.getName().equalsIgnoreCase(name)) {
-                return true;
-            }
-        }
-        for (Book book : rmBook) {
-            if (book.getId().equalsIgnoreCase(id) || book.getName().equalsIgnoreCase(name)) {
-                return true;
+    public boolean kiemTraIdVaTen(String id, String name){
+        ArrayList<ArrayList<Book>> allbooks = new ArrayList<>();
+        allbooks.add(gk1Book);
+        allbooks.add(gk2Book);
+        allbooks.add(gk3Book);
+        allbooks.add(gk4Book);
+        allbooks.add(gk5Book);
+        allbooks.add(gk6Book);
+        allbooks.add(gk7Book);
+        allbooks.add(gk8Book);
+        allbooks.add(gk9Book);
+        allbooks.add(gk10Book);
+        allbooks.add(gk11Book);
+        allbooks.add(gk12Book);
+        allbooks.add(sbBook);
+        allbooks.add(psBook);
+        allbooks.add(rmBook);
+        allbooks.add(nvBook);
+
+        for (ArrayList<Book> danhSach : allbooks){
+            for (Book book : danhSach){
+                if (book.getId().equalsIgnoreCase(id) || book.getName().equalsIgnoreCase(name)){
+                    return true;
+                }
             }
         }
         return false;
@@ -388,6 +347,9 @@ public class Book extends Product{
            System.out.println("11: Sach giao khoa lop 11");
            System.out.println("12: Sach giao khoa lop 12");
            System.out.println("13: Sach khoa hoc");
+           System.out.println("14: Sach tam ly");
+           System.out.println("15: Sach tinh cam");
+           System.out.println("16: Sach tieu thuyet");
            System.out.println("0: Quay lai");
 
            System.out.print("Chon loai sach: ");
@@ -437,6 +399,12 @@ public class Book extends Product{
                 case 14:
                    displayBooks(b.getPsBook());
                    break;
+                case 15:
+                    displayBooks(b.getRmBook());
+                    break;
+                case 16:
+                    displayBooks(b.getNvBook());
+                    break;
                 case 0:
                    backToMainMenu = true;
                    break;
@@ -448,10 +416,10 @@ public class Book extends Product{
 
     public void displayBooks(ArrayList<Book> books) 
     {
-        System.out.printf("%-10s %-10s %-30s %-10s %-10s %-10s\n", "Loai", "Ma so", "Ten sach", "Gia", "So luong", "Tac gia");
+        System.out.printf("%-7s %-7s %-55s %-15s %-10s %-20s\n", "Loai", "Ma so", "Ten sach", "Gia", "So luong", "Tac gia");
         for (Book book : books) 
         {
-            System.out.printf("%-10s %-10s %-30s %-10.2f %-10s %-20s\n",
+            System.out.printf("%-7s %-7s %-55s %-15.2f %-10s %-20s\n",
                     book.getType(), book.getId(), book.getName(), book.getPrice(), book.getQuantity(), book.getAuthor());
         }
     }
@@ -478,6 +446,7 @@ public class Book extends Product{
         allBooks.add(sbBook);
         allBooks.add(psBook);
         allBooks.add(rmBook);
+        allBooks.add(nvBook);
         
         for (ArrayList<Book> books : allBooks){
             for (int i = 0; i < books.size(); i++){
@@ -517,31 +486,32 @@ public class Book extends Product{
         String input = sc.nextLine().trim();
 
         boolean found = false;
-        ArrayList<ArrayList<Book>> allBooks2 = new ArrayList<>();
-        allBooks2.add(gk1Book);
-        allBooks2.add(gk2Book);
-        allBooks2.add(gk3Book);
-        allBooks2.add(gk4Book);
-        allBooks2.add(gk5Book);
-        allBooks2.add(gk6Book);
-        allBooks2.add(gk7Book);
-        allBooks2.add(gk8Book);
-        allBooks2.add(gk9Book);
-        allBooks2.add(gk10Book);
-        allBooks2.add(gk11Book);
-        allBooks2.add(gk12Book);
-        allBooks2.add(sbBook);
-        allBooks2.add(psBook);
-        allBooks2.add(rmBook);
+        ArrayList<ArrayList<Book>> allBooks = new ArrayList<>();
+        allBooks.add(gk1Book);
+        allBooks.add(gk2Book);
+        allBooks.add(gk3Book);
+        allBooks.add(gk4Book);
+        allBooks.add(gk5Book);
+        allBooks.add(gk6Book);
+        allBooks.add(gk7Book);
+        allBooks.add(gk8Book);
+        allBooks.add(gk9Book);
+        allBooks.add(gk10Book);
+        allBooks.add(gk11Book);
+        allBooks.add(gk12Book);
+        allBooks.add(sbBook);
+        allBooks.add(psBook);
+        allBooks.add(rmBook);
+        allBooks.add(nvBook);
 
-        for (ArrayList<Book> books : allBooks2){
+        for (ArrayList<Book> books : allBooks){
             for (Book book : books){
                 if (book.getId().equalsIgnoreCase(input) || book.getName().equalsIgnoreCase(input)) {
                     System.out.println("Tim thay sach:");
                     
-                    System.out.printf("%-10s %-10s %-30s %-10s %-10s %-10s\n", "Loai", "Ma so", "Ten sach", "Gia", "So luong", "Tac gia");
+                    System.out.printf("%-7s %-7s %-55s %-15s %-10s %-20s\n", "Loai", "Ma so", "Ten sach", "Gia", "So luong", "Tac gia");
                     
-                    System.out.printf("%-10s %-10s %-30s %-10.2f %-10d %-20s\n",
+                    System.out.printf("%-7s %-7s %-55s %-15.2f %-10d %-20s\n",
                             book.getType(), book.getId(), book.getName(), book.getPrice(), book.getQuantity(), book.getAuthor());
 
                     System.out.println("Nhap thong tin moi (nhan Enter de giu nguyen gia tri cu):");
@@ -589,7 +559,7 @@ public class Book extends Product{
                 FileWriter fw = new FileWriter(f, false);
                 PrintWriter pw = new PrintWriter(fw);
 
-                for (ArrayList<Book> books : allBooks2) {
+                for (ArrayList<Book> books : allBooks) {
                     for (Book book : books) {
                         pw.println(book.toString());
                     }
@@ -604,4 +574,55 @@ public class Book extends Product{
             System.out.println("Khong tim thay sach co ID hoac ten nhu vay.");
         }
     }
+    
+    public void TimKiem(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Nhap thong tin sach can tim (ID, ten sach hoac ten tac gia): ");
+        String input = sc.nextLine().trim();
+
+        if (input.isEmpty()) {
+            System.out.println("Vui long nhap it nhat mot gia tri de tim kiem!");
+            return;
+        }
+
+        ArrayList<ArrayList<Book>> allBooks = new ArrayList<>();
+        allBooks.add(gk1Book);
+        allBooks.add(gk2Book);
+        allBooks.add(gk3Book);
+        allBooks.add(gk4Book);
+        allBooks.add(gk5Book);
+        allBooks.add(gk6Book);
+        allBooks.add(gk7Book);
+        allBooks.add(gk8Book);
+        allBooks.add(gk9Book);
+        allBooks.add(gk10Book);
+        allBooks.add(gk11Book);
+        allBooks.add(gk12Book);
+        allBooks.add(sbBook);
+        allBooks.add(psBook);
+        allBooks.add(rmBook);
+        allBooks.add(nvBook);
+
+        for (ArrayList<Book> danhSach : allBooks){
+            if (danhSach == null) continue;
+
+            for (Book book : danhSach){
+                boolean matchId = book.getId() != null && book.getId().equalsIgnoreCase(input);
+                boolean matchName = book.getName() != null && book.getName().equalsIgnoreCase(input);
+                boolean matchAuthor = book.getAuthor() != null && book.getAuthor().equalsIgnoreCase(input);
+
+                if (matchId || matchName || matchAuthor){ // Nếu một trong 3 thuộc tính giống với sách có trong file thì sẽ in ra cuốn sách đó
+                    System.out.printf("%-7s %-7s %-55s %-15s %-10s %-20s\n",
+                            "Loai", "ID", "Ten", "Gia", "So luong", "Tac gia");
+                
+                    System.out.printf("%-7s %-7s %-55s %-15.2f %-10d %-20s\n",
+                            book.getType(), book.getId(), book.getName(),
+                            book.getPrice(), book.getQuantity(), book.getAuthor());
+                    return;
+                }
+            }
+        }
+        System.out.println("Khong tim thay sach phu hop!");
+    }
+  
 }
