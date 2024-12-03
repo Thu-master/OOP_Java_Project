@@ -256,7 +256,7 @@ public class User_Management
     public void addDeleteEmployeeRequest(User user) 
     {
        deleteRequests.add(user);
-       System.out.println("Yêu cầu xóa nhân viên đã được gửi lên Admin!");
+       System.out.println("Yeu cau xoa nhan vien da duoc gui len Admin!");
     }
 
     // Hủy yêu cầu xóa nhân viên
@@ -265,11 +265,11 @@ public class User_Management
         boolean removed = deleteRequests.removeIf(req -> req.getEmloyeeI().equals(employeeId));
         if (removed) 
         {
-           System.out.println("Yêu cầu xóa nhân viên với ID: " + employeeId + " đã được hủy.");
+           System.out.println("Yeu cau xoa nhan vien voi ID: " + employeeId + " da duoc huy.");
         } 
         else 
         {
-           System.out.println("Không tìm thấy yêu cầu xóa với ID: " + employeeId);
+           System.out.println("Khong tim thay yeu cau xoa voi ID: " + employeeId);
         }
     }
 
@@ -285,9 +285,9 @@ public class User_Management
             writer.write(user.getEmloyeeI() + "-" + user.getFullname() + "-" + user.getRole());
             writer.newLine(); // Thêm dòng mới
         }
-        System.out.println("File List-NV.txt đã được cập nhật.");
+        System.out.println("File List-NV.txt đa duoc cap nhat.");
     } catch (IOException e) {
-        System.out.println("Lỗi khi cập nhật file: " + e.getMessage());
+        System.out.println("Loi khi cap nhat file: " + e.getMessage());
     }
 }
 

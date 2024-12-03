@@ -106,7 +106,7 @@ public class Book extends Product
     }
 
     // Hiển thị các loại sách hiện có
-    public void viewBooks() {
+    public void viewBooks(){
         Scanner scanner = new Scanner(System.in);
         docFile(); // Đọc dữ liệu từ file
         boolean backToMainMenu = false;
@@ -115,7 +115,7 @@ public class Book extends Product
             System.out.println("\n--- MENU XEM SACH ---");
             int index = 1;
             List<String> types = new ArrayList<>(booksByType.keySet());
-            for (String type : types) {
+            for (String type : types){
                 System.out.println(index + ": " + type);
                 index++;
             }
@@ -141,7 +141,7 @@ public class Book extends Product
             System.out.println("Khong co sach nao trong loai nay.");
             return;
         }
-        System.out.printf("%-7s %-7s %-55s %-15s %-10s %-20s\n", "Loại", "Mã số", "Tên sách", "Giá", "Số lượng", "Tác giả");
+        System.out.printf("%-7s %-7s %-55s %-15s %-10s %-20s\n", "Loai", "Ma so", "Ten sach", "Gia", "So luong", "Tac gia");
         for (Book book : books) {
             System.out.printf("%-7s %-7s %-55s %-15.2f %-10d %-20s\n",
                     book.getType(), book.getId(), book.getName(), book.getPrice(), book.getQuantity(), book.getAuthor());
@@ -307,7 +307,7 @@ public class Book extends Product
                     if (!newAuthor.isEmpty()) book.setAuthor(newAuthor);
 
                     System.out.println("\nCap nhat thong tin sach thanh cong!");
-                    ghiLichSu("Sửa sách", book); // Ghi lịch sử
+                    ghiLichSu("Sua sach", book); // Ghi lịch sử
                     found = true;
                     break;
                 }
@@ -359,7 +359,7 @@ public class Book extends Product
     public void xemLichSu(String hanhDong) {
         try (BufferedReader br = new BufferedReader(new FileReader("approval_history.txt"))) {
             String line;
-            System.out.println("\n--- Lich su " + hanhDong.toLowerCase() + " sach ---");
+            System.out.println("\n--- Lich su " + hanhDong.toLowerCase() + " ---");
             boolean found = false;
             while ((line = br.readLine()) != null) {
                 if (line.contains("[Book Action]") && line.contains(hanhDong)) {
@@ -425,13 +425,13 @@ public class Book extends Product
                 viewBooks(); // Xem sách
                 break;
             case 5:
-                xemLichSu("Thêm sách");
+                xemLichSu("Them sach");
                 break;
             case 6:
-                xemLichSu("Sửa sách"); // Xem lịch sử sửa sách
+                xemLichSu("Sua sach"); // Xem lịch sử sửa sách
                 break;
             case 7:
-                xemLichSu("Xóa sách");   // Xem lịch sử xóa sách
+                xemLichSu("Xoa sach");   // Xem lịch sử xóa sách
                 break;
             case 8:
                 keepManaging = false; // Quay lại menu trước

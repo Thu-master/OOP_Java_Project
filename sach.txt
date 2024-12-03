@@ -1,3 +1,69 @@
+GK1;101;Tieng Viet 1 Tap 1;30000.0;47;Bo Giao duc va Dao tao
+GK1;102;Tieng Viet 1 Tap 2;29000.0;31;Bo Giao duc va Dao tao
+GK1;106;Toan 1 Tap 2;16000.0;46;Bo Giao duc va Dao tao
+GK1;110;Dao Duc 1;12000.0;45;Bo Giao duc va Dao tao
+GK1;115;Tu nhien va xa hoi 1;21000.0;55;Bo Giao duc va Dao tao
+GK1;120;Giao duc the chat 1;16000.0;29;Bo Giao duc va Dao tao
+GK1;122;Am nhac va my thuat 1;11000.0;67;Bo Giao duc va Dao tao
+GK1;125;Hoat dong va trai nghiem 1;15000.0;36;Bo Giao duc va Dao tao
+GK1;300;sach enlish;30000.0;50;Mr.jhoin
+GK2;201;Tieng Viet 2 Tap 1;30000.0;61;Bo Giao duc va Dao tao
+GK2;202;Tieng Viet 2 Tap 2;29000.0;33;Bo Giao duc va Dao tao
+GK2;205;Toan 2 Tap 1;17000.0;73;Bo Giao duc va Dao tao
+GK2;206;Toan 2 Tap 2;16000.0;35;Bo Giao duc va Dao tao
+GK2;210;Dao Duc 2;12000.0;46;Bo Giao duc va Dao tao
+GK2;215;Tu nhien va xa hoi 2;21000.0;51;Bo Giao duc va Dao tao
+GK2;220;Giao duc the chat 2;16000.0;48;Bo Giao duc va Dao tao
+GK2;222;Am nhac va my thuat 2;11000.0;45;Bo Giao duc va Dao tao
+GK2;225;Hoat dong va trai nghiem 2;15000.0;37;Bo Giao duc va Dao tao
+GK3;303;My thuat 3;15000.0;75;Bo Giao duc va Dao tao
+GK3;366;Tieng Viet 3 Tap 1;17000.0;51;Bo Giao duc va Dao tao
+GK3;367;Tieng Viet 3 Tap 1;16000.0;60;Bo Giao duc va Dao tao
+GK3;388;Hoat dong va trai nghiem 3;19000.0;37;Bo Giao duc va Dao tao
+GK3;377;Toan 3 Tap 1;15000.0;58;Bo Giao duc va Dao tao
+GK3;378;Toan 3 Tap 2;17000.0;58;Bo Giao duc va Dao tao
+GK4;454;Cong nghe 4;17000.0;62;Bo Giao duc va Dao tao
+GK4;400;Tin hoc 4;18000.0;56;Bo Giao duc va Dao tao
+GK4;421;Hoat dong va trai nghiem 4;19000.0;41;Bo Giao duc va Dao tao
+GK4;499;Lich su va Dia ly 4;45000.0;58;Bo Giao duc va Dao tao
+GK4;484;Tieng Viet 4 Tap 1;15000.0;45;Bo Giao duc va Dao tao
+GK4;432;Toan 4 Tap 2;17000.0;41;Bo Giao duc va Dao tao
+GK4;466;Am nhac 4;12000.0;37;Bo Giao duc va Dao tao
+GK4;478;Tieng Viet 4 Tap 2;18000.0;59;Bo Giao duc va Dao tao
+GK5;522;Cong nghe 5;17000.0;66;Bo Giao duc va Dao tao
+GK5;501;Tin hoc 5;18000.0;46;Bo Giao duc va Dao tao
+GK5;567;Hoat dong va trai nghiem 5;19000.0;72;Bo Giao duc va Dao tao
+GK5;588;Lich su va Dia ly 5;55000.0;34;Bo Giao duc va Dao tao
+GK5;586;Tieng Viet 5 Tap 1;15000.0;47;Bo Giao duc va Dao tao
+GK5;535;Toan 5 Tap 2;17000.0;39;Bo Giao duc va Dao tao
+GK5;569;Am nhac 5;12000.0;78;Bo Giao duc va Dao tao
+GK5;578;Tieng Viet 5 Tap 2;18000.0;37;Bo Giao duc va Dao tao
+GK6;692;Cong nghe 6;17000.0;73;Bo Giao duc va Dao tao
+GK6;611;Tin hoc 6;18000.0;20;Bo Giao duc va Dao tao
+GK6;657;Hoat dong va trai nghiem 6;19000.0;53;Bo Giao duc va Dao tao
+GK6;618;Lich su va Dia ly 6;56000.0;25;Bo Giao duc va Dao tao
+GK6;606;Ngu van 6;15000.0;28;Bo Giao duc va Dao tao
+GK6;632;Toan 6;17000.0;21;Bo Giao duc va Dao tao
+GK6;669;Am nhac 6;12000.0;43;Bo Giao duc va Dao tao
+GK6;679;Giao duc cong dan 6;28000.0;45;Bo Giao duc va Dao tao
+GK7;782;Am nhac 7;22000.0;37;Bo Giao duc va Dao tao
+GK7;741;Cong nghe 7;33000.0;41;Bo Giao duc va Dao tao
+GK7;704;Ngu Van 7 Tap 1;46000.0;35;Bo Giao duc va Dao tao
+GK7;706;Toan 7 Tap 1;42000.0;36;Bo Giao duc va Dao tao
+GK7;763;Hoat dong va trai nghiem 7;41000.0;34;Bo Giao duc va Dao tao
+GK7;766;Tin hoc 7;35000.0;40;Bo Giao duc va Dao tao
+GK8;871;Am nhac 8;22000.0;40;Bo Giao duc va Dao tao
+GK8;850;Cong nghe 8;33000.0;41;Bo Giao duc va Dao tao
+GK8;813;Ngu Van 8 Tap 1;46000.0;72;Bo Giao duc va Dao tao
+GK8;815;Toan 8 Tap 1;42000.0;77;Bo Giao duc va Dao tao
+GK8;874;Hoat dong va trai nghiem 8;41000.0;55;Bo Giao duc va Dao tao
+GK8;895;Tin hoc 8;35000.0;41;Bo Giao duc va Dao tao
+GK9;956;Am nhac 9;22000.0;55;Bo Giao duc va Dao tao
+GK9;935;Cong nghe 9;33000.0;61;Bo Giao duc va Dao tao
+GK9;979;Ngu Van 9 Tap 1;46000.0;57;Bo Giao duc va Dao tao
+GK9;990;Toan 9 Tap 1;42000.0;34;Bo Giao duc va Dao tao
+GK9;951;Hoat dong va trai nghiem 9;41000.0;21;Bo Giao duc va Dao tao
+GK9;971;Tin hoc 9;35000.0;64;Bo Giao duc va Dao tao
 GK10;1046;Sinh hoc 10;22000.0;71;Bo Giao duc va Dao tao
 GK10;1095;Cong nghe 10;33000.0;56;Bo Giao duc va Dao tao
 GK10;1019;Ngu Van 10 Tap 1;46000.0;45;Bo Giao duc va Dao tao
@@ -5,14 +71,6 @@ GK10;1000;Toan 10 Tap 1;42000.0;23;Bo Giao duc va Dao tao
 GK10;1067;Hoat dong va trai nghiem 10;41000.0;45;Bo Giao duc va Dao tao
 GK10;1071;Hoa hoc 10;35000.0;55;Bo Giao duc va Dao tao
 GK10;1089;Lich su 10;44000.0;67;Bo Giao duc va Dao tao
-GK12;1213;Sinh hoc 12;53000.0;41;Bo Giao duc va Dao tao
-GK12;1272;Cong nghe 12;37000.0;26;Bo Giao duc va Dao tao
-GK12;1290;Ngu Van 12 Tap 1;61000.0;35;Bo Giao duc va Dao tao
-GK12;1228;Toan 12 Tap 1;72000.0;20;Bo Giao duc va Dao tao
-GK12;1242;Hoat dong va trai nghiem 12;29000.0;42;Bo Giao duc va Dao tao
-GK12;1273;Hoa hoc 12;57000.0;54;Bo Giao duc va Dao tao
-GK12;1242;Lich su 12;320000.0;33;Bo Giao duc va Dao tao
-GK12;1281;Dia li 12;44000.0;77;Bo Giao duc va Dao tao
 GK11;1109;Dia li 11;54000.0;47;Bo Giao duc va Dao tao
 GK11;1136;Sinh hoc 11;22000.0;71;Bo Giao duc va Dao tao
 GK11;1125;Cong nghe 11;36000.0;56;Bo Giao duc va Dao tao
@@ -22,6 +80,71 @@ GK11;1160;Hoat dong va trai nghiem 11;21000.0;45;Bo Giao duc va Dao tao
 GK11;1171;Hoa hoc 11;60000.0;55;Bo Giao duc va Dao tao
 GK11;1159;Lich su 11;20000.0;67;Bo Giao duc va Dao tao
 GK11;1119;Dia li 11;54000.0;47;Bo Giao duc va Dao tao
+GK12;1213;Sinh hoc 12;53000.0;41;Bo Giao duc va Dao tao
+GK12;1272;Cong nghe 12;37000.0;26;Bo Giao duc va Dao tao
+GK12;1290;Ngu Van 12 Tap 1;61000.0;35;Bo Giao duc va Dao tao
+GK12;1228;Toan 12 Tap 1;72000.0;20;Bo Giao duc va Dao tao
+GK12;1242;Hoat dong va trai nghiem 12;29000.0;42;Bo Giao duc va Dao tao
+GK12;1273;Hoa hoc 12;57000.0;54;Bo Giao duc va Dao tao
+GK12;1242;Lich su 12;320000.0;33;Bo Giao duc va Dao tao
+GK12;1281;Dia li 12;44000.0;77;Bo Giao duc va Dao tao
+SB;1301;A Brief History of Time;450000.0;50;Stephen Hawking
+SB;1302;Cosmos;500000.0;40;Carl Sagan
+SB;1303;The Selfish Gene;300000.0;70;Richard Dawkins
+SB;1304;The Origin of Species;600000.0;30;Charles Darwin
+SB;1305;Sapiens: A Brief History of Humankind;400000.0;60;Yuval Noah Harari
+SB;1306;The Elegant Universe;700000.0;35;Brian Greene
+SB;1307;The God Delusion;320000.0;80;Richard Dawkins
+SB;1308;Astrophysics for People in a Hurry;250000.0;65;Neil deGrasse Tyson
+SB;1309;Why We Sleep;420000.0;50;Matthew Walker
+SB;1310;Thinking, Fast and Slow;550000.0;75;Daniel Kahneman
+SB;1311;A Short History of Nearly Everything;500000.0;60;Bill Bryson
+SB;1312;On the Shoulders of Giants;480000.0;45;Stephen Hawking
+SB;1313;The Fabric of the Cosmos;650000.0;55;Brian Greene
+SB;1314;Life on the Edge;400000.0;30;Jim Al-Khalili
+SB;1315;The Immortal Life of Henrietta Lacks;350000.0;70;Rebecca Skloot
+SB;1316;Hidden Figures;450000.0;40;Margot Lee Shetterly
+SB;1317;The Blind Watchmaker;370000.0;50;Richard Dawkins
+SB;1318;Genius: The Life and Science of Richard Feynman;580000.0;25;James Gleick
+SB;1319;The Man Who Knew Infinity;620000.0;35;Robert Kanigel
+SB;1320;Quantum Reality;470000.0;60;Nick Herbert
+SB;1321;The Universe in a Nutshell;480000.0;50;Stephen Hawking
+SB;1322;Einstein's Dreams;370000.0;40;Alan Lightman
+SB;1323;Superforecasting: The Art and Science of Prediction;320000.0;60;Philip Tetlock
+SB;1324;A Brief History of Life;450000.0;45;Andrew H. Knoll
+SB;1325;Chaos: Making a New Science;520000.0;35;James Gleick
+SB;1327;The Ocean of Life;400000.0;70;Callum Roberts
+SB;1328;Superintelligence: Paths, Dangers, Strategies;350000.0;80;Nick Bostrom
+SB;1329;The Physicists;480000.0;55;C.P. Snow
+SB;1330;The Particle at the End of the Universe;430000.0;65;Sean Carroll
+PSB;1501;Thinking, Fast and Slow;450000.0;50;Daniel Kahneman
+PSB;1502;The Power of Habit;400000.0;70;Charles Duhigg
+PSB;1503;Atomic Habits;500000.0;65;James Clear
+PSB;1504;The Subtle Art of Not Giving a F*ck;370000.0;80;Mark Manson
+PSB;1505;Man's Search for Meaning;320000.0;60;Viktor E. Frankl
+PSB;1506;Grit: The Power of Passion and Perseverance;450000.0;55;Angela Duckworth
+PSB;1507;Mindset: The New Psychology of Success;480000.0;45;Carol S. Dweck
+PSB;1508;Drive: The Surprising Truth About What Motivates Us;400000.0;50;Daniel H. Pink
+PSB;1509;The Art of Thinking Clearly;370000.0;70;Rolf Dobelli
+PSB;1510;The Paradox of Choice;420000.0;40;Barry Schwartz
+PSB;1512;Emotional Intelligence 2.0;430000.0;75;Travis Bradberry
+PSB;1513;Outliers: The Story of Success;460000.0;65;Malcolm Gladwell
+PSB;1514;Blink: The Power of Thinking Without Thinking;370000.0;50;Malcolm Gladwell
+PSB;1515;Flow: The Psychology of Optimal Experience;520000.0;35;Mihaly Csikszentmihalyi
+PSB;1516;The Happiness Hypothesis;400000.0;45;Jonathan Haidt
+PSB;1517;Switch: How to Change Things When Change Is Hard;350000.0;80;Chip Heath, Dan Heath
+PSB;1518;Stumbling on Happiness;400000.0;50;Daniel Gilbert
+PSB;1519;Influence: The Psychology of Persuasion;550000.0;40;Robert B. Cialdini
+PSB;1521;The Upside of Stress;360000.0;70;Kelly McGonigal
+PSB;1522;Lost Connections;430000.0;65;Johann Hari
+PSB;1523;Dare to Lead;420000.0;60;Brené Brown
+PSB;1524;The Social Animal;520000.0;30;Elliot Aronson
+PSB;1525;The Confidence Code;390000.0;45;Katty Kay, Claire Shipman
+PSB;1526;Rework;350000.0;80;Jason Fried, David Heinemeier Hansson
+PSB;1527;You Are Not So Smart;400000.0;70;David McRaney
+PSB;1528;Thinking in Bets;450000.0;50;Annie Duke
+PSB;1529;The Willpower Instinct;480000.0;65;Kelly McGonigal
+PSB;1530;The Body Keeps the Score;570000.0;55;Bessel van der Kolk
 RMB;1701;The Fault in Our Stars;350000.0;60;John Green
 RMB;1702;Pride and Prejudice;250000.0;70;Jane Austen
 RMB;1703;Me Before You;380000.0;65;Jojo Moyes
@@ -52,159 +175,33 @@ RMB;1727;Someone Like You;290000.0;80;Sarah Dessen
 RMB;1728;After;480000.0;50;Anna Todd
 RMB;1729;Beautiful Disaster;430000.0;65;Jamie McGuire
 RMB;1731;The Wedding Date;395000.0;46;Jasmine Guillory
-NV;1900;To Kill a Mockingbird;350000.0;70;Harper Lee
-NV;1901;1984;300000.0;80;George Orwell
-NV;1902;The Great Gatsby;280000.0;65;F. Scott Fitzgerald
-NV;1903;Moby Dick;450000.0;50;Herman Melville
-NV;1904;War and Peace;520000.0;40;Leo Tolstoy
-NV;1905;Crime and Punishment;490000.0;45;Fyodor Dostoevsky
-NV;1906;The Catcher in the Rye;310000.0;60;J.D. Salinger
-NV;1907;The Alchemist;370000.0;75;Paulo Coelho
-NV;1908;Brave New World;360000.0;70;Aldous Huxley
-NV;1909;Anna Karenina;500000.0;55;Leo Tolstoy
-NV;1910;Pride and Prejudice;250000.0;85;Jane Austen
-NV;1911;The Brothers Karamazov;510000.0;35;Fyodor Dostoevsky
-NV;1912;One Hundred Years of Solitude;430000.0;65;Gabriel García Márquez
-NV;1913;Frankenstein;320000.0;60;Mary Shelley
-NV;1914;The Odyssey;390000.0;70;Homer
-NV;1915;The Divine Comedy;450000.0;50;Dante Alighieri
-NV;1916;The Road;400000.0;75;Cormac McCarthy
-NV;1917;The Old Man and the Sea;310000.0;80;Ernest Hemingway
-NV;1918;The Hobbit;430000.0;65;J.R.R. Tolkien
-NV;1919;Les Misérables;520000.0;45;Victor Hugo
-NV;1920;Don Quixote;480000.0;40;Miguel de Cervantes
-NV;1921;Wuthering Heights;290000.0;85;Emily Brontë
-NV;1922;The Handmaid's Tale;380000.0;60;Margaret Atwood
-NV;1923;Jane Eyre;310000.0;75;Charlotte Brontë
-NV;1924;Dracula;370000.0;70;Bram Stoker
-NV;1925;Great Expectations;350000.0;50;Charles Dickens
-NV;1926;The Picture of Dorian Gray;340000.0;65;Oscar Wilde
-NV;1927;A Tale of Two Cities;280000.0;80;Charles Dickens
-NV;1928;Beloved;420000.0;55;Toni Morrison
-NV;1929;Slaughterhouse-Five;400000.0;60;Kurt Vonnegut
-GK1;101;Tieng Viet 1 Tap 1;30000.0;47;Bo Giao duc va Dao tao
-GK1;102;Tieng Viet 1 Tap 2;29000.0;31;Bo Giao duc va Dao tao
-GK1;106;Toan 1 Tap 2;16000.0;46;Bo Giao duc va Dao tao
-GK1;110;Dao Duc 1;12000.0;45;Bo Giao duc va Dao tao
-GK1;115;Tu nhien va xa hoi 1;21000.0;55;Bo Giao duc va Dao tao
-GK1;120;Giao duc the chat 1;16000.0;29;Bo Giao duc va Dao tao
-GK1;122;Am nhac va my thuat 1;11000.0;67;Bo Giao duc va Dao tao
-GK1;125;Hoat dong va trai nghiem 1;15000.0;36;Bo Giao duc va Dao tao
-GK1;300;sach enlish;30000.0;50;Mr.jhoin
-GK3;303;My thuat 3;15000.0;75;Bo Giao duc va Dao tao
-GK3;366;Tieng Viet 3 Tap 1;17000.0;51;Bo Giao duc va Dao tao
-GK3;367;Tieng Viet 3 Tap 1;16000.0;60;Bo Giao duc va Dao tao
-GK3;388;Hoat dong va trai nghiem 3;19000.0;37;Bo Giao duc va Dao tao
-GK3;377;Toan 3 Tap 1;15000.0;58;Bo Giao duc va Dao tao
-GK3;378;Toan 3 Tap 2;17000.0;58;Bo Giao duc va Dao tao
-GK2;201;Tieng Viet 2 Tap 1;30000.0;61;Bo Giao duc va Dao tao
-GK2;202;Tieng Viet 2 Tap 2;29000.0;33;Bo Giao duc va Dao tao
-GK2;205;Toan 2 Tap 1;17000.0;73;Bo Giao duc va Dao tao
-GK2;206;Toan 2 Tap 2;16000.0;35;Bo Giao duc va Dao tao
-GK2;210;Dao Duc 2;12000.0;46;Bo Giao duc va Dao tao
-GK2;215;Tu nhien va xa hoi 2;21000.0;51;Bo Giao duc va Dao tao
-GK2;220;Giao duc the chat 2;16000.0;48;Bo Giao duc va Dao tao
-GK2;222;Am nhac va my thuat 2;11000.0;45;Bo Giao duc va Dao tao
-GK2;225;Hoat dong va trai nghiem 2;15000.0;37;Bo Giao duc va Dao tao
-SB;1301;A Brief History of Time;450000.0;50;Stephen Hawking
-SB;1302;Cosmos;500000.0;40;Carl Sagan
-SB;1303;The Selfish Gene;300000.0;70;Richard Dawkins
-SB;1304;The Origin of Species;600000.0;30;Charles Darwin
-SB;1305;Sapiens: A Brief History of Humankind;400000.0;60;Yuval Noah Harari
-SB;1306;The Elegant Universe;700000.0;35;Brian Greene
-SB;1307;The God Delusion;320000.0;80;Richard Dawkins
-SB;1308;Astrophysics for People in a Hurry;250000.0;65;Neil deGrasse Tyson
-SB;1309;Why We Sleep;420000.0;50;Matthew Walker
-SB;1310;Thinking, Fast and Slow;550000.0;75;Daniel Kahneman
-SB;1311;A Short History of Nearly Everything;500000.0;60;Bill Bryson
-SB;1312;On the Shoulders of Giants;480000.0;45;Stephen Hawking
-SB;1313;The Fabric of the Cosmos;650000.0;55;Brian Greene
-SB;1314;Life on the Edge;400000.0;30;Jim Al-Khalili
-SB;1315;The Immortal Life of Henrietta Lacks;350000.0;70;Rebecca Skloot
-SB;1316;Hidden Figures;450000.0;40;Margot Lee Shetterly
-SB;1317;The Blind Watchmaker;370000.0;50;Richard Dawkins
-SB;1318;Genius: The Life and Science of Richard Feynman;580000.0;25;James Gleick
-SB;1319;The Man Who Knew Infinity;620000.0;35;Robert Kanigel
-SB;1320;Quantum Reality;470000.0;60;Nick Herbert
-SB;1321;The Universe in a Nutshell;480000.0;50;Stephen Hawking
-SB;1322;Einstein's Dreams;370000.0;40;Alan Lightman
-SB;1323;Superforecasting: The Art and Science of Prediction;320000.0;60;Philip Tetlock
-SB;1324;A Brief History of Life;450000.0;45;Andrew H. Knoll
-SB;1325;Chaos: Making a New Science;520000.0;35;James Gleick
-SB;1327;The Ocean of Life;400000.0;70;Callum Roberts
-SB;1328;Superintelligence: Paths, Dangers, Strategies;350000.0;80;Nick Bostrom
-SB;1329;The Physicists;480000.0;55;C.P. Snow
-SB;1330;The Particle at the End of the Universe;430000.0;65;Sean Carroll
-GK5;522;Cong nghe 5;17000.0;66;Bo Giao duc va Dao tao
-GK5;501;Tin hoc 5;18000.0;46;Bo Giao duc va Dao tao
-GK5;567;Hoat dong va trai nghiem 5;19000.0;72;Bo Giao duc va Dao tao
-GK5;588;Lich su va Dia ly 5;55000.0;34;Bo Giao duc va Dao tao
-GK5;586;Tieng Viet 5 Tap 1;15000.0;47;Bo Giao duc va Dao tao
-GK5;535;Toan 5 Tap 2;17000.0;39;Bo Giao duc va Dao tao
-GK5;569;Am nhac 5;12000.0;78;Bo Giao duc va Dao tao
-GK5;578;Tieng Viet 5 Tap 2;18000.0;37;Bo Giao duc va Dao tao
-GK4;454;Cong nghe 4;17000.0;62;Bo Giao duc va Dao tao
-GK4;400;Tin hoc 4;18000.0;56;Bo Giao duc va Dao tao
-GK4;421;Hoat dong va trai nghiem 4;19000.0;41;Bo Giao duc va Dao tao
-GK4;499;Lich su va Dia ly 4;45000.0;58;Bo Giao duc va Dao tao
-GK4;484;Tieng Viet 4 Tap 1;15000.0;45;Bo Giao duc va Dao tao
-GK4;432;Toan 4 Tap 2;17000.0;41;Bo Giao duc va Dao tao
-GK4;466;Am nhac 4;12000.0;37;Bo Giao duc va Dao tao
-GK4;478;Tieng Viet 4 Tap 2;18000.0;59;Bo Giao duc va Dao tao
-ádas;120;thu;60000.0;100;khonbiet
-GK7;782;Am nhac 7;22000.0;37;Bo Giao duc va Dao tao
-GK7;741;Cong nghe 7;33000.0;41;Bo Giao duc va Dao tao
-GK7;704;Ngu Van 7 Tap 1;46000.0;35;Bo Giao duc va Dao tao
-GK7;706;Toan 7 Tap 1;42000.0;36;Bo Giao duc va Dao tao
-GK7;763;Hoat dong va trai nghiem 7;41000.0;34;Bo Giao duc va Dao tao
-GK7;766;Tin hoc 7;35000.0;40;Bo Giao duc va Dao tao
-GK6;692;Cong nghe 6;17000.0;73;Bo Giao duc va Dao tao
-GK6;611;Tin hoc 6;18000.0;20;Bo Giao duc va Dao tao
-GK6;657;Hoat dong va trai nghiem 6;19000.0;53;Bo Giao duc va Dao tao
-GK6;618;Lich su va Dia ly 6;56000.0;25;Bo Giao duc va Dao tao
-GK6;606;Ngu van 6;15000.0;28;Bo Giao duc va Dao tao
-GK6;632;Toan 6;17000.0;21;Bo Giao duc va Dao tao
-GK6;669;Am nhac 6;12000.0;43;Bo Giao duc va Dao tao
-GK6;679;Giao duc cong dan 6;28000.0;45;Bo Giao duc va Dao tao
-GK9;956;Am nhac 9;22000.0;55;Bo Giao duc va Dao tao
-GK9;935;Cong nghe 9;33000.0;61;Bo Giao duc va Dao tao
-GK9;979;Ngu Van 9 Tap 1;46000.0;57;Bo Giao duc va Dao tao
-GK9;990;Toan 9 Tap 1;42000.0;34;Bo Giao duc va Dao tao
-GK9;951;Hoat dong va trai nghiem 9;41000.0;21;Bo Giao duc va Dao tao
-GK9;971;Tin hoc 9;35000.0;64;Bo Giao duc va Dao tao
-GK8;871;Am nhac 8;22000.0;40;Bo Giao duc va Dao tao
-GK8;850;Cong nghe 8;33000.0;41;Bo Giao duc va Dao tao
-GK8;813;Ngu Van 8 Tap 1;46000.0;72;Bo Giao duc va Dao tao
-GK8;815;Toan 8 Tap 1;42000.0;77;Bo Giao duc va Dao tao
-GK8;874;Hoat dong va trai nghiem 8;41000.0;55;Bo Giao duc va Dao tao
-GK8;895;Tin hoc 8;35000.0;41;Bo Giao duc va Dao tao
-PSB;1501;Thinking, Fast and Slow;450000.0;50;Daniel Kahneman
-PSB;1502;The Power of Habit;400000.0;70;Charles Duhigg
-PSB;1503;Atomic Habits;500000.0;65;James Clear
-PSB;1504;The Subtle Art of Not Giving a F*ck;370000.0;80;Mark Manson
-PSB;1505;Man's Search for Meaning;320000.0;60;Viktor E. Frankl
-PSB;1506;Grit: The Power of Passion and Perseverance;450000.0;55;Angela Duckworth
-PSB;1507;Mindset: The New Psychology of Success;480000.0;45;Carol S. Dweck
-PSB;1508;Drive: The Surprising Truth About What Motivates Us;400000.0;50;Daniel H. Pink
-PSB;1509;The Art of Thinking Clearly;370000.0;70;Rolf Dobelli
-PSB;1510;The Paradox of Choice;420000.0;40;Barry Schwartz
-PSB;1512;Emotional Intelligence 2.0;430000.0;75;Travis Bradberry
-PSB;1513;Outliers: The Story of Success;460000.0;65;Malcolm Gladwell
-PSB;1514;Blink: The Power of Thinking Without Thinking;370000.0;50;Malcolm Gladwell
-PSB;1515;Flow: The Psychology of Optimal Experience;520000.0;35;Mihaly Csikszentmihalyi
-PSB;1516;The Happiness Hypothesis;400000.0;45;Jonathan Haidt
-PSB;1517;Switch: How to Change Things When Change Is Hard;350000.0;80;Chip Heath, Dan Heath
-PSB;1518;Stumbling on Happiness;400000.0;50;Daniel Gilbert
-PSB;1519;Influence: The Psychology of Persuasion;550000.0;40;Robert B. Cialdini
-PSB;1521;The Upside of Stress;360000.0;70;Kelly McGonigal
-PSB;1522;Lost Connections;430000.0;65;Johann Hari
-PSB;1523;Dare to Lead;420000.0;60;Brené Brown
-PSB;1524;The Social Animal;520000.0;30;Elliot Aronson
-PSB;1525;The Confidence Code;390000.0;45;Katty Kay, Claire Shipman
-PSB;1526;Rework;350000.0;80;Jason Fried, David Heinemeier Hansson
-PSB;1527;You Are Not So Smart;400000.0;70;David McRaney
-PSB;1528;Thinking in Bets;450000.0;50;Annie Duke
-PSB;1529;The Willpower Instinct;480000.0;65;Kelly McGonigal
-PSB;1530;The Body Keeps the Score;570000.0;55;Bessel van der Kolk
-abc;30211;gibcd;5.6015899E7;70;know
-h;613;ád;20.0;30;gf
+NV;1900;To Kill a Mockingbird;350000;70;Harper Lee
+NV;1901;1984;300000;80;George Orwell
+NV;1902;The Great Gatsby;280000;65;F. Scott Fitzgerald
+NV;1903;Moby Dick;450000;50;Herman Melville
+NV;1904;War and Peace;520000;40;Leo Tolstoy
+NV;1905;Crime and Punishment;490000;45;Fyodor Dostoevsky
+NV;1906;The Catcher in the Rye;310000;60;J.D. Salinger
+NV;1907;The Alchemist;370000;75;Paulo Coelho
+NV;1908;Brave New World;360000;70;Aldous Huxley
+NV;1909;Anna Karenina;500000;55;Leo Tolstoy
+NV;1910;Pride and Prejudice;250000;85;Jane Austen
+NV;1911;The Brothers Karamazov;510000;35;Fyodor Dostoevsky
+NV;1912;One Hundred Years of Solitude;430000;65;Gabriel García Márquez
+NV;1913;Frankenstein;320000;60;Mary Shelley
+NV;1914;The Odyssey;390000;70;Homer
+NV;1915;The Divine Comedy;450000;50;Dante Alighieri
+NV;1916;The Road;400000;75;Cormac McCarthy
+NV;1917;The Old Man and the Sea;310000;80;Ernest Hemingway
+NV;1918;The Hobbit;430000;65;J.R.R. Tolkien
+NV;1919;Les Misérables;520000;45;Victor Hugo
+NV;1920;Don Quixote;480000;40;Miguel de Cervantes
+NV;1921;Wuthering Heights;290000;85;Emily Brontë
+NV;1922;The Handmaid's Tale;380000;60;Margaret Atwood
+NV;1923;Jane Eyre;310000;75;Charlotte Brontë
+NV;1924;Dracula;370000;70;Bram Stoker
+NV;1925;Great Expectations;350000;50;Charles Dickens
+NV;1926;The Picture of Dorian Gray;340000;65;Oscar Wilde
+NV;1927;A Tale of Two Cities;280000;80;Charles Dickens
+NV;1928;Beloved;420000;55;Toni Morrison
+NV;1929;Slaughterhouse-Five;400000;60;Kurt Vonnegut
