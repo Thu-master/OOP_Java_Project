@@ -425,10 +425,10 @@ public class Book extends Product
                 viewBooks(); // Xem sách
                 break;
             case 5:
-                xemLichSu("Them sach");
+                xemLichSu("Thêm sách");
                 break;
             case 6:
-                xemLichSu("Sua sach"); // Xem lịch sử sửa sách
+                xemLichSu("Sửa sách"); // Xem lịch sử sửa sách
                 break;
             case 7:
                 xemLichSu("Xóa sách");   // Xem lịch sử xóa sách
