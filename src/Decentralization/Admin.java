@@ -23,6 +23,42 @@ public class Admin extends User
        System.out.println("Quyen han: Toan quyen trong he thong.");
     }
     
+//    public void manageDiscounts(DiscountManager discountManager) 
+//    {
+//                Scanner scanner = new Scanner(System.in);
+//        boolean keepManaging = true;
+//
+//        while (keepManaging) {
+//            System.out.println("\n--- Quản lý mã giảm giá ---");
+//            System.out.println("1. Thêm mã giảm giá");
+//            System.out.println("2. Xem danh sách mã giảm giá");
+//            System.out.println("3. Quay lại");
+//            System.out.print("Chọn chức năng: ");
+//
+//            int choice = Integer.parseInt(scanner.nextLine());
+//
+//            switch (choice) {
+//                case 1:
+//                    System.out.print("Nhập mã giảm giá: ");
+//                    String code = scanner.nextLine().trim();
+//                    System.out.print("Nhập phần trăm giảm giá: ");
+//                    double percentage = Double.parseDouble(scanner.nextLine());
+//                    System.out.print("Nhập giá trị đơn hàng tối thiểu: ");
+//                    double minOrder = Double.parseDouble(scanner.nextLine());
+//                    discountManager.addDiscount(code, percentage, minOrder);
+//                    break;
+//                case 2:
+//                    discountManager.viewDiscounts();
+//                    break;
+//                case 3:
+//                    keepManaging = false;
+//                    break;
+//                default:
+//                    System.out.println("Lựa chọn không hợp lệ!");
+//            }
+//        }
+//    }
+    
     public void approveAddEmployee(User_Management userManagement) 
     {
         userManagement.approveRequest();
@@ -59,7 +95,7 @@ public class Admin extends User
         boolean keepManaging = true;
 
         while (keepManaging) {
-            System.out.println("\n--- QUAN LY NGUOI DUNG ---");
+            System.out.println("\n--- QUAN LY NHAN VIEN ---");
             System.out.println("Ban dang co " + userManagement.getPendingRequests().size() + " yeu cau them nhan vien can duyet.");
             System.out.println("Ban dang co " + userManagement.getDeleteRequests().size() + " yeu cau xoa nhan vien can duyet.");
             System.out.println("1. Phe duyet yeu cau them nhan vien");
@@ -104,6 +140,4 @@ public class Admin extends User
             }
         }
     }
-
-
 }

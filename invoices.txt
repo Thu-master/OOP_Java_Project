@@ -1,0 +1,44 @@
+[2024-12-04 02:04:29]
+Hoa don chi tiet:
+Sach: Sinh hoc 10, So luong: 1, Don gia: 22000.0, Thanh tien: 22000.0
+Tong cong: 22000.0
+[2024-12-04 02:07:30]
+Hoa don chi tiet:
+Sach: The Body Keeps the Score, So luong: 1, Don gia: 570000.0, Thanh tien: 570000.0
+Tong cong: 570000.0
+[2024-12-04 02:09:37]
+Hoa don chi tiet:
+Sach: Lich su 10, So luong: 1, Don gia: 44000.0, Thanh tien: 44000.0
+Tong cong: 44000.0
+[2024-12-04 02:18:18]
+Hoa don chi tiet:
+Sach: The Particle at the End of the Universe, So luong: 1, Don gia: 430000.0, Thanh tien: 430000.0
+Tong cong: 430000.0
+[2024-12-04 02:20:41]
+Hoa don chi tiet:
+Sach: Hoat dong va trai nghiem 2, So luong: 1, Don gia: 15000.0, Thanh tien: 15000.0
+Tong cong: 15000.0
+[2024-12-04 02:22:33]
+Hoa don chi tiet:
+Sach: Cong nghe 10, So luong: 2, Don gia: 33000.0, Thanh tien: 66000.0
+Tong cong: 66000.0
+[2024-12-04 02:24:14]
+Hoa don chi tiet:
+Sach: Giao duc cong dan 6, So luong: 1, Don gia: 28000.0, Thanh tien: 28000.0
+Tong cong: 28000.0
+[2024-12-04 02:54:35]
+--- Hóa đơn thanh toán ---
+Tên sách: Am nhac 9, Số lượng: 5, Đơn giá: 22000,00, Thành tiền: 110000,00
+Tổng tiền: 110000,00
+Thuế (8%): 8800,00
+Tổng cộng: 118800,00
+-----------------------------
+
+[2024-12-04 03:27:08]
+--- Hóa đơn thanh toán ---
+Tên sách: The Willpower Instinct, Số lượng: 1, Đơn giá: 480000,00, Thành tiền: 480000,00
+Tổng tiền: 480000,00
+Thuế (8%): 38400,00
+Tổng cộng: 518400,00
+-----------------------------
+

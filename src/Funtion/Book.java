@@ -393,19 +393,19 @@ public class Book extends Product
         System.out.println("5. Xem lich su them sach");
         System.out.println("6. Xem lich su sua sach");
         System.out.println("7. Xem lich su xoa sach");
-        System.out.println("8. Quay lai");
-        System.out.println("0. Thoat");
+        System.out.println("8. Xem lich su hoa don");
+        System.out.println("9. Quay lai");
         System.out.print("Chon chuc nang: ");
 
         int choice = Integer.parseInt(scanner.nextLine());
 
         switch (choice) 
         {
-            case 0:
+/*            case 0:
                 //Thoát chương trình
                 System.out.println("Dang thoat chuong trinh... Tam biet!");
                 System.exit(0);
-                break;
+                break;*/
             case 1:
                 System.out.println("\n--- THEM SACH ---");
                 docFile(); // Đọc file dữ liệu hiện tại
@@ -435,6 +435,9 @@ public class Book extends Product
                 xemLichSu("Xoa sach");   // Xem lịch sử xóa sách
                 break;
             case 8:
+                viewPaymentHistory(); //Gọi phương thức xem lịch sử hóa đơn
+                break;
+            case 9:
                 keepManaging = false; // Quay lại menu trước
                 break;
             default:
@@ -442,5 +445,188 @@ public class Book extends Product
         }
     }
 }
+    
+    public void muaSach() {
+        Bill billManager = new Bill();
+        Scanner scanner = new Scanner(System.in);
+        boolean keepShopping = true;
 
+        while (keepShopping) {
+            System.out.println("\n--- MENU MUA SACH ---");
+            System.out.println("1. Them sach vao gio hang");
+            System.out.println("2. Xem gio hang");
+            System.out.println("3. Chinh sua gio hang");
+            System.out.println("4. Thanh toan");
+            System.out.println("0. Quay lai");
+            System.out.print("Chon chuc nang: ");
+            int choice = Integer.parseInt(scanner.nextLine());
+
+            switch (choice) {
+                case 1:
+                    billManager.TinhThanhTien(this); // Thêm sách vào giỏ
+                    break;
+                case 2:
+                    System.out.println("\n--- Gio hang hien tai ---");
+                    System.out.println(billManager.toString()); // Xem giỏ hàng
+                    break;
+                case 3:
+                    suaGioHang(billManager); // Chỉnh sửa giỏ hàng
+                    break;
+                case 4:
+                    if (billManager.getCart().isEmpty()) 
+                    {
+                        System.out.println("Gio hang cua ban dang trong. Vui long them sach truoc khi thanh toan.");
+                        break;
+                    }
+                    else
+                    {
+//                    billManager.applyDiscount(discountManager);
+//                    System.out.println("Tổng tiền sau giảm giá: " + billManager.getThanhTien());
+                    hienThiHoaDon(billManager); // Xuất giao diện hóa đơn
+                    savePaymentHistory(billManager); // Lưu hóa đơn
+                    updateInventory(billManager); // Cập nhật tồn kho
+                    billManager.getCart().clear(); // Xóa giỏ hàng sau thanh toán
+                    billManager.setThanhTien(0);   // Đặt tổng thành tiền về 0
+                    }
+                    keepShopping = false; // Thoát sau thanh toán
+                    break;
+                case 0:
+                    keepShopping = false; // Thoát menu mua sách
+                    break;
+                default:
+                    System.out.println("Lua chon khong hop le. Vui long thu lai!");
+            }
+        }
+    }
+
+private void hienThiHoaDon(Bill billManager) {
+    // Định nghĩa độ rộng các cột
+    int width = 80; // Tổng chiều rộng bảng
+    int col1Width = 40; // Cột "Mặt hàng"
+    int col2Width = 6;  // Cột "SL"
+    int col3Width = 12; // Cột "Đơn giá"
+    int col4Width = 12; // Cột "Thành tiền"
+    String border = "-".repeat(width);
+
+    // Tính toán tổng tiền và thuế
+    double taxRate = 0.08; // Thuế mặc định 8%
+    double totalAmount = billManager.getThanhTien();
+    double totalTax = Math.round(totalAmount * taxRate); // Làm tròn thuế
+    double finalAmount = totalAmount + totalTax;
+
+    // Giả định số tiền khách trả
+    double tienKhachTra = 200000;
+    double tienThua = tienKhachTra - finalAmount;
+
+    // In hóa đơn
+    System.out.println(border);
+    System.out.printf("| %-76s |\n", "NHÀ SÁCH TRUNG LÂN");
+    System.out.printf("| %-76s |\n", "42/4 TTN01, P. TÂN THỚI NHẤT, Q12");
+    System.out.println(border);
+    System.out.printf("| %-76s |\n", "Khách hàng: Khách lẻ");
+    System.out.printf("| %-76s |\n", "Số PTT: 00000052       Ngày: " + LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm")));
+    System.out.printf("| %-76s |\n", "Ca: 1 - Thu ngân: admin");
+    System.out.println(border);
+
+    // Bảng thông tin sách
+    System.out.printf("| %-40s | %-6s | %-12s | %-12s |\n", "Mặt hàng", "SL", "Đơn giá", "Thành tiền");
+    System.out.println(border);
+
+    for (Book book : billManager.getCart()) {
+        double thanhTien = Math.round(book.getPrice() * book.getQuantity());
+        System.out.printf("| %-40s | %-6d | %-12.0f | %-12.0f |\n", book.getName(), book.getQuantity(), book.getPrice(), thanhTien);
+    }
+
+    System.out.println(border);
+    System.out.printf("| %-40s | %-6s | %-12s | %-12.0f |\n", "Tổng tiền:", "", "", totalAmount);
+    System.out.printf("| %-40s | %-6s | %-12s | %-12.0f |\n", "Thuế 8%:", "", "", totalTax);
+    System.out.printf("| %-40s | %-6s | %-12s | %-12.0f |\n", "Tổng cộng:", "", "", finalAmount);
+    System.out.printf("| %-40s | %-6s | %-12s | %-12.0f |\n", "Tiền khách trả:", "", "", tienKhachTra);
+    System.out.printf("| %-40s | %-6s | %-12s | %-12.0f |\n", "Tiền thừa:", "", "", tienThua);
+
+    System.out.println(border);
+    System.out.printf("| %-76s |\n", "Cảm ơn Quý khách, hẹn gặp lại!");
+    System.out.println(border);
+}
+
+    // Phương thức chỉnh sửa giỏ hàng
+    private void suaGioHang(Bill billManager) {
+        Scanner scanner = new Scanner(System.in);
+        if (billManager.getCart().isEmpty()) {
+            System.out.println("Gio hang cua ban dang trong.");
+            return;
+        }
+
+        System.out.println("\n--- Gio hang hien tai ---");
+        System.out.println(billManager.toString());
+        System.out.print("Nhap ID hoac ten sach can xoa khoi gio hang: ");
+        String search = scanner.nextLine().trim();
+
+        Book bookToRemove = null;
+        for (Book b : billManager.getCart()) {
+            if (b.getId().equalsIgnoreCase(search) || b.getName().equalsIgnoreCase(search)) {
+                bookToRemove = b;
+                break;
+            }
+        }
+
+        if (bookToRemove != null) {
+            billManager.getCart().remove(bookToRemove);
+            System.out.println("Da xoa sach \"" + bookToRemove.getName() + "\" khoi gio hang.");
+        } else {
+            System.out.println("Khong tim thay sach trong gio hang.");
+        }
+    }
+
+    // Lưu hóa đơn vào file
+    private void savePaymentHistory(Bill billManager) {
+    try (BufferedWriter writer = new BufferedWriter(new FileWriter("invoices.txt", true))) {
+        String timestamp = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
+        writer.write("[" + timestamp + "]\n");
+        writer.write("--- Hóa đơn thanh toán ---\n");
+        for (Book book : billManager.getCart()) {
+            writer.write(String.format("Tên sách: %s, Số lượng: %d, Đơn giá: %.2f, Thành tiền: %.2f\n",
+                    book.getName(), book.getQuantity(), book.getPrice(), book.getPrice() * book.getQuantity()));
+        }
+        double totalAmount = billManager.getThanhTien();
+        double taxRate = 0.08;
+        double totalTax = totalAmount * taxRate;
+        double finalAmount = totalAmount + totalTax;
+        writer.write(String.format("Tổng tiền: %.2f\nThuế (8%%): %.2f\nTổng cộng: %.2f\n", totalAmount, totalTax, finalAmount));
+        writer.write("-----------------------------\n\n");
+        System.out.println("Lịch sử thanh toán đã được lưu.");
+    } catch (IOException e) {
+        System.out.println("Lỗi khi lưu lịch sử thanh toán: " + e.getMessage());
+    }
+    }
+    
+    public void viewPaymentHistory() {
+    try (BufferedReader reader = new BufferedReader(new FileReader("invoices.txt"))) {
+        String line;
+        System.out.println("\n--- Lich su thanh ton ---");
+        while ((line = reader.readLine()) != null) {
+            System.out.println(line);
+        }
+    } catch (FileNotFoundException e) {
+        System.out.println("Khong co lich su thanh toan nao.");
+    } catch (IOException e) {
+        System.out.println("Loi khi doc lich su thanh toan: " + e.getMessage());
+    }
+}
+
+
+    // Cập nhật tồn kho
+    private void updateInventory(Bill billManager) {
+        for (Book purchasedBook : billManager.getCart()) {
+            for (ArrayList<Book> books : booksByType.values()) {
+                for (Book book : books) {
+                    if (book.getId().equalsIgnoreCase(purchasedBook.getId())) {
+                        book.setQuantity(book.getQuantity() - purchasedBook.getQuantity());
+                    }
+                }
+            }
+        }
+        ghiLaiFile(); // Lưu lại dữ liệu sách sau cập nhật
+    }
+    
 }

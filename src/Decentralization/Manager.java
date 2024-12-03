@@ -184,6 +184,5 @@ public void viewSentDeleteRequests(User_Management userManagement) {
         }
     }
 }
-
-        
+    
 }

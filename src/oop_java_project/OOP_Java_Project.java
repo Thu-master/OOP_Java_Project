@@ -20,11 +20,11 @@ public class OOP_Java_Project
      */
     public static void main(String[] args) 
     {
-//        SystemManager systemManager = new SystemManager();
-//        systemManager.run(); 
-        Bill bill = new Bill();
-        Book b = new Book();
-        bill.TinhThanhTien(b);
+        SystemManager systemManager = new SystemManager();
+        systemManager.run(); 
+//        Bill bill = new Bill();
+//        Book b = new Book();
+//        bill.TinhThanhTien(b);
         
 
     } 

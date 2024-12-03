@@ -106,13 +106,16 @@ public class SystemManager
                    System.out.println("1. Quan ly sach");
                    System.out.println("2. Quan ly yeu cau them nhan vien");
                    System.out.println("3. Quan ly yeu cau xoa nhan vien");
+                   System.out.println("4. Mua sach");
+                   System.out.println("5. Xem ma giam gia");
                    System.out.println("20. Dang xuat");
                    System.out.println("0. Thoat");
                    break;
                 case "Admin":
                    System.out.println("\n--- MENU BOSS ---");
                    System.out.println("1. Quan ly nhan vien");
-                   System.out.println("2. Quan ly sach");     
+                   System.out.println("2. Quan ly sach");
+                   System.out.println("3. Quan ly ma giam gia");
                    System.out.println("20. Dang xuat");
                    System.out.println("0. Thoat");
                    break;
@@ -181,13 +184,12 @@ public class SystemManager
                     }
                     else
                     {
-                       System.out.println("Chuc nang khong hop le!");
                     }
                     break;
                 case 4:
-                    if (user.getRole().equals("Employee") || user.getRole().equals("Manager")) 
+                    if (user.getRole().equals("Manager")) 
                     {
-                       bookManager.viewBooks(); //Chức năng xem sách(Employee)
+                        bookManager.muaSach(); // Gọi chức năng mua sách
                     } 
                     break;
                 case 5:

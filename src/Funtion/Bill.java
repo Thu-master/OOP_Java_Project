@@ -165,6 +165,24 @@ public class Bill {
         billDetails.append("Tong cong: ").append(ThanhTien);
         return billDetails.toString();
     }
+    
+//    public void applyDiscount(DiscountManager discountManager) {
+//        Scanner scanner = new Scanner(System.in);
+//        System.out.print("Nhập mã giảm giá (hoặc bỏ qua): ");
+//        String discountCode = scanner.nextLine().trim();
+//
+//        Discount discount = discountManager.validateDiscount(discountCode, this.ThanhTien);
+//        if (discount != null) {
+//            double discountAmount = this.ThanhTien * (discount.getPercentage() / 100);
+//            this.ThanhTien -= discountAmount;
+//            System.out.println("Giảm giá áp dụng: -" + discountAmount + " VND");
+//        } else {
+//            System.out.println("Không áp dụng giảm giá.");
+//        }
+//    }
+
+
+
 }
 
 
