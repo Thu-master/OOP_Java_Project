@@ -72,7 +72,7 @@ public void requestAddEmployeesWithMenu(User_Management userManagement) {
         System.out.println("1. Gui yeu cau them nhan vien");
         System.out.println("2. Huy yeu cau them nhan vien");
         System.out.println("3. Xem cac yeu cau them da gui");
-        System.out.println("4. Thoat ve menu chinh");
+        System.out.println("4. Quay lai");
         System.out.print("Chon chuc nang: ");
 
         int choice = Integer.parseInt(scanner.nextLine());

@@ -6,6 +6,7 @@ package Decentralization;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -200,22 +201,28 @@ public class User_Management
         }
     }
 
-    public void viewApprovalHistory() 
-    {
-        try (BufferedReader reader = new BufferedReader(new FileReader("approval_history.txt"))) 
-        {
+    public void viewApprovalHistory(String actionType) {
+        try (BufferedReader reader = new BufferedReader(new FileReader("approval_history.txt"))) {
             String line;
-            System.out.println("\n--- Lich su duyet ---");
-            while ((line = reader.readLine()) != null) 
-            {
-                System.out.println(line);
+            boolean hasResults = false;
+
+            System.out.println("\n--- Lich su " + actionType + " ---");
+            while ((line = reader.readLine()) != null) {
+                if (line.toLowerCase().contains(actionType.toLowerCase())) { // Ignore case sensitivity
+                    System.out.println(line);
+                    hasResults = true;
+                }
             }
-        } 
-        catch(IOException e) 
-        {
-            System.out.println("Loi khi doc lich su duyet: " + e.getMessage());
+
+            if (!hasResults) {
+                System.out.println("Khong tim thay lich su nao cho hanh dong: " + actionType);
+        }
+        } catch (IOException e) {
+            System.out.println("Loi khi doc file lich su: " + e.getMessage());
         }
     }
+
+
 
 
     public void cancelEmployeeRequest(String employeeId) 
@@ -284,18 +291,15 @@ public class User_Management
     }
 }
 
-    public void approveDeleteEmployee(User_Management userManagement) 
-    {
-        if (deleteRequests.isEmpty()) 
-        {
-           System.out.println("Khong co yeu cau xoa nhan vien nao dang cho.");
-           return;
+    public void approveDeleteEmployee() {
+        if (deleteRequests.isEmpty()) {
+            System.out.println("Khong co yeu cau xoa nhan vien nao dang cho.");
+            return;
         }
 
         System.out.println("\n--- Danh sach yeu cau xoa nhan vien ---");
         int index = 1;
-        for (User user : deleteRequests) 
-        {
+        for (User user : deleteRequests) {
             System.out.println(index + ". ID: " + user.getEmloyeeI() + ", Ten: " + user.getFullname());
             index++;
         }
@@ -306,33 +310,25 @@ public class User_Management
 
         if (choice >= 0 && choice < deleteRequests.size()) {
             User userToDelete = deleteRequests.get(choice);
-            System.out.println("Ban co chac chan muon xoa nhan vien: " + userToDelete.getFullname() + " (Y/N)?");
+            System.out.println("Thong tin nhan vien can xoa:");
+            System.out.println("ID: " + userToDelete.getEmloyeeI() + ", Ten: " + userToDelete.getFullname());
+
+            System.out.print("Ban co chac chan muon xoa nhan vien nay? (Y/N): ");
             String confirm = scanner.nextLine();
-            if (confirm.equalsIgnoreCase("Y")) 
-            {
-                //Xóa nhân viên khỏi danh sách
+            if (confirm.equalsIgnoreCase("Y")) {
                 deleteRequests.remove(choice);
                 users.removeIf(user -> user.getEmloyeeI().equals(userToDelete.getEmloyeeI()));
-                
-                //Cập nhật file   
-                updateEmployeeFile();  
-                
-                //Ghi lịch sử phê duyệt
-                writeApprovalHistory("Admin đã xóa nhân viên: " + userToDelete.getFullname() + " (ID: " + userToDelete.getEmloyeeI() + ")");
-                System.out.println("Nhan vien da duoc xoa.");
-            } 
-            else 
-            {
-                //Ghi lịch sử từ chối
-                writeApprovalHistory("Admin đã từ chối yêu cầu xóa nhân viên: " + userToDelete.getFullname() + " (ID: " + userToDelete.getEmloyeeI() + ")");
-                System.out.println("Yeu cau khong duoc xu ly.");
+                updateEmployeeFile();
+                writeApprovalHistory("Admin da xoa nhan vien: " + userToDelete.getFullname() + " (ID: " + userToDelete.getEmloyeeI() + ")");
+                System.out.println("Nhan vien da duoc xoa thanh cong.");
+            } else {
+                System.out.println("Huy thao tac xoa nhan vien.");
             }
-        } 
-        else 
-        {
+        } else {
             System.out.println("Lua chon khong hop le.");
         }
     }
+
 
 // ----------------------------------------------------------------------------------------------------------------------------------  
     //Admin
@@ -340,7 +336,7 @@ public class User_Management
     {
        return users;
     }
+    
 
-    
-    
+
 }

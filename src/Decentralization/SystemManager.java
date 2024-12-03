@@ -86,7 +86,8 @@ public class SystemManager
     {
        Scanner scanner = new Scanner(System.in);
        boolean keepRunning = true;
-       Book bookManager = new Book();
+       Book bookManager = new Book(userManagement);   // Tạo đối tượng Book, truyền userManagement
+       
         while (keepRunning) 
         {
             switch (user.getRole()) 
@@ -97,33 +98,22 @@ public class SystemManager
                    System.out.println("2. Xoa sach");
                    System.out.println("3. Sua sach");
                    System.out.println("4. Xem sach");                  
-                   System.out.println("20. Quay lai dang nhap");
+                   System.out.println("20. Dang xuat");
                    System.out.println("0. Thoat");
                    break;
                 case "Manager":
                    System.out.println("\n--- MENU QUAN LY ---");
-                   System.out.println("1. Them sach");
-                   System.out.println("2. Xoa sach");
-                   System.out.println("3. Sua sach");
-                   System.out.println("4. Xem sach");
-                   System.out.println("5. Quan ly yeu cau them nhan vien");
-                   System.out.println("6. Quan ly yeu cau xoa nhan vien");
-                   System.out.println("9. Xem sach");
-                   System.out.println("10. Huy yeu cau them nhan vien");
-                   System.out.println("20. Quay lai dang nhap");
+                   System.out.println("1. Quan ly sach");
+                   System.out.println("2. Quan ly yeu cau them nhan vien");
+                   System.out.println("3. Quan ly yeu cau xoa nhan vien");
+                   System.out.println("20. Dang xuat");
                    System.out.println("0. Thoat");
                    break;
                 case "Admin":
                    System.out.println("\n--- MENU BOSS ---");
-                   System.out.println("1. Quan ly nguoi dung");
-                   System.out.println("2. Phe duyet yeu cau them nhan vien");
-                   System.out.println("3. Phe duyet yeu cau xoa nhan vien");
-                   System.out.println("5. Xem lich su duyet"); 
-                   System.out.println("7. Them sach");
-                   System.out.println("8. Xoa sach");
-                   System.out.println("9. Sua sach");
-                   System.out.println("10. Xem sach");         
-                   System.out.println("20. Quay lai dang nhap");
+                   System.out.println("1. Quan ly nhan vien");
+                   System.out.println("2. Quan ly sach");     
+                   System.out.println("20. Dang xuat");
                    System.out.println("0. Thoat");
                    break;
                 default:
@@ -136,42 +126,58 @@ public class SystemManager
             switch (choice) 
             {
                 case 0:
-                   keepRunning = false; // Thoát menu
-                   break;
-                case 1:
-                    if (user.getRole().equals("Employee") || user.getRole().equals("Manager")) 
-                    {
-                       System.out.println("\n--- Them sach ---");   //Thêm sách 
-                       bookManager.docFile();
-                       bookManager.ThemSachVaGhiFile();
-                    } 
-                    else 
-                    {
-                        //Admin quản lý người dùng
-                       ((Admin) user).manageUsersWithMenu(userManagement);
+                    System.out.print("Ban co chac chan muon thoat chương trinh? (Y/N): ");
+                    String confirm = scanner.nextLine();
+                    if (confirm.equalsIgnoreCase("Y")) {
+                        System.out.println("Dang thoat chuong trinh... Tam biet!");
+                        System.exit(0);
+                    } else {
+                        System.out.println("Huy thao tac thoat.");
                     }
                     break;
-                case 2:
-                    if (user.getRole().equals("Employee") || user.getRole().equals("Manager")) 
+                case 1:
+                    if(user.getRole().equals("Employee"))
                     {
-                       System.out.println("Xoa sach"); // Chưa có chức năng xóa sách
+                       System.out.println("\n--- Them sach ---");   //Thêm sách (Employee)
+                       bookManager.docFile();
+                       bookManager.ThemSachVaGhiFile();
+                    }
+                    else if (user.getRole().equals("Manager")) 
+                    {
+                        
+                        bookManager.manageBooksWithMenu(); // Gọi menu quản lý sách(Manager)
+                    }
+                    else
+                    {
+                        ((Admin) user).manageUsersWithMenu(userManagement); //Gọi menu quản lý nguoi dung.(Admin)
+                    }
+
+                    break;
+                case 2:
+                    if (user.getRole().equals("Employee")) 
+                    {
+                       bookManager.docFile();   //Chức năng xóa sách(Employee)
+                       bookManager.xoaSachTheoIDHoacTen();
+                    } 
+                    else if(user.getRole().equals("Manager"))
+                    {
+                       ((Manager) user).requestAddEmployeesWithMenu(userManagement); //Gọi menu quản lý yêu cầu thêm nhân viên.(Manager)
                     } 
                     else
                     {
-                       ((Admin) user).approveAddEmployee(userManagement); //Phê duyệt yêu cầu thêm nhân viên.
-                    } 
+                        bookManager.manageBooksWithMenu();  //Gọi menu quản lý sách(Admin)
+                    }
                     break;
                 case 3:
-                    if (user.getRole().equals("Employee") || user.getRole().equals("Manager")) 
-                    {
-                        System.out.println("\n--- Sua sach ---");
+                    if (user.getRole().equals("Employee")) 
+                    {                     
+                       System.out.println("\n--- Sua sach ---");    //Sửa sách(Employee).
                        bookManager.docFile();
                        bookManager.capNhatSachVaGhiFile();
-                       //System.out.println("Sua sach"); //Chưa có chức năng sửa sách
                     } 
-                    else if (user.getRole().equals("Admin"))
+                    else if (user.getRole().equals("Manager"))
                     {
-                       userManagement.approveDeleteEmployee(userManagement);    //Phê duyệt xóa nhân viên.
+                        ((Manager) user).cancelAddRequest(userManagement); //Gọi menu quản lý yêu cầu xóa nhân viên.(Manager)
                     }
                     else
                     {
@@ -181,29 +187,24 @@ public class SystemManager
                 case 4:
                     if (user.getRole().equals("Employee") || user.getRole().equals("Manager")) 
                     {
-                       bookManager.viewBooks();
+                       bookManager.viewBooks(); //Chức năng xem sách(Employee)
                     } 
                     break;
                 case 5:
                     if (user.getRole().equals("Employee")) 
                     {
-                       //keepRunning = false; // Thoát menu
                     } 
-                    else if(user.getRole().equals("Manager")) //Yêu cầu thêm nhân viên.
-                    {
-                       ((Manager) user).requestAddEmployeesWithMenu(userManagement);
-                    break;
-
+                    else if(user.getRole().equals("Manager")) 
+                    { 
+                        break;
                     } 
                     else 
                     {
-                       userManagement.viewApprovalHistory();
                     }
                     break;
                 case 6:
                     if(user.getRole().equals("Manager")) 
                     {
-                       ((Manager) user).cancelAddRequest(userManagement);  //Hủy yêu cầu thêm nhân viên.
                     } 
                     else 
                     {
@@ -213,19 +214,14 @@ public class SystemManager
                 case 7:
                     if (user.getRole().equals("Manager")) 
                     {                      
-                       ((Manager) user).requestDeleteEmployeesWithMenu(userManagement);  //Yêu cầu xóa nhân viên.
                     } 
                     else 
                     {
-                       System.out.println("\n--- Them sach ---");   // Thêm sách
-                       bookManager.docFile();
-                       bookManager.ThemSachVaGhiFile();
                     }
                     break;
                 case 8:
                     if (user.getRole().equals("Manager")) 
                     {
-                       ((Manager) user).cancelDeleteRequest(userManagement);    //Hủy yêu cầu xóa nhân viên.
                     } 
                     else 
                     {
@@ -237,7 +233,6 @@ public class SystemManager
                 case 10:
                     if (user.getRole().equals("Manager"))
                     {
-                       bookManager.viewBooks();
                     }
                     break;
                 case 20:
@@ -249,4 +244,6 @@ public class SystemManager
         }
         return false;
     }
+    
+//-------------------------------------------------------------------------------------------------
 }

@@ -1,3 +1,6 @@
-[2024-12-01 22:28:11] Admin da duyet nhan vien: Thanh (ID: 005)
-[2024-12-01 22:29:25] Admin da tu choi nhan vien: Thu (ID: 000)
-[2024-12-02 13:22:45] Admin da duyet nhan vien: fjrhn (ID: 007)
+[2024-12-03 10:24:50] [Book Action] Thêm sách - Loại: abc, Mã số: 30211, Tên: gibcd, Giá: 5.6015899E7, Số lượng: 70, Tác giả: know
+[2024-12-03 10:26:13] [Employee Approval] Admin da duyet nhan vien: thu (ID: 031)
+[2024-12-03 10:26:24] [Employee Approval] Admin da tu choi nhan vien: quan (ID: 55)
+[2024-12-03 10:24:50] [Book Action] Thêm sách - Loại: abc, Mã số: 30211, Tên: gibcd, Giá: 5.6015899E7, Số lượng: 70, Tác giả: know
+[2024-12-03 10:26:13] [Employee Approval] Admin da duyet nhan vien: thu (ID: 031)
+[2024-12-03 11:05:46] [Book Action] Thêm sách - Loại: h, Mã số: 613, Tên: ád, Giá: 20.0, Số lượng: 30, Tác giả: gf

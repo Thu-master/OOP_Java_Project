@@ -38,15 +38,9 @@ public class Admin extends User
     // Phê duyệt yêu cầu xóa nhân viên
     public void approveDeleteEmployeeRequest(User_Management userManagement) 
     {
-       userManagement.approveDeleteEmployee(userManagement);
+       userManagement.approveDeleteEmployee();
     }
     
-    // Xem lịch sử duyệt
-    public void viewApprovalHistory(User_Management userManagement) 
-    {
-        userManagement.viewApprovalHistory();
-    }
-
     // Xem danh sách nhân viên hiện tại
     public void viewEmployeeList(User_Management userManagement) 
     {
@@ -72,7 +66,7 @@ public class Admin extends User
             System.out.println("2. Phe duyet yeu cau xoa nhan vien");
             System.out.println("3. Xem lich su duyet");
             System.out.println("4. Xem danh sach nhan vien hien tai");
-            System.out.println("5. Thoat ve menu chinh");
+            System.out.println("5. Quay lai");
             System.out.println("0. Thoat chuong trinh");
             System.out.print("Chon chuc nang: ");
 
@@ -95,7 +89,7 @@ public class Admin extends User
                     break;
                 case 3:
                     // Xem lịch sử duyệt
-                    viewApprovalHistory(userManagement);
+                    userManagement.viewApprovalHistory("[Employee Approval]");
                     break;
                 case 4:
                     // Xem danh sách nhân viên hiện tại

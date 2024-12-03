@@ -1,8 +1,0 @@
-SB;101;Thuyet tuong doi;130000.0
-SB;105;Gia thuyet vu no lon;433000.0
-SB;113;Dong dien xoay chieu;222000.0
-SB;134;Thi nghiem cua Marie Curry;122000.0
-SB;145;Qua tao va Newton;310000.0
-SB;107;Lich su van vat;710000.0
-SB;199;Nghien cuu vi dai cua Hawking;988000.0
-SB;188;Ho den va ho trang;650000.0
