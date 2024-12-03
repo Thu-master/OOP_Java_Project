@@ -6,6 +6,7 @@ package oop_java_project;
 
 import Decentralization.SystemManager;
 import Funtion.Book;
+import Funtion.Bill;
 
 /**
  *
@@ -19,12 +20,13 @@ public class OOP_Java_Project
      */
     public static void main(String[] args) 
     {
-        SystemManager systemManager = new SystemManager();
-        systemManager.run(); 
+//        SystemManager systemManager = new SystemManager();
+//        systemManager.run(); 
+        Bill bill = new Bill();
+        Book b = new Book();
+        bill.TinhThanhTien(b);
+        
 
-//        Book b = new Book();
-//        b.docFile();
-//        b.TimKiem();
-    }   
+    } 
     
 }

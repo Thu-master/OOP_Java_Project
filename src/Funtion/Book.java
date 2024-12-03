@@ -19,7 +19,7 @@ public class Book extends Product
 {
     private String author;
     private String type;
-    private Map<String, ArrayList<Book>> booksByType = new HashMap<>();
+    public Map<String, ArrayList<Book>> booksByType = new HashMap<>();
     private User_Management userManagement;
 
 
@@ -79,7 +79,8 @@ public class Book extends Product
         booksByType.clear(); // Xóa dữ liệu cũ
         try {
             File f = new File("sach.txt");
-            BufferedReader br = new BufferedReader(new FileReader(f));
+            FileReader fr = new FileReader(f);
+            BufferedReader br = new BufferedReader(fr);
             String line;
 
             while ((line = br.readLine()) != null) {
