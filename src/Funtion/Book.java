@@ -73,6 +73,7 @@ public class Book extends Product
     public String toString() {
         return getType() + ";" + getId() + ";" + getName() + ";" + getPrice() + ";" + getQuantity() + ";" + author;
     }
+    
 
     // Đọc file và tự động phân loại sách
     public void docFile() {
@@ -108,7 +109,7 @@ public class Book extends Product
 
     // Hiển thị các loại sách hiện có
     public void viewBooks(){
-        Scanner scanner = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
         docFile(); // Đọc dữ liệu từ file
         boolean backToMainMenu = false;
 
@@ -123,7 +124,7 @@ public class Book extends Product
             System.out.println("0: Quay lai");
 
             System.out.print("Chon loai sach: ");
-            int choice = Integer.parseInt(scanner.nextLine());
+            int choice = Integer.parseInt(sc.nextLine());
 
             if (choice == 0) {
                 backToMainMenu = true;
@@ -378,7 +379,7 @@ public class Book extends Product
 
 
     public void manageBooksWithMenu() {
-    Scanner scanner = new Scanner(System.in);
+    Scanner sc = new Scanner(System.in);
     boolean keepManaging = true;
     Book bookManager = new Book(userManagement); // Truyền userManagement
 
@@ -397,7 +398,7 @@ public class Book extends Product
         System.out.println("9. Quay lai");
         System.out.print("Chon chuc nang: ");
 
-        int choice = Integer.parseInt(scanner.nextLine());
+        int choice = Integer.parseInt(sc.nextLine());
 
         switch (choice) 
         {
@@ -448,7 +449,7 @@ public class Book extends Product
     
     public void muaSach() {
         Bill billManager = new Bill();
-        Scanner scanner = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
         boolean keepShopping = true;
 
         while (keepShopping) {
@@ -459,7 +460,7 @@ public class Book extends Product
             System.out.println("4. Thanh toan");
             System.out.println("0. Quay lai");
             System.out.print("Chon chuc nang: ");
-            int choice = Integer.parseInt(scanner.nextLine());
+            int choice = Integer.parseInt(sc.nextLine());
 
             switch (choice) {
                 case 1:
@@ -501,44 +502,57 @@ public class Book extends Product
 
     private void hienThiHoaDon(Bill billManager) {
         // Định nghĩa độ rộng bảng
-        int width = 80; // Tổng chiều rộng bảng
+        int width = 83; // Tổng chiều rộng bảng
         int col1Width = 40; // Cột "Mặt hàng"
         int col2Width = 6;  // Cột "SL"
         int col3Width = 12; // Cột "Đơn giá"
         int col4Width = 12; // Cột "Thành tiền"
         String border = "-".repeat(width);
 
-        // Tính toán tổng tiền và thuế
-        double taxRate = 0.08; // Thuế mặc định 8%
-        double totalAmount = billManager.getThanhTien();
-        double totalTax = Math.round(totalAmount * taxRate);
-        double finalAmount = totalAmount + totalTax;
+        // Tính tổng tiền và thuế từ billManager
+        billManager.calculateThanhTien();
+        double totalAmount = billManager.getThanhTien(); // Lấy tổng tiền đã tính trong Bill
+        double taxRate = 0.08; // Thuế 8%
+        double totalTax = Math.round(totalAmount * taxRate); // Tính thuế
+        double finalAmount = totalAmount + totalTax; // Tổng cộng sau thuế
 
-        // Giả định số tiền khách trả
-        double tienKhachTra = 200000;
-        double tienThua = tienKhachTra - finalAmount;
+        // Yêu cầu người dùng nhập số tiền khách trả
+        Scanner sc = new Scanner(System.in);
+        double tienKhachTra = 0;
+        while (true) {
+            System.out.printf("\nTong cong : %.2f VND\n", totalAmount);
+            System.out.print("Nhap so tien khach tra: ");
+            tienKhachTra = sc.nextDouble();
 
-        // In phần header
+            if (tienKhachTra >= finalAmount) {
+                break; // Số tiền hợp lệ
+            } else {
+                System.out.println("So tien khach tra khong du (Co the vi bao gom thue)! Vui long nhap lai.");
+            }
+        }
+
+        double tienThua = tienKhachTra - finalAmount; // Tính tiền thừa
+
+        // In header của hóa đơn
         System.out.println(border);
-        System.out.printf("| %-76s |\n", "NHA SACH TRUNG LAN");
-        System.out.printf("| %-76s |\n", "42/4 TTN01, P. TAN THOI NHAT, Q12");
+        System.out.printf("| %-79s |\n", "NHA SACH TRUNG LAN");
+        System.out.printf("| %-79s |\n", "42/4 TTN01, P. TAN THOI NHAT, Q12");
         System.out.println(border);
-        System.out.printf("| %-76s |\n", "Khach hang: Khach le");
-        System.out.printf("| %-76s |\n", "So PTT: 00000052       Ngay: " + LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm")));
-        System.out.printf("| %-76s |\n", "Ca: 1 - Thu ngan: admin");
+        System.out.printf("| %-79s |\n", "Khach hang: Khach le");
+        System.out.printf("| %-79s |\n", "So PTT: 00000052       Ngay: " + LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm")));
+        System.out.printf("| %-79s |\n", "Ca: 1 - Thu ngan: admin");
         System.out.println(border);
 
-        // Bảng thông tin sách
+        // In danh sách sách trong giỏ hàng
         System.out.printf("| %-40s | %-6s | %-12s | %-12s |\n", "Mat hang", "SL", "Don gia", "Thanh tien");
         System.out.println(border);
 
         for (Book book : billManager.getCart()) {
-            double thanhTien = Math.round(book.getPrice() * book.getQuantity());
+            double thanhTien = book.getPrice() * book.getQuantity(); // Thành tiền từng sách
             String itemName = book.getName();
             if (itemName.length() > col1Width - 2) {
                 itemName = itemName.substring(0, col1Width - 5) + "..."; // Cắt tên nếu dài
             }
-            // Đảm bảo chiều rộng khung từng dòng
             System.out.printf("| %-40s | %6d | %12.0f | %12.0f |\n",
                     String.format("%-" + col1Width + "s", itemName), 
                     book.getQuantity(), 
@@ -546,7 +560,7 @@ public class Book extends Product
                     thanhTien);
         }
 
-        // Đóng bảng và in thông tin tổng
+        // Hiển thị phần tổng tiền, thuế, và các thông tin thanh toán
         System.out.println(border);
         System.out.printf("| %-40s | %-6s | %-12s | %12.0f |\n", "Tong tien:", "", "", totalAmount);
         System.out.printf("| %-40s | %-6s | %-12s | %12.0f |\n", "Thue 8%:", "", "", totalTax);
@@ -556,15 +570,16 @@ public class Book extends Product
 
         // Đóng khung
         System.out.println(border);
-        System.out.printf("| %-76s |\n", "Cam on Quy khach, hen gap lai!");
+        System.out.printf("| %-79s |\n", "Cam on Quy khach, hen gap lai!");
         System.out.println(border);
     }
 
 
 
+
     // Phương thức chỉnh sửa giỏ hàng
     private void suaGioHang(Bill billManager) {
-        Scanner scanner = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
         if (billManager.getCart().isEmpty()) {
             System.out.println("Gio hang cua ban dang trong.");
             return;
@@ -573,7 +588,7 @@ public class Book extends Product
         System.out.println("\n--- Gio hang hien tai ---");
         System.out.println(billManager.toString());
         System.out.print("Nhap ID hoac ten sach can xoa khoi gio hang: ");
-        String search = scanner.nextLine().trim();
+        String search = sc.nextLine().trim();
 
         Book bookToRemove = null;
         for (Book b : billManager.getCart()) {

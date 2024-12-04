@@ -172,3 +172,108 @@ Thue (8%): 0.00
 Tong cong: 0.00
 -----------------------------
 
+[2024-12-04 19:23:35]
+--- Hoa don thanh toan ---
+Tên sách: Thinking, Fast and Slow, Sa luong: 16, Don gia: 450000.00, Thanh tien: 7200000.00
+Tong tien: 0.00
+Thue (8%): 0.00
+Tong cong: 0.00
+-----------------------------
+
+[2024-12-04 19:24:48]
+--- Hoa don thanh toan ---
+Tên sách: The Odyssey, Sa luong: 11, Don gia: 390000.00, Thanh tien: 4290000.00
+Tong tien: 0.00
+Thue (8%): 0.00
+Tong cong: 0.00
+-----------------------------
+
+[2024-12-04 19:25:51]
+--- Hoa don thanh toan ---
+Tên sách: Before We Were Strangers, Sa luong: 19, Don gia: 370000.00, Thanh tien: 7030000.00
+Tong tien: 0.00
+Thue (8%): 0.00
+Tong cong: 0.00
+-----------------------------
+
+[2024-12-04 19:32:38]
+--- Hoa don thanh toan ---
+Tên sách: The Power of Habit, Sa luong: 4, Don gia: 400000.00, Thanh tien: 1600000.00
+Tong tien: 0.00
+Thue (8%): 0.00
+Tong cong: 0.00
+-----------------------------
+
+[2024-12-04 19:35:55]
+--- Hoa don thanh toan ---
+Tên sách: Les Misérables, Sa luong: 9, Don gia: 520000.00, Thanh tien: 4680000.00
+Tong tien: 0.00
+Thue (8%): 0.00
+Tong cong: 0.00
+-----------------------------
+
+[2024-12-04 19:41:16]
+--- Hoa don thanh toan ---
+Tên sách: Don Quixote, Sa luong: 3, Don gia: 480000.00, Thanh tien: 1440000.00
+Tong tien: 0.00
+Thue (8%): 0.00
+Tong cong: 0.00
+-----------------------------
+
+[2024-12-04 19:46:56]
+--- Hoa don thanh toan ---
+Tên sách: Great Expectations, Sa luong: 11, Don gia: 350000.00, Thanh tien: 3850000.00
+Tong tien: 0.00
+Thue (8%): 0.00
+Tong cong: 0.00
+-----------------------------
+
+[2024-12-04 19:53:19]
+--- Hoa don thanh toan ---
+Tên sách: The Picture of Dorian Gray, Sa luong: 6, Don gia: 340000.00, Thanh tien: 2040000.00
+Tong tien: 0.00
+Thue (8%): 0.00
+Tong cong: 0.00
+-----------------------------
+
+[2024-12-04 19:55:01]
+--- Hoa don thanh toan ---
+Tên sách: The Hobbit, Sa luong: 1, Don gia: 430000.00, Thanh tien: 430000.00
+Tong tien: 430000.00
+Thue (8%): 34400.00
+Tong cong: 464400.00
+-----------------------------
+
+[2024-12-04 19:56:20]
+--- Hoa don thanh toan ---
+Tên sách: Slaughterhouse-Five, Sa luong: 1, Don gia: 400000.00, Thanh tien: 400000.00
+Tong tien: 400000.00
+Thue (8%): 32000.00
+Tong cong: 432000.00
+-----------------------------
+
+[2024-12-04 20:00:22]
+--- Hoa don thanh toan ---
+Tên sách: The Willpower Instinct, Sa luong: 2, Don gia: 480000.00, Thanh tien: 960000.00
+Tong tien: 960000.00
+Thue (8%): 76800.00
+Tong cong: 1036800.00
+-----------------------------
+
+[2024-12-04 20:02:50]
+--- Hoa don thanh toan ---
+Tên sách: Thinking in Bets, Sa luong: 2, Don gia: 450000.00, Thanh tien: 900000.00
+Tong tien: 900000.00
+Thue (8%): 72000.00
+Tong cong: 972000.00
+-----------------------------
+
+[2024-12-04 20:04:00]
+--- Hoa don thanh toan ---
+Tên sách: To Kill a Mockingbird, Sa luong: 3, Don gia: 350000.00, Thanh tien: 1050000.00
+Tên sách: Normal People, Sa luong: 11, Don gia: 400000.00, Thanh tien: 4400000.00
+Tong tien: 5450000.00
+Thue (8%): 436000.00
+Tong cong: 5886000.00
+-----------------------------
+
