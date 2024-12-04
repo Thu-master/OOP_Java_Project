@@ -129,7 +129,7 @@ public class SystemManager
             switch (choice) 
             {
                 case 0:
-                    System.out.print("Ban co chac chan muon thoat chương trinh? (Y/N): ");
+                    System.out.print("Ban co chac chan muon thoat chuong trinh? (Y/N): ");
                     String confirm = scanner.nextLine();
                     if (confirm.equalsIgnoreCase("Y")) {
                         System.out.println("Dang thoat chuong trinh... Tam biet!");

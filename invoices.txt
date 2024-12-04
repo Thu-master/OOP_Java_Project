@@ -42,3 +42,133 @@ Thuế (8%): 38400,00
 Tổng cộng: 518400,00
 -----------------------------
 
+[2024-12-04 17:08:30]
+--- Hóa đơn thanh toán ---
+Tên sách: Don Quixote, Số lượng: 1, Đơn giá: 480000.00, Thành tiền: 480000.00
+Tên sách: The Nightingale, Số lượng: 2, Đơn giá: 420000.00, Thành tiền: 840000.00
+Tổng tiền: 1320000.00
+Thuế (8%): 105600.00
+Tổng cộng: 1425600.00
+-----------------------------
+
+[2024-12-04 17:14:17]
+--- Hoa don thanh toan ---
+Tên sách: Les Misérables, Sa luong: 5, Don gia: 520000.00, Thanh tien: 2600000.00
+Tên sách: Quantum Reality, Sa luong: 15, Don gia: 470000.00, Thanh tien: 7050000.00
+Tong tien: 9650000.00
+Thuế (8%): 772000.00
+Tong cong: 10422000.00
+-----------------------------
+
+[2024-12-04 17:19:22]
+--- Hoa don thanh toan ---
+Tên sách: Sinh hoc 10, Sa luong: 1, Don gia: 22000.00, Thanh tien: 22000.00
+Tong tien: 22000.00
+Thue (8%): 1760.00
+Tong cong: 23760.00
+-----------------------------
+
+[2024-12-04 17:43:26]
+--- Hoa don thanh toan ---
+Tên sách: Sinh hoc 10, Sa luong: 2, Don gia: 22000.00, Thanh tien: 44000.00
+Tong tien: 0.00
+Thue (8%): 0.00
+Tong cong: 0.00
+-----------------------------
+
+[2024-12-04 17:46:53]
+--- Hoa don thanh toan ---
+Tên sách: Sinh hoc 10, Sa luong: 2, Don gia: 22000.00, Thanh tien: 44000.00
+Tong tien: 0.00
+Thue (8%): 0.00
+Tong cong: 0.00
+-----------------------------
+
+[2024-12-04 17:48:09]
+--- Hoa don thanh toan ---
+Tên sách: Sinh hoc 10, Sa luong: 2, Don gia: 22000.00, Thanh tien: 44000.00
+Tong tien: 0.00
+Thue (8%): 0.00
+Tong cong: 0.00
+-----------------------------
+
+[2024-12-04 17:48:59]
+--- Hoa don thanh toan ---
+Tên sách: Sinh hoc 10, Sa luong: 2, Don gia: 22000.00, Thanh tien: 44000.00
+Tong tien: 0.00
+Thue (8%): 0.00
+Tong cong: 0.00
+-----------------------------
+
+[2024-12-04 17:53:16]
+--- Hoa don thanh toan ---
+Tên sách: Sinh hoc 10, Sa luong: 2, Don gia: 22000.00, Thanh tien: 44000.00
+Tong tien: 0.00
+Thue (8%): 0.00
+Tong cong: 0.00
+-----------------------------
+
+[2024-12-04 17:53:55]
+--- Hoa don thanh toan ---
+Tên sách: Sinh hoc 10, Sa luong: 1, Don gia: 22000.00, Thanh tien: 22000.00
+Tong tien: 0.00
+Thue (8%): 0.00
+Tong cong: 0.00
+-----------------------------
+
+[2024-12-04 17:55:03]
+--- Hoa don thanh toan ---
+Tên sách: Sinh hoc 10, Sa luong: 1, Don gia: 22000.00, Thanh tien: 22000.00
+Tong tien: 0.00
+Thue (8%): 0.00
+Tong cong: 0.00
+-----------------------------
+
+[2024-12-04 17:58:12]
+--- Hoa don thanh toan ---
+Tên sách: Sinh hoc 10, Sa luong: 1, Don gia: 22000.00, Thanh tien: 22000.00
+Tong tien: 0.00
+Thue (8%): 0.00
+Tong cong: 0.00
+-----------------------------
+
+[2024-12-04 18:02:05]
+--- Hoa don thanh toan ---
+Tên sách: Sinh hoc 10, Sa luong: 1, Don gia: 22000.00, Thanh tien: 22000.00
+Tong tien: 0.00
+Thue (8%): 0.00
+Tong cong: 0.00
+-----------------------------
+
+[2024-12-04 18:12:48]
+--- Hoa don thanh toan ---
+Tên sách: Sinh hoc 10, Sa luong: 1, Don gia: 22000.00, Thanh tien: 22000.00
+Tong tien: 0.00
+Thue (8%): 0.00
+Tong cong: 0.00
+-----------------------------
+
+[2024-12-04 18:23:33]
+--- Hoa don thanh toan ---
+Tên sách: Sinh hoc 10, Sa luong: 1, Don gia: 22000.00, Thanh tien: 22000.00
+Tong tien: 0.00
+Thue (8%): 0.00
+Tong cong: 0.00
+-----------------------------
+
+[2024-12-04 18:32:26]
+--- Hoa don thanh toan ---
+Tên sách: Sinh hoc 10, Sa luong: 1, Don gia: 22000.00, Thanh tien: 22000.00
+Tong tien: 0.00
+Thue (8%): 0.00
+Tong cong: 0.00
+-----------------------------
+
+[2024-12-04 18:35:33]
+--- Hoa don thanh toan ---
+Tên sách: Sinh hoc 10, Sa luong: 1, Don gia: 22000.00, Thanh tien: 22000.00
+Tong tien: 0.00
+Thue (8%): 0.00
+Tong cong: 0.00
+-----------------------------
+

@@ -499,55 +499,68 @@ public class Book extends Product
         }
     }
 
-private void hienThiHoaDon(Bill billManager) {
-    // Định nghĩa độ rộng các cột
-    int width = 80; // Tổng chiều rộng bảng
-    int col1Width = 40; // Cột "Mặt hàng"
-    int col2Width = 6;  // Cột "SL"
-    int col3Width = 12; // Cột "Đơn giá"
-    int col4Width = 12; // Cột "Thành tiền"
-    String border = "-".repeat(width);
+    private void hienThiHoaDon(Bill billManager) {
+        // Định nghĩa độ rộng bảng
+        int width = 80; // Tổng chiều rộng bảng
+        int col1Width = 40; // Cột "Mặt hàng"
+        int col2Width = 6;  // Cột "SL"
+        int col3Width = 12; // Cột "Đơn giá"
+        int col4Width = 12; // Cột "Thành tiền"
+        String border = "-".repeat(width);
 
-    // Tính toán tổng tiền và thuế
-    double taxRate = 0.08; // Thuế mặc định 8%
-    double totalAmount = billManager.getThanhTien();
-    double totalTax = Math.round(totalAmount * taxRate); // Làm tròn thuế
-    double finalAmount = totalAmount + totalTax;
+        // Tính toán tổng tiền và thuế
+        double taxRate = 0.08; // Thuế mặc định 8%
+        double totalAmount = billManager.getThanhTien();
+        double totalTax = Math.round(totalAmount * taxRate);
+        double finalAmount = totalAmount + totalTax;
 
-    // Giả định số tiền khách trả
-    double tienKhachTra = 200000;
-    double tienThua = tienKhachTra - finalAmount;
+        // Giả định số tiền khách trả
+        double tienKhachTra = 200000;
+        double tienThua = tienKhachTra - finalAmount;
 
-    // In hóa đơn
-    System.out.println(border);
-    System.out.printf("| %-76s |\n", "NHÀ SÁCH TRUNG LÂN");
-    System.out.printf("| %-76s |\n", "42/4 TTN01, P. TÂN THỚI NHẤT, Q12");
-    System.out.println(border);
-    System.out.printf("| %-76s |\n", "Khách hàng: Khách lẻ");
-    System.out.printf("| %-76s |\n", "Số PTT: 00000052       Ngày: " + LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm")));
-    System.out.printf("| %-76s |\n", "Ca: 1 - Thu ngân: admin");
-    System.out.println(border);
+        // In phần header
+        System.out.println(border);
+        System.out.printf("| %-76s |\n", "NHA SACH TRUNG LAN");
+        System.out.printf("| %-76s |\n", "42/4 TTN01, P. TAN THOI NHAT, Q12");
+        System.out.println(border);
+        System.out.printf("| %-76s |\n", "Khach hang: Khach le");
+        System.out.printf("| %-76s |\n", "So PTT: 00000052       Ngay: " + LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm")));
+        System.out.printf("| %-76s |\n", "Ca: 1 - Thu ngan: admin");
+        System.out.println(border);
 
-    // Bảng thông tin sách
-    System.out.printf("| %-40s | %-6s | %-12s | %-12s |\n", "Mặt hàng", "SL", "Đơn giá", "Thành tiền");
-    System.out.println(border);
+        // Bảng thông tin sách
+        System.out.printf("| %-40s | %-6s | %-12s | %-12s |\n", "Mat hang", "SL", "Don gia", "Thanh tien");
+        System.out.println(border);
 
-    for (Book book : billManager.getCart()) {
-        double thanhTien = Math.round(book.getPrice() * book.getQuantity());
-        System.out.printf("| %-40s | %-6d | %-12.0f | %-12.0f |\n", book.getName(), book.getQuantity(), book.getPrice(), thanhTien);
+        for (Book book : billManager.getCart()) {
+            double thanhTien = Math.round(book.getPrice() * book.getQuantity());
+            String itemName = book.getName();
+            if (itemName.length() > col1Width - 2) {
+                itemName = itemName.substring(0, col1Width - 5) + "..."; // Cắt tên nếu dài
+            }
+            // Đảm bảo chiều rộng khung từng dòng
+            System.out.printf("| %-40s | %6d | %12.0f | %12.0f |\n",
+                    String.format("%-" + col1Width + "s", itemName), 
+                    book.getQuantity(), 
+                    book.getPrice(), 
+                    thanhTien);
+        }
+
+        // Đóng bảng và in thông tin tổng
+        System.out.println(border);
+        System.out.printf("| %-40s | %-6s | %-12s | %12.0f |\n", "Tong tien:", "", "", totalAmount);
+        System.out.printf("| %-40s | %-6s | %-12s | %12.0f |\n", "Thue 8%:", "", "", totalTax);
+        System.out.printf("| %-40s | %-6s | %-12s | %12.0f |\n", "Tong cong:", "", "", finalAmount);
+        System.out.printf("| %-40s | %-6s | %-12s | %12.0f |\n", "Tien khach tra:", "", "", tienKhachTra);
+        System.out.printf("| %-40s | %-6s | %-12s | %12.0f |\n", "Tien thua:", "", "", tienThua);
+
+        // Đóng khung
+        System.out.println(border);
+        System.out.printf("| %-76s |\n", "Cam on Quy khach, hen gap lai!");
+        System.out.println(border);
     }
 
-    System.out.println(border);
-    System.out.printf("| %-40s | %-6s | %-12s | %-12.0f |\n", "Tổng tiền:", "", "", totalAmount);
-    System.out.printf("| %-40s | %-6s | %-12s | %-12.0f |\n", "Thuế 8%:", "", "", totalTax);
-    System.out.printf("| %-40s | %-6s | %-12s | %-12.0f |\n", "Tổng cộng:", "", "", finalAmount);
-    System.out.printf("| %-40s | %-6s | %-12s | %-12.0f |\n", "Tiền khách trả:", "", "", tienKhachTra);
-    System.out.printf("| %-40s | %-6s | %-12s | %-12.0f |\n", "Tiền thừa:", "", "", tienThua);
 
-    System.out.println(border);
-    System.out.printf("| %-76s |\n", "Cảm ơn Quý khách, hẹn gặp lại!");
-    System.out.println(border);
-}
 
     // Phương thức chỉnh sửa giỏ hàng
     private void suaGioHang(Bill billManager) {
@@ -580,30 +593,30 @@ private void hienThiHoaDon(Bill billManager) {
 
     // Lưu hóa đơn vào file
     private void savePaymentHistory(Bill billManager) {
-    try (BufferedWriter writer = new BufferedWriter(new FileWriter("invoices.txt", true))) {
-        String timestamp = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
-        writer.write("[" + timestamp + "]\n");
-        writer.write("--- Hóa đơn thanh toán ---\n");
-        for (Book book : billManager.getCart()) {
-            writer.write(String.format("Tên sách: %s, Số lượng: %d, Đơn giá: %.2f, Thành tiền: %.2f\n",
-                    book.getName(), book.getQuantity(), book.getPrice(), book.getPrice() * book.getQuantity()));
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter("invoices.txt", true))) {
+            String timestamp = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
+            writer.write("[" + timestamp + "]\n");
+            writer.write("--- Hoa don thanh toan ---\n");
+            for (Book book : billManager.getCart()) {
+                writer.write(String.format("Tên sách: %s, Sa luong: %d, Don gia: %.2f, Thanh tien: %.2f\n",
+                        book.getName(), book.getQuantity(), book.getPrice(), book.getPrice() * book.getQuantity()));
+            }
+            double totalAmount = billManager.getThanhTien();
+            double taxRate = 0.08;
+            double totalTax = totalAmount * taxRate;
+            double finalAmount = totalAmount + totalTax;
+            writer.write(String.format("Tong tien: %.2f\nThue (8%%): %.2f\nTong cong: %.2f\n", totalAmount, totalTax, finalAmount));
+            writer.write("-----------------------------\n\n");
+            System.out.println("Lich su thanh toan da duoc luu.");
+        } catch (IOException e) {
+            System.out.println("Loi khi luu lich su thanh toan: " + e.getMessage());
         }
-        double totalAmount = billManager.getThanhTien();
-        double taxRate = 0.08;
-        double totalTax = totalAmount * taxRate;
-        double finalAmount = totalAmount + totalTax;
-        writer.write(String.format("Tổng tiền: %.2f\nThuế (8%%): %.2f\nTổng cộng: %.2f\n", totalAmount, totalTax, finalAmount));
-        writer.write("-----------------------------\n\n");
-        System.out.println("Lịch sử thanh toán đã được lưu.");
-    } catch (IOException e) {
-        System.out.println("Lỗi khi lưu lịch sử thanh toán: " + e.getMessage());
-    }
     }
     
     public void viewPaymentHistory() {
     try (BufferedReader reader = new BufferedReader(new FileReader("invoices.txt"))) {
         String line;
-        System.out.println("\n--- Lich su thanh ton ---");
+        System.out.println("\n--- Lich su thanh toan ---");
         while ((line = reader.readLine()) != null) {
             System.out.println(line);
         }
