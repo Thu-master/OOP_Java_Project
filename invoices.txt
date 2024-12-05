@@ -301,3 +301,75 @@ Thue (8%): 25600.00
 Tong cong: 345600.00
 -----------------------------
 
+[2024-12-05 13:54:58]
+--- Hoa don thanh toan ---
+Ten sach: A Tale of Two Cities, So luong: 11, Don gia: 280000.00, Thanh tien: 3080000.00
+Tong tien: 3080000.00
+Thue (8%): 246400.00
+Tong cong: 3326400.00
+-----------------------------
+
+[2024-12-05 14:06:05]
+--- Hoa don thanh toan ---
+Ten sach: The Picture of Dorian Gray, So luong: 4, Don gia: 340000.00, Thanh tien: 1360000.00
+Tong tien: 1360000.00
+Thue (8%): 108800.00
+Tong cong: 1468800.00
+-----------------------------
+
+[2024-12-05 14:07:58]
+--- Hoa don thanh toan ---
+Ten sach: The Handmaid's Tale, So luong: 6, Don gia: 380000.00, Thanh tien: 2280000.00
+Tong tien: 2280000.00
+Thue (8%): 182400.00
+Tong cong: 2462400.00
+-----------------------------
+
+[2024-12-05 14:09:20]
+--- Hoa don thanh toan ---
+Ten sach: Les Misérables, So luong: 1, Don gia: 520000.00, Thanh tien: 520000.00
+Tong tien: 520000.00
+Thue (8%): 41600.00
+Tong cong: 561600.00
+-----------------------------
+
+[2024-12-05 14:12:11]
+--- Hoa don thanh toan ---
+Ten sach: Don Quixote, So luong: 3, Don gia: 480000.00, Thanh tien: 1440000.00
+Tong tien: 1440000.00
+Thue (8%): 115200.00
+Tong cong: 1555200.00
+-----------------------------
+
+[2024-12-05 14:14:38]
+--- Hoa don thanh toan ---
+Ten sach: War and Peace, So luong: 2, Don gia: 520000.00, Thanh tien: 1040000.00
+Tong tien: 1040000.00
+Thue (8%): 83200.00
+Tong cong: 1123200.00
+-----------------------------
+
+[2024-12-05 14:16:12]
+--- Hoa don thanh toan ---
+Ten sach: The Willpower Instinct, So luong: 4, Don gia: 480000.00, Thanh tien: 1920000.00
+Tong tien: 1920000.00
+Thue (8%): 153600.00
+Tong cong: 2073600.00
+-----------------------------
+
+[2024-12-05 14:17:43]
+--- Hoa don thanh toan ---
+Ten sach: Switch: How to Change Things When Change Is Hard, So luong: 6, Don gia: 350000.00, Thanh tien: 2100000.00
+Tong tien: 2100000.00
+Thue (8%): 168000.00
+Tong cong: 2268000.00
+-----------------------------
+
+[2024-12-05 14:18:37]
+--- Hoa don thanh toan ---
+Ten sach: Rework, So luong: 3, Don gia: 350000.00, Thanh tien: 1050000.00
+Tong tien: 1050000.00
+Thue (8%): 84000.00
+Tong cong: 1134000.00
+-----------------------------
+

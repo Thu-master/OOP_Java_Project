@@ -530,7 +530,7 @@ public class Book extends Product
         }
     }
 
-    private void hienThiHoaDon(Bill billManager) {
+private void hienThiHoaDon(Bill billManager) {
         // Định nghĩa độ rộng bảng
         int width = 83; // Tổng chiều rộng bảng
         int col1Width = 40; // Cột "Mặt hàng"
@@ -565,8 +565,8 @@ public class Book extends Product
 
         // In header của hóa đơn
         System.out.println(border);
-        System.out.printf("| %-79s |\n", "NHA SACH TRUNG LAN");
-        System.out.printf("| %-79s |\n", "42/4 TTN01, P. TAN THOI NHAT, Q12");
+        System.out.printf("| %-30s %-48s |\n", " " ,"NHA SACH TRUNG LAN");
+        System.out.printf("| %-22s %-56s |\n", " " ,"42/4 TTN01, P. TAN THOI NHAT, Q12");
         System.out.println(border);
         System.out.printf("| %-79s |\n", "Khach hang: Khach le");
         System.out.printf("| %-79s |\n", "So PTT: 00000052       Ngay: " + LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm")));
@@ -583,7 +583,7 @@ public class Book extends Product
             if (itemName.length() > col1Width - 2) {
                 itemName = itemName.substring(0, col1Width - 5) + "..."; // Cắt tên nếu dài
             }
-            System.out.printf("| %-40s | %6d | %12.0f | %12.0f |\n",
+            System.out.printf("| %-40s | %d      | %.0f       | %.0f      |\n",
                     String.format("%-" + col1Width + "s", itemName), 
                     book.getQuantity(), 
                     book.getPrice(), 
@@ -603,9 +603,6 @@ public class Book extends Product
         System.out.printf("| %-79s |\n", "Cam on Quy khach, hen gap lai!");
         System.out.println(border);
     }
-
-
-
 
     // Phương thức chỉnh sửa giỏ hàng
     private void suaGioHang(Bill billManager) {

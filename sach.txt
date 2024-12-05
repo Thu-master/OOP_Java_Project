@@ -56,7 +56,7 @@ NV;1900;To Kill a Mockingbird;350000.0;70;Harper Lee
 NV;1901;1984;300000.0;80;George Orwell
 NV;1902;The Great Gatsby;280000.0;65;F. Scott Fitzgerald
 NV;1903;Moby Dick;450000.0;50;Herman Melville
-NV;1904;War and Peace;520000.0;40;Leo Tolstoy
+NV;1904;War and Peace;520000.0;38;Leo Tolstoy
 NV;1905;Crime and Punishment;490000.0;45;Fyodor Dostoevsky
 NV;1906;The Catcher in the Rye;310000.0;60;J.D. Salinger
 NV;1907;The Alchemist;370000.0;75;Paulo Coelho
@@ -71,15 +71,15 @@ NV;1915;The Divine Comedy;450000.0;50;Dante Alighieri
 NV;1916;The Road;400000.0;75;Cormac McCarthy
 NV;1917;The Old Man and the Sea;310000.0;80;Ernest Hemingway
 NV;1918;The Hobbit;430000.0;65;J.R.R. Tolkien
-NV;1919;Les Misérables;520000.0;45;Victor Hugo
-NV;1920;Don Quixote;480000.0;40;Miguel de Cervantes
+NV;1919;Les Misérables;520000.0;44;Victor Hugo
+NV;1920;Don Quixote;480000.0;37;Miguel de Cervantes
 NV;1921;Wuthering Heights;290000.0;85;Emily Brontë
-NV;1922;The Handmaid's Tale;380000.0;60;Margaret Atwood
+NV;1922;The Handmaid's Tale;380000.0;54;Margaret Atwood
 NV;1923;Jane Eyre;310000.0;75;Charlotte Brontë
 NV;1924;Dracula;370000.0;70;Bram Stoker
 NV;1925;Great Expectations;350000.0;50;Charles Dickens
-NV;1926;The Picture of Dorian Gray;340000.0;65;Oscar Wilde
-NV;1927;A Tale of Two Cities;280000.0;80;Charles Dickens
+NV;1926;The Picture of Dorian Gray;340000.0;61;Oscar Wilde
+NV;1927;A Tale of Two Cities;280000.0;69;Charles Dickens
 NV;1928;Beloved;420000.0;55;Toni Morrison
 NV;1929;Slaughterhouse-Five;400000.0;60;Kurt Vonnegut
 GK1;101;Tieng Viet 1 Tap 1;30000.0;47;Bo Giao duc va Dao tao
@@ -98,15 +98,6 @@ GK3;367;Tieng Viet 3 Tap 1;16000.0;60;Bo Giao duc va Dao tao
 GK3;388;Hoat dong va trai nghiem 3;19000.0;37;Bo Giao duc va Dao tao
 GK3;377;Toan 3 Tap 1;15000.0;58;Bo Giao duc va Dao tao
 GK3;378;Toan 3 Tap 2;17000.0;58;Bo Giao duc va Dao tao
-GK2;201;Tieng Viet 2 Tap 1;30000.0;61;Bo Giao duc va Dao tao
-GK2;202;Tieng Viet 2 Tap 2;29000.0;33;Bo Giao duc va Dao tao
-GK2;205;Toan 2 Tap 1;17000.0;73;Bo Giao duc va Dao tao
-GK2;206;Toan 2 Tap 2;16000.0;35;Bo Giao duc va Dao tao
-GK2;210;Dao Duc 2;12000.0;46;Bo Giao duc va Dao tao
-GK2;215;Tu nhien va xa hoi 2;21000.0;51;Bo Giao duc va Dao tao
-GK2;220;Giao duc the chat 2;16000.0;48;Bo Giao duc va Dao tao
-GK2;222;Am nhac va my thuat 2;11000.0;45;Bo Giao duc va Dao tao
-GK2;225;Hoat dong va trai nghiem 2;15000.0;37;Bo Giao duc va Dao tao
 SB;1301;A Brief History of Time;450000.0;50;Stephen Hawking
 SB;1302;Cosmos;500000.0;40;Carl Sagan
 SB;1303;The Selfish Gene;300000.0;70;Richard Dawkins
@@ -136,6 +127,15 @@ SB;1327;The Ocean of Life;400000.0;70;Callum Roberts
 SB;1328;Superintelligence: Paths, Dangers, Strategies;350000.0;80;Nick Bostrom
 SB;1329;The Physicists;480000.0;55;C.P. Snow
 SB;1330;The Particle at the End of the Universe;430000.0;65;Sean Carroll
+GK2;201;Tieng Viet 2 Tap 1;30000.0;61;Bo Giao duc va Dao tao
+GK2;202;Tieng Viet 2 Tap 2;29000.0;33;Bo Giao duc va Dao tao
+GK2;205;Toan 2 Tap 1;17000.0;73;Bo Giao duc va Dao tao
+GK2;206;Toan 2 Tap 2;16000.0;35;Bo Giao duc va Dao tao
+GK2;210;Dao Duc 2;12000.0;46;Bo Giao duc va Dao tao
+GK2;215;Tu nhien va xa hoi 2;21000.0;51;Bo Giao duc va Dao tao
+GK2;220;Giao duc the chat 2;16000.0;48;Bo Giao duc va Dao tao
+GK2;222;Am nhac va my thuat 2;11000.0;45;Bo Giao duc va Dao tao
+GK2;225;Hoat dong va trai nghiem 2;15000.0;37;Bo Giao duc va Dao tao
 GK5;522;Cong nghe 5;17000.0;66;Bo Giao duc va Dao tao
 GK5;501;Tin hoc 5;18000.0;46;Bo Giao duc va Dao tao
 GK5;567;Hoat dong va trai nghiem 5;19000.0;72;Bo Giao duc va Dao tao
@@ -193,7 +193,7 @@ PSB;1513;Outliers: The Story of Success;460000.0;65;Malcolm Gladwell
 PSB;1514;Blink: The Power of Thinking Without Thinking;370000.0;50;Malcolm Gladwell
 PSB;1515;Flow: The Psychology of Optimal Experience;520000.0;35;Mihaly Csikszentmihalyi
 PSB;1516;The Happiness Hypothesis;400000.0;45;Jonathan Haidt
-PSB;1517;Switch: How to Change Things When Change Is Hard;350000.0;80;Chip Heath, Dan Heath
+PSB;1517;Switch: How to Change Things When Change Is Hard;350000.0;74;Chip Heath, Dan Heath
 PSB;1518;Stumbling on Happiness;400000.0;50;Daniel Gilbert
 PSB;1519;Influence: The Psychology of Persuasion;550000.0;40;Robert B. Cialdini
 PSB;1521;The Upside of Stress;360000.0;70;Kelly McGonigal
@@ -201,8 +201,8 @@ PSB;1522;Lost Connections;430000.0;65;Johann Hari
 PSB;1523;Dare to Lead;420000.0;60;Brené Brown
 PSB;1524;The Social Animal;520000.0;30;Elliot Aronson
 PSB;1525;The Confidence Code;390000.0;45;Katty Kay, Claire Shipman
-PSB;1526;Rework;350000.0;80;Jason Fried, David Heinemeier Hansson
+PSB;1526;Rework;350000.0;77;Jason Fried, David Heinemeier Hansson
 PSB;1527;You Are Not So Smart;400000.0;70;David McRaney
 PSB;1528;Thinking in Bets;450000.0;50;Annie Duke
-PSB;1529;The Willpower Instinct;480000.0;65;Kelly McGonigal
+PSB;1529;The Willpower Instinct;480000.0;61;Kelly McGonigal
 PSB;1530;The Body Keeps the Score;570000.0;50;Bessel van der Kolk
