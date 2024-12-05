@@ -29,7 +29,7 @@ public class SystemManager
     public void run() 
     {
         boolean keepRunning = true;
-        Scanner scanner = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
 
         while (keepRunning) 
         {
@@ -37,10 +37,10 @@ public class SystemManager
 
            // Nhập thông tin người dùng
            System.out.print("Nhap ma so nhan vien: ");
-           String employeeId = scanner.nextLine();
+           String employeeId = sc.nextLine();
 
            System.out.print("Nhap ho ten cua ban: ");
-           String fullName = scanner.nextLine();
+           String fullName = sc.nextLine();
 
            // Tìm kiếm người dùng
            User user = userManagement.findUserByInfo(employeeId, fullName);
@@ -51,7 +51,7 @@ public class SystemManager
 
                // Hỏi người dùng có muốn đăng nhập lại không
                System.out.print("Ban co muon thu lai khong (Y/N): ");
-               String choice = scanner.nextLine();
+               String choice = sc.nextLine();
 
                if (!choice.equalsIgnoreCase("Y")) 
                {
@@ -84,7 +84,7 @@ public class SystemManager
     
     private boolean showMenu(User user) 
     {
-       Scanner scanner = new Scanner(System.in);
+       Scanner sc = new Scanner(System.in);
        boolean keepRunning = true;
        Book bookManager = new Book(userManagement);   // Tạo đối tượng Book, truyền userManagement
        
@@ -125,12 +125,12 @@ public class SystemManager
             }
 
             System.out.print("Chon chuc nang: ");
-            int choice = Integer.parseInt(scanner.nextLine());
+            int choice = Integer.parseInt(sc.nextLine());
             switch (choice) 
             {
                 case 0:
                     System.out.print("Ban co chac chan muon thoat chuong trinh? (Y/N): ");
-                    String confirm = scanner.nextLine();
+                    String confirm = sc.nextLine();
                     if (confirm.equalsIgnoreCase("Y")) {
                         System.out.println("Dang thoat chuong trinh... Tam biet!");
                         System.exit(0);

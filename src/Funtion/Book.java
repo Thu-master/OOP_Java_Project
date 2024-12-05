@@ -154,12 +154,21 @@ public class Book extends Product
     public void ThemSachVaGhiFile() 
     {
         Scanner sc = new Scanner(System.in);
-
+        System.out.println("Ban dang trong che do them sach. Nhan Enter de quay lai menu neu ban khong muon them");
         System.out.println("Nhap loai sach:");
         String type = sc.nextLine();
+        if (type.isEmpty())
+        {
+            System.out.println("Thoat khoi che do them sach.");
+            return;
+        }
         System.out.println("Nhap ma so sach:");
         String id = sc.nextLine();
-
+        if (id.isEmpty())
+        {
+            System.out.println("Thoat khoi che do them sach.");
+            return;
+        }
         if (kiemTraIdVaTen(id, "")) {
             System.out.println("Ma sach da ton tai. Khong the them sach trung ID.");
             return;
@@ -167,28 +176,49 @@ public class Book extends Product
 
         System.out.println("Nhap ten sach:");
         String name = sc.nextLine();
+        if (name.isEmpty())
+        {
+            System.out.println("Thoat khoi che do them sach.");
+            return;
+        }
         if (kiemTraIdVaTen("", name)) {
             System.out.println("Ten sach da ton tai. Khong the them sach trung ten.");
             return;
         }
 
         System.out.println("Nhap gia sach:");
-        double price = Double.parseDouble(sc.nextLine());
+        String priceInput = sc.nextLine();
+        if (priceInput.isEmpty()) {
+            System.out.println("Thoat khoi che do them sach.");
+            return;
+        }
+        double price = Double.parseDouble(priceInput);
+        
         System.out.println("Nhap so luong:");
-        int quantity = Integer.parseInt(sc.nextLine());
+        String quantityInput = sc.nextLine();
+        if (quantityInput.isEmpty()) {
+            System.out.println("Thoat khoi che do them sach.");
+            return;
+        }
+        int quantity = Integer.parseInt(quantityInput);
         System.out.println("Nhap ten tac gia:");
         String author = sc.nextLine();
-
+        if (author.isEmpty()){
+            System.out.println("Thoat khoi che do them sach.");
+            return;
+        }
         Book newBook = new Book(type, id, name, price, quantity, author);
-
-        try (FileWriter fw = new FileWriter("sach.txt", true);
-             PrintWriter pw = new PrintWriter(fw)) {
+        
+        try{
+            File f = new File ("sach.txt");
+            FileWriter fw = new FileWriter(f, true);
+            PrintWriter pw = new PrintWriter(fw);
             pw.println(newBook.toString());
             booksByType.computeIfAbsent(type, k -> new ArrayList<>()).add(newBook);
             System.out.println("Da them sach va ghi vao file thanh cong.");
             ghiLichSu("Them sach", newBook);
-        } catch (IOException e) {
-            System.out.println("Khong the ghi file: " + e.getMessage());
+        } catch (Exception e) {
+            System.out.println("Khong the ghi file");
         }
     }
     
@@ -346,15 +376,17 @@ public class Book extends Product
     }
     
     private void ghiLichSu(String hanhDong, Book book) {
-        try (FileWriter fw = new FileWriter("approval_history.txt", true);
-             PrintWriter pw = new PrintWriter(fw)) {
+        try{
+            File f = new File("approval_history.txt");
+            FileWriter fw = new FileWriter(f, true);
+            PrintWriter pw = new PrintWriter(fw);
             String timestamp = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
             pw.println("[" + timestamp + "] [Book Action] " + hanhDong + " - Loai: " + book.getType() +
                     ", Ma so: " + book.getId() + ", Ten: " + book.getName() +
                     ", Gia: " + book.getPrice() + ", So luong: " + book.getQuantity() +
                     ", Tac gia: " + book.getAuthor());
         } catch (IOException e) {
-            System.out.println("Không thể ghi lịch sử: " + e.getMessage());
+            System.out.println("Khong the ghi lich su: " + e.getMessage());
         }
     }
     
@@ -481,8 +513,6 @@ public class Book extends Product
                     }
                     else
                     {
-//                    billManager.applyDiscount(discountManager);
-//                    System.out.println("Tổng tiền sau giảm giá: " + billManager.getThanhTien());
                     hienThiHoaDon(billManager); // Xuất giao diện hóa đơn
                     savePaymentHistory(billManager); // Lưu hóa đơn
                     updateInventory(billManager); // Cập nhật tồn kho
@@ -613,7 +643,7 @@ public class Book extends Product
             writer.write("[" + timestamp + "]\n");
             writer.write("--- Hoa don thanh toan ---\n");
             for (Book book : billManager.getCart()) {
-                writer.write(String.format("Ten sách: %s, Sa luong: %d, Don gia: %.2f, Thanh tien: %.2f\n",
+                writer.write(String.format("Ten sach: %s, So luong: %d, Don gia: %.2f, Thanh tien: %.2f\n",
                         book.getName(), book.getQuantity(), book.getPrice(), book.getPrice() * book.getQuantity()));
             }
             double totalAmount = billManager.getThanhTien();
