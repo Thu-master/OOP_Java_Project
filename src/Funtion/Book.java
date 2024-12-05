@@ -613,7 +613,7 @@ public class Book extends Product
             writer.write("[" + timestamp + "]\n");
             writer.write("--- Hoa don thanh toan ---\n");
             for (Book book : billManager.getCart()) {
-                writer.write(String.format("Tên sách: %s, Sa luong: %d, Don gia: %.2f, Thanh tien: %.2f\n",
+                writer.write(String.format("Ten sách: %s, Sa luong: %d, Don gia: %.2f, Thanh tien: %.2f\n",
                         book.getName(), book.getQuantity(), book.getPrice(), book.getPrice() * book.getQuantity()));
             }
             double totalAmount = billManager.getThanhTien();

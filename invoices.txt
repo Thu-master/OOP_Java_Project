@@ -277,3 +277,11 @@ Thue (8%): 436000.00
 Tong cong: 5886000.00
 -----------------------------
 
+[2024-12-05 07:58:14]
+--- Hoa don thanh toan ---
+Tên sách: The Body Keeps the Score, Sa luong: 5, Don gia: 570000,00, Thanh tien: 2850000,00
+Tong tien: 2850000,00
+Thue (8%): 228000,00
+Tong cong: 3078000,00
+-----------------------------
+
