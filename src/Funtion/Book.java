@@ -30,7 +30,7 @@ public class Book extends Product
         super(id, name, price, quantity);
         this.type = type;
         this.author = author;
-    }
+    }   
     
     public Book(User_Management userManagement) 
     {
@@ -77,7 +77,7 @@ public class Book extends Product
 
     // Đọc file và tự động phân loại sách
     public void docFile() {
-        booksByType.clear(); // Xóa dữ liệu cũ
+        booksByType.clear();// Xóa dữ liệu cũ
         try {
             File f = new File("sach.txt");
             FileReader fr = new FileReader(f);

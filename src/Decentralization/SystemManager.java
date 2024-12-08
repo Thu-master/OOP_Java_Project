@@ -5,6 +5,7 @@
 package Decentralization;
 
 import Funtion.Book;
+import Funtion.SalesStatistics;
 import java.util.Scanner;
 
 /**
@@ -86,7 +87,8 @@ public class SystemManager
     {
        Scanner sc = new Scanner(System.in);
        boolean keepRunning = true;
-       Book bookManager = new Book(userManagement);   // Tạo đối tượng Book, truyền userManagement
+       Book bookManager = new Book(userManagement);     // Tạo đối tượng Book, truyền userManagement
+       SalesStatistics salesStatistics = new SalesStatistics();
        
         while (keepRunning) 
         {
@@ -108,6 +110,7 @@ public class SystemManager
                    System.out.println("3. Quan ly yeu cau xoa nhan vien");
                    System.out.println("4. Mua sach");
                    System.out.println("5. Xem ma giam gia");
+                   System.out.println("6. Xem thong ke doanh so ban hang");
                    System.out.println("20. Dang xuat");
                    System.out.println("0. Thoat");
                    break;
@@ -207,6 +210,7 @@ public class SystemManager
                 case 6:
                     if(user.getRole().equals("Manager")) 
                     {
+                        salesStatistics.manageSalesStatisticsWithMenu();
                     } 
                     else 
                     {

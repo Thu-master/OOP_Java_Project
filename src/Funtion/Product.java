@@ -49,7 +49,16 @@ public class Product
     
     public void displayInfo() 
     {
-       System.out.println("ID: " + id + ", Name: " + name + ", Price: " + price + ", Quantity: " + quantity);
+       System.out.println("ID: " + id + ", Name: " + name + ", Price: " + price + ", Quantity: " + quantity + ", TotalPrice" + getTotalPrice());
+    }
+    public double getTotalPrice() 
+    {
+        return quantity * price;
+    }
+    @Override
+    public String toString()
+    {
+        return id +"\t"+ name +"\t"+ price +"\t"+ quantity +"\t"+ getTotalPrice();
     }
     
 }
