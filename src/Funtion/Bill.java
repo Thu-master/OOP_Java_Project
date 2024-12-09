@@ -4,6 +4,7 @@
  */
 package Funtion;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -11,7 +12,7 @@ import java.util.Scanner;
 
 public class Bill {
     private ArrayList<Book> cart = new ArrayList<>();
-    private double ThanhTien;                       
+    private double ThanhTien;
 
     public Bill() {
         this.cart = new ArrayList<>();
@@ -22,8 +23,7 @@ public class Bill {
         this.cart = cart;
         this.ThanhTien = ThanhTien;
     }
-
-    
+   
     public ArrayList<Book> getCart() {
         return cart;
     }
@@ -223,6 +223,18 @@ public class Bill {
 //            System.out.println("Không áp dụng giảm giá.");
 //        }
 //    }
+
+    public String getCurrentShift() {
+    int currentHour = LocalDateTime.now().getHour(); // Lấy giờ hiện tại
+
+    if (currentHour >= 6 && currentHour < 14) {
+        return "1"; // Ca sáng
+    } else if (currentHour >= 14 && currentHour < 22) {
+        return "2"; // Ca chiều
+    } else {
+        return "3"; // Ca đêm
+    }
+}
 
 
 

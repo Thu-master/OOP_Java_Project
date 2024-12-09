@@ -373,3 +373,61 @@ Thue (8%): 84000.00
 Tong cong: 1134000.00
 -----------------------------
 
+[2024-12-09 23:32:13]
+--- Hoa don thanh toan ---
+Ten sach: The Body Keeps the Score, So luong: 10, Don gia: 570000,00, Thanh tien: 5700000,00
+Tong tien: 5700000,00
+Thue (8%): 456000,00
+Tong cong: 6156000,00
+-----------------------------
+
+[2024-12-10 00:19:41]
+--- Hoa don thanh toan ---
+Ten sach: The Willpower Instinct, So luong: 1, Don gia: 480000,00, Thanh tien: 480000,00
+Tong tien: 480000,00
+Thue (8%): 38400,00
+Tong cong: 518400,00
+-----------------------------
+
+[2024-12-10 00:26:10]
+--- Hoa don thanh toan ---
+Ten sach: Switch: How to Change Things When Change Is Hard, So luong: 4, Don gia: 350000,00, Thanh tien: 1400000,00
+Tong tien: 1400000,00
+Thue (8%): 112000,00
+Tong cong: 1512000,00
+-----------------------------
+
+[2024-12-10 00:33:52]
+--- Hoa don thanh toan ---
+Ten sach: Cong nghe 7, So luong: 1, Don gia: 33000,00, Thanh tien: 33000,00
+Tong tien: 33000,00
+Thue (8%): 2640,00
+Tong cong: 35640,00
+-----------------------------
+
+[2024-12-10 00:42:15]
+--- Hoa don thanh toan ---
+Ca: 3 - Thu ngan: a (ID: 002)Ten sach: Cong nghe 8, So luong: 1, Don gia: 33000,00, Thanh tien: 33000,00
+Tong tien: 33000,00
+Thue (8%): 2640,00
+Tong cong: 35640,00
+-----------------------------
+
+[2024-12-10 00:43:49]
+--- Hoa don thanh toan ---
+Ca: 3 - Thu ngan: a (ID: 002)
+Ten sach: Hoat dong va trai nghiem 4, So luong: 1, Don gia: 19000,00, Thanh tien: 19000,00
+Tong tien: 19000,00
+Thue (8%): 1520,00
+Tong cong: 20520,00
+-----------------------------
+
+[2024-12-10 00:46:00]
+Ca: 3 - Thu ngan: a (ID: 002)
+--- Hoa don thanh toan ---
+Ten sach: Tieng Viet 5 Tap 2, So luong: 1, Don gia: 18000,00, Thanh tien: 18000,00
+Tong tien: 18000,00
+Thue (8%): 1440,00
+Tong cong: 19440,00
+-----------------------------
+

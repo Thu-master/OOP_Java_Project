@@ -9,6 +9,9 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
 import Decentralization.User_Management;
+import Decentralization.SystemManager;
+import Decentralization.User;
+
 
 
 /**
@@ -530,7 +533,16 @@ public class Book extends Product
         }
     }
 
-private void hienThiHoaDon(Bill billManager) {
+private void hienThiHoaDon(Bill billManager) 
+{
+    // Lấy thông tin ca làm việc từ Bill
+    String currentShift = billManager.getCurrentShift();
+
+    // Lấy thông tin nhân viên từ SystemManager
+    User currentUser = SystemManager.getCurrentUser();
+    String cashierName = (currentUser != null) ? currentUser.getFullname() : "Unknown";
+    String cashierId = (currentUser != null) ? currentUser.getEmloyeeI() : "N/A";
+    
         // Định nghĩa độ rộng bảng
         int width = 83; // Tổng chiều rộng bảng
         int col1Width = 40; // Cột "Mặt hàng"
@@ -570,7 +582,8 @@ private void hienThiHoaDon(Bill billManager) {
         System.out.println(border);
         System.out.printf("| %-79s |\n", "Khach hang: Khach le");
         System.out.printf("| %-79s |\n", "So PTT: 00000052       Ngay: " + LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm")));
-        System.out.printf("| %-79s |\n", "Ca: 1 - Thu ngan: admin");
+        System.out.printf("| %-79s |\n", 
+                           String.format("Ca: %s - Thu ngan: %s (ID: %s)", currentShift, cashierName, cashierId));
         System.out.println(border);
 
         // In danh sách sách trong giỏ hàng
@@ -637,8 +650,17 @@ private void hienThiHoaDon(Bill billManager) {
     private void savePaymentHistory(Bill billManager) {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter("invoices.txt", true))) {
             String timestamp = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
+                        // Lấy thông tin ca làm việc
+            String currentShift = billManager.getCurrentShift();
+
+            // Lấy thông tin thu ngân
+            User currentUser = SystemManager.getCurrentUser();
+            String cashierName = (currentUser != null) ? currentUser.getFullname() : "Unknown";
+            String cashierId = (currentUser != null) ? currentUser.getEmloyeeI() : "N/A";
+            
             writer.write("[" + timestamp + "]\n");
-            writer.write("--- Hoa don thanh toan ---\n");
+            writer.write("Ca: " + currentShift + " - Thu ngan: " + cashierName + " (ID: " + cashierId + ")\n");
+            writer.write("--- Hoa don thanh toan ---\n");          
             for (Book book : billManager.getCart()) {
                 writer.write(String.format("Ten sach: %s, So luong: %d, Don gia: %.2f, Thanh tien: %.2f\n",
                         book.getName(), book.getQuantity(), book.getPrice(), book.getPrice() * book.getQuantity()));
