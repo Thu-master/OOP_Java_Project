@@ -1,31 +1,3 @@
-[2024-12-04 02:04:29]
-Hoa don chi tiet:
-Sach: Sinh hoc 10, So luong: 1, Don gia: 22000.0, Thanh tien: 22000.0
-Tong cong: 22000.0
-[2024-12-04 02:07:30]
-Hoa don chi tiet:
-Sach: The Body Keeps the Score, So luong: 1, Don gia: 570000.0, Thanh tien: 570000.0
-Tong cong: 570000.0
-[2024-12-04 02:09:37]
-Hoa don chi tiet:
-Sach: Lich su 10, So luong: 1, Don gia: 44000.0, Thanh tien: 44000.0
-Tong cong: 44000.0
-[2024-12-04 02:18:18]
-Hoa don chi tiet:
-Sach: The Particle at the End of the Universe, So luong: 1, Don gia: 430000.0, Thanh tien: 430000.0
-Tong cong: 430000.0
-[2024-12-04 02:20:41]
-Hoa don chi tiet:
-Sach: Hoat dong va trai nghiem 2, So luong: 1, Don gia: 15000.0, Thanh tien: 15000.0
-Tong cong: 15000.0
-[2024-12-04 02:22:33]
-Hoa don chi tiet:
-Sach: Cong nghe 10, So luong: 2, Don gia: 33000.0, Thanh tien: 66000.0
-Tong cong: 66000.0
-[2024-12-04 02:24:14]
-Hoa don chi tiet:
-Sach: Giao duc cong dan 6, So luong: 1, Don gia: 28000.0, Thanh tien: 28000.0
-Tong cong: 28000.0
 [2024-12-04 02:54:35]
 --- Hóa đơn thanh toán ---
 Tên sách: Am nhac 9, Số lượng: 5, Đơn giá: 22000,00, Thành tiền: 110000,00
@@ -429,5 +401,50 @@ Ten sach: Tieng Viet 5 Tap 2, So luong: 1, Don gia: 18000,00, Thanh tien: 18000,
 Tong tien: 18000,00
 Thue (8%): 1440,00
 Tong cong: 19440,00
+-----------------------------
+
+[2024-12-10 08:41:26]
+Ca: 1 - Thu ngan: a (ID: 002)
+--- Hoa don thanh toan ---
+Ten sach: Hoat dong va trai nghiem 5, So luong: 1, Don gia: 19000,00, Thanh tien: 19000,00
+Tong tien: 19000,00
+Thue (8%): 1520,00
+Tong cong: 20520,00
+-----------------------------
+
+[2024-12-10 09:00:59]
+Ca: 1 - Thu ngan: a (ID: 002)
+--- Hoa don thanh toan ---
+Ten sach: Sinh hoc 10, So luong: 1, Don gia: 22000,00, Thanh tien: 22000,00
+Tong tien: 22000,00
+Thue (8%): 1760,00
+Tong cong: 23760,00
+-----------------------------
+
+[2024-12-10 09:10:32]
+Ca: 1 - Thu ngan: a (ID: 002)
+--- Hoa don thanh toan ---
+Ten sach: Tieng Viet 2 Tap 1, So luong: 1, Don gia: 30000,00, Thanh tien: 30000,00
+Tong tien: 30000,00
+Thue (8%): 2400,00
+Tong cong: 32400,00
+-----------------------------
+
+[2024-12-10 09:13:38]
+Ca: 1 - Thu ngan: a (ID: 002)
+--- Hoa don thanh toan ---
+Ten sach: Sinh hoc 12, So luong: 1, Don gia: 53000,00, Thanh tien: 53000,00
+Tong tien: 53000,00
+Thue (8%): 4240,00
+Tong cong: 57240,00
+-----------------------------
+
+[2024-12-10 09:16:21]
+Ca: 1 - Thu ngan: a (ID: 002)
+--- Hoa don thanh toan ---
+Ten sach: The Particle at the End of the Universe, So luong: 1, Don gia: 430000,00, Thanh tien: 430000,00
+Tong tien: 430000,00
+Thue (8%): 34400,00
+Tong cong: 464400,00
 -----------------------------
 

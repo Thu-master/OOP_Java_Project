@@ -6,8 +6,6 @@ package Funtion;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
 import java.util.Scanner;
 
 public class Bill {
@@ -208,33 +206,18 @@ public class Bill {
         billDetails.append("Tong cong: ").append(totalAmount); // Hiển thị tổng cộng
         return billDetails.toString();
     }
-    
-//    public void applyDiscount(DiscountManager discountManager) {
-//        Scanner scanner = new Scanner(System.in);
-//        System.out.print("Nhập mã giảm giá (hoặc bỏ qua): ");
-//        String discountCode = scanner.nextLine().trim();
-//
-//        Discount discount = discountManager.validateDiscount(discountCode, this.ThanhTien);
-//        if (discount != null) {
-//            double discountAmount = this.ThanhTien * (discount.getPercentage() / 100);
-//            this.ThanhTien -= discountAmount;
-//            System.out.println("Giảm giá áp dụng: -" + discountAmount + " VND");
-//        } else {
-//            System.out.println("Không áp dụng giảm giá.");
-//        }
-//    }
 
     public String getCurrentShift() {
-    int currentHour = LocalDateTime.now().getHour(); // Lấy giờ hiện tại
+        int currentHour = LocalDateTime.now().getHour(); // Lấy giờ hiện tại
 
-    if (currentHour >= 6 && currentHour < 14) {
-        return "1"; // Ca sáng
-    } else if (currentHour >= 14 && currentHour < 22) {
-        return "2"; // Ca chiều
-    } else {
-        return "3"; // Ca đêm
+        if (currentHour >= 6 && currentHour < 14) {
+            return "1"; // Ca sáng
+        } else if (currentHour >= 14 && currentHour < 22) {
+            return "2"; // Ca chiều
+        } else {
+            return "3"; // Ca đêm
+        }
     }
-}
 
 
 

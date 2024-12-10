@@ -1,11 +1,11 @@
-GK10;1046;Sinh hoc 10;22000.0;71;Bo Giao duc va Dao tao
+GK10;1046;Sinh hoc 10;22000.0;70;Bo Giao duc va Dao tao
 GK10;1095;Cong nghe 10;33000.0;56;Bo Giao duc va Dao tao
 GK10;1019;Ngu Van 10 Tap 1;46000.0;45;Bo Giao duc va Dao tao
 GK10;1000;Toan 10 Tap 1;42000.0;23;Bo Giao duc va Dao tao
 GK10;1067;Hoat dong va trai nghiem 10;41000.0;45;Bo Giao duc va Dao tao
 GK10;1071;Hoa hoc 10;35000.0;55;Bo Giao duc va Dao tao
 GK10;1089;Lich su 10;44000.0;47;Bo Giao duc va Dao tao
-GK12;1213;Sinh hoc 12;53000.0;41;Bo Giao duc va Dao tao
+GK12;1213;Sinh hoc 12;53000.0;40;Bo Giao duc va Dao tao
 GK12;1272;Cong nghe 12;37000.0;26;Bo Giao duc va Dao tao
 GK12;1290;Ngu Van 12 Tap 1;61000.0;35;Bo Giao duc va Dao tao
 GK12;1228;Toan 12 Tap 1;72000.0;20;Bo Giao duc va Dao tao
@@ -98,15 +98,6 @@ GK3;367;Tieng Viet 3 Tap 1;16000.0;60;Bo Giao duc va Dao tao
 GK3;388;Hoat dong va trai nghiem 3;19000.0;37;Bo Giao duc va Dao tao
 GK3;377;Toan 3 Tap 1;15000.0;58;Bo Giao duc va Dao tao
 GK3;378;Toan 3 Tap 2;17000.0;58;Bo Giao duc va Dao tao
-GK2;201;Tieng Viet 2 Tap 1;30000.0;61;Bo Giao duc va Dao tao
-GK2;202;Tieng Viet 2 Tap 2;29000.0;33;Bo Giao duc va Dao tao
-GK2;205;Toan 2 Tap 1;17000.0;73;Bo Giao duc va Dao tao
-GK2;206;Toan 2 Tap 2;16000.0;35;Bo Giao duc va Dao tao
-GK2;210;Dao Duc 2;12000.0;46;Bo Giao duc va Dao tao
-GK2;215;Tu nhien va xa hoi 2;21000.0;51;Bo Giao duc va Dao tao
-GK2;220;Giao duc the chat 2;16000.0;48;Bo Giao duc va Dao tao
-GK2;222;Am nhac va my thuat 2;11000.0;45;Bo Giao duc va Dao tao
-GK2;225;Hoat dong va trai nghiem 2;15000.0;37;Bo Giao duc va Dao tao
 SB;1301;A Brief History of Time;450000.0;50;Stephen Hawking
 SB;1302;Cosmos;500000.0;40;Carl Sagan
 SB;1303;The Selfish Gene;300000.0;70;Richard Dawkins
@@ -135,10 +126,19 @@ SB;1325;Chaos: Making a New Science;520000.0;35;James Gleick
 SB;1327;The Ocean of Life;400000.0;70;Callum Roberts
 SB;1328;Superintelligence: Paths, Dangers, Strategies;350000.0;80;Nick Bostrom
 SB;1329;The Physicists;480000.0;55;C.P. Snow
-SB;1330;The Particle at the End of the Universe;430000.0;65;Sean Carroll
+SB;1330;The Particle at the End of the Universe;430000.0;64;Sean Carroll
+GK2;201;Tieng Viet 2 Tap 1;30000.0;60;Bo Giao duc va Dao tao
+GK2;202;Tieng Viet 2 Tap 2;29000.0;33;Bo Giao duc va Dao tao
+GK2;205;Toan 2 Tap 1;17000.0;73;Bo Giao duc va Dao tao
+GK2;206;Toan 2 Tap 2;16000.0;35;Bo Giao duc va Dao tao
+GK2;210;Dao Duc 2;12000.0;46;Bo Giao duc va Dao tao
+GK2;215;Tu nhien va xa hoi 2;21000.0;51;Bo Giao duc va Dao tao
+GK2;220;Giao duc the chat 2;16000.0;48;Bo Giao duc va Dao tao
+GK2;222;Am nhac va my thuat 2;11000.0;45;Bo Giao duc va Dao tao
+GK2;225;Hoat dong va trai nghiem 2;15000.0;37;Bo Giao duc va Dao tao
 GK5;522;Cong nghe 5;17000.0;66;Bo Giao duc va Dao tao
 GK5;501;Tin hoc 5;18000.0;46;Bo Giao duc va Dao tao
-GK5;567;Hoat dong va trai nghiem 5;19000.0;72;Bo Giao duc va Dao tao
+GK5;567;Hoat dong va trai nghiem 5;19000.0;71;Bo Giao duc va Dao tao
 GK5;588;Lich su va Dia ly 5;55000.0;34;Bo Giao duc va Dao tao
 GK5;586;Tieng Viet 5 Tap 1;15000.0;47;Bo Giao duc va Dao tao
 GK5;535;Toan 5 Tap 2;17000.0;39;Bo Giao duc va Dao tao

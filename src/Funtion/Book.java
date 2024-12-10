@@ -11,6 +11,7 @@ import java.util.*;
 import Decentralization.User_Management;
 import Decentralization.SystemManager;
 import Decentralization.User;
+import java.text.DecimalFormat;
 
 
 
@@ -535,6 +536,8 @@ public class Book extends Product
 
 private void hienThiHoaDon(Bill billManager) 
 {
+    DecimalFormat df = new DecimalFormat("#,##0.00");
+    
     // Lấy thông tin ca làm việc từ Bill
     String currentShift = billManager.getCurrentShift();
 
@@ -605,11 +608,11 @@ private void hienThiHoaDon(Bill billManager)
 
         // Hiển thị phần tổng tiền, thuế, và các thông tin thanh toán
         System.out.println(border);
-        System.out.printf("| %-40s | %-6s | %-12s | %12.0f |\n", "Tong tien:", "", "", totalAmount);
-        System.out.printf("| %-40s | %-6s | %-12s | %12.0f |\n", "Thue 8%:", "", "", totalTax);
-        System.out.printf("| %-40s | %-6s | %-12s | %12.0f |\n", "Tong cong:", "", "", finalAmount);
-        System.out.printf("| %-40s | %-6s | %-12s | %12.0f |\n", "Tien khach tra:", "", "", tienKhachTra);
-        System.out.printf("| %-40s | %-6s | %-12s | %12.0f |\n", "Tien thua:", "", "", tienThua);
+        System.out.printf("| %-40s | %-6s | %-12s | %12s |\n", "Tong tien:", "", "", df.format(totalAmount));
+        System.out.printf("| %-40s | %-6s | %-12s | %12s |\n", "Thue 8%:", "", "", df.format(totalTax));
+        System.out.printf("| %-40s | %-6s | %-12s | %12s |\n", "Tong cong:", "", "", df.format(finalAmount));
+        System.out.printf("| %-40s | %-6s | %-12s | %12s |\n", "Tien khach tra:", "", "", df.format(tienKhachTra));
+        System.out.printf("| %-40s | %-6s | %-12s | %12s |\n", "Tien thua:", "", "", df.format(tienThua));
 
         // Đóng khung
         System.out.println(border);

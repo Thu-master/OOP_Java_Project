@@ -4,6 +4,11 @@
  */
 package Decentralization;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 
 /**
@@ -22,42 +27,6 @@ public class Admin extends User
     {
        System.out.println("Quyen han: Toan quyen trong he thong.");
     }
-    
-//    public void manageDiscounts(DiscountManager discountManager) 
-//    {
-//                Scanner scanner = new Scanner(System.in);
-//        boolean keepManaging = true;
-//
-//        while (keepManaging) {
-//            System.out.println("\n--- Quản lý mã giảm giá ---");
-//            System.out.println("1. Thêm mã giảm giá");
-//            System.out.println("2. Xem danh sách mã giảm giá");
-//            System.out.println("3. Quay lại");
-//            System.out.print("Chọn chức năng: ");
-//
-//            int choice = Integer.parseInt(scanner.nextLine());
-//
-//            switch (choice) {
-//                case 1:
-//                    System.out.print("Nhập mã giảm giá: ");
-//                    String code = scanner.nextLine().trim();
-//                    System.out.print("Nhập phần trăm giảm giá: ");
-//                    double percentage = Double.parseDouble(scanner.nextLine());
-//                    System.out.print("Nhập giá trị đơn hàng tối thiểu: ");
-//                    double minOrder = Double.parseDouble(scanner.nextLine());
-//                    discountManager.addDiscount(code, percentage, minOrder);
-//                    break;
-//                case 2:
-//                    discountManager.viewDiscounts();
-//                    break;
-//                case 3:
-//                    keepManaging = false;
-//                    break;
-//                default:
-//                    System.out.println("Lựa chọn không hợp lệ!");
-//            }
-//        }
-//    }
     
     public void approveAddEmployee(User_Management userManagement) 
     {
@@ -139,5 +108,141 @@ public class Admin extends User
                     System.out.println("Lựa chọn không hợp lệ! Vui lòng chọn lại.");
             }
         }
+    }
+//--------------------------------------------------------------------------------------------------------------------
+ public void manageSales() {
+        Scanner sc = new Scanner(System.in);
+        boolean keepManaging = true;
+
+        while (keepManaging) {
+            System.out.println("\n--- MENU THONG KE DOANH SO ---");
+            System.out.println("1. Thong ke doanh so sach");
+            System.out.println("2. Doanh thu cua nhan vien");
+            System.out.println("3. Mat hang ban chay nhat");
+            System.out.println("5. Quay lai");
+            System.out.print("Chon chuc nang: ");
+
+            int choice = Integer.parseInt(sc.nextLine());
+            switch (choice) {
+                case 1:
+                    //reportSales();
+                    break;
+                case 2:
+                    topEmployeesByRevenue();
+                    break;
+                case 3:
+                    bestSellingProduct();
+                    break;
+                case 5:
+                    keepManaging = false;
+                    break;
+                default:
+                    System.out.println("Lua chon khong hop le!");
+            }
+        }
+    }
+
+//    private void reportSales() {
+//        Map<String, int[]> salesReport = new HashMap<>();
+//
+//        // Đọc dữ liệu hóa đơn và tính toán
+//        readInvoices((book, quantity, price, employee) -> {
+//            salesReport.putIfAbsent(book, new int[2]);
+//            salesReport.get(book)[0] += quantity;         // Tổng số lượng
+//            salesReport.get(book)[1] += quantity * price; // Tổng doanh số
+//        });
+//
+//        // Hiển thị kết quả
+//        System.out.println("\n--- Thong ke doanh so sach ---");
+//        System.out.printf("%-30s %-15s %-15s\n", "Ten sach", "Se luong", "Doanh so (VND)");
+//        salesReport.forEach((book, stats) -> {
+//            String cleanBookName = book.replaceAll("[^\\p{L}\\p{N}\\p{Z}]", "").trim(); // Làm sạch tên sách
+//            double revenue = stats[1] >= 0 ? (double) stats[1] : 0.0; // Đảm bảo giá trị hợp lệ
+//            System.out.printf("%-30s %-15d %-15,.2f\n", cleanBookName, stats[0], revenue);
+//        });
+//    }
+
+
+    private void topEmployeesByRevenue() {
+        Map<String, Double> employeeRevenueReport = new HashMap<>();
+
+        try (BufferedReader br = new BufferedReader(new FileReader("invoices.txt"))) {
+            String line;
+            String currentEmployee = "Unknown"; // Lưu trữ nhân viên hiện tại
+
+            while ((line = br.readLine()) != null) {
+                line = line.trim();
+
+                // Kiểm tra dòng chứa thông tin nhân viên
+                if (line.startsWith("Ca:")) {
+                    String[] parts = line.split(" - Thu ngan: ");
+                    if (parts.length > 1) {
+                        currentEmployee = parts[1].split(" \\(ID:")[0].trim();
+                    }
+                }
+
+                // Kiểm tra dòng chứa tổng cộng
+                if (line.startsWith("Tong cong:")) {
+                    String totalString = line.split(":")[1].trim().replace(",", ".");
+                    double total = Double.parseDouble(totalString);
+
+                    // Cộng dồn doanh thu cho nhân viên
+                    employeeRevenueReport.put(currentEmployee,
+                            employeeRevenueReport.getOrDefault(currentEmployee, 0.0) + total);
+                }
+            }
+        } catch (IOException | NumberFormatException e) {
+            System.out.println("Loi khi doc file hoa don: " + e.getMessage());
+        }
+
+        // Hiển thị top 3 nhân viên có doanh thu cao nhất
+        System.out.println("\n--- Doanh thu của nhan vien ---");
+        employeeRevenueReport.entrySet().stream()
+            .sorted((e1, e2) -> e2.getValue().compareTo(e1.getValue())) // Sắp xếp theo doanh thu giảm dần
+            .limit(3) // Lấy top 3
+            .forEach(entry -> 
+                System.out.println("Nhan vien: " + entry.getKey() + ", Doanh thu: " + String.format("%,.2f VND", entry.getValue()))
+            );
+    }
+
+
+
+
+    private void bestSellingProduct() {
+        Map<String, Integer> productReport = new HashMap<>();
+        readInvoices((book, quantity, price, employee) -> {
+            productReport.put(book, productReport.getOrDefault(book, 0) + quantity);
+        });
+        System.out.println("\n--- San pham ban chay nhat ---");
+        productReport.entrySet().stream()
+            .max(Map.Entry.comparingByValue())
+            .ifPresent(entry -> 
+                System.out.println("Sach ban chay nhat: " + entry.getKey() + ", So luong: " + entry.getValue())
+            );
+    }
+
+    private void readInvoices(InvoiceProcessor processor) {
+        try (BufferedReader br = new BufferedReader(new FileReader("invoices.txt"))) {
+            String line;
+            while ((line = br.readLine()) != null) {
+                if (line.startsWith("Ten sach:")) {
+                    String[] parts = line.split(", ");
+                    String book = parts[0].split(":")[1].trim();
+                    int quantity = Integer.parseInt(parts[1].split(":")[1].trim());
+                    // Chuyển đổi định dạng trước khi parse double
+                    String priceString = parts[2].split(":")[1].trim().replace(",", ".");
+                    double price = Double.parseDouble(priceString);
+                    //double price = Double.parseDouble(parts[2].split(":")[1].trim());
+                    String employee = parts.length > 3 ? parts[3].split(":")[1].trim() : "Unknown";
+                    processor.process(book, quantity, price, employee);
+                }
+            }
+        } catch (IOException e) {
+            System.out.println("Loi khi doc file hoa don: " + e.getMessage());
+        }
+    }
+
+    private interface InvoiceProcessor {
+        void process(String book, int quantity, double price, String employee);
     }
 }

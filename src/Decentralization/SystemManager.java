@@ -140,6 +140,7 @@ public class SystemManager
                    System.out.println("1. Quan ly nhan vien");
                    System.out.println("2. Quan ly sach");
                    System.out.println("3. Quan ly ma giam gia");
+                   System.out.println("4. Quan ly doanh so ban hang");
                    System.out.println("20. Dang xuat");
                    System.out.println("0. Thoat");
                    break;
@@ -215,6 +216,11 @@ public class SystemManager
                     {
                         bookManager.muaSach(); // Gọi chức năng mua sách
                     } 
+                    else if(user.getRole().equals("Admin"))
+                    {
+                        ((Admin) user).manageSales(); // Gọi phương thức thống kê doanh số
+                        break;
+                    }
                     break;
                 case 5:
                     if (user.getRole().equals("Employee")) 
@@ -229,8 +235,9 @@ public class SystemManager
                     }
                     break;
                 case 6:
-                    if(user.getRole().equals("Manager")) 
+                    if(user.getRole().equals("Admin")) 
                     {
+                        
                     } 
                     else 
                     {
