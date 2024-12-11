@@ -485,6 +485,7 @@ public class Book extends Product
     
     public void muaSach() {
         Bill billManager = new Bill();
+        DiscountManager discountManager = new DiscountManager();
         Scanner sc = new Scanner(System.in);
         boolean keepShopping = true;
 
@@ -494,6 +495,7 @@ public class Book extends Product
             System.out.println("2. Xem gio hang");
             System.out.println("3. Chinh sua gio hang");
             System.out.println("4. Thanh toan");
+            System.out.println("5. Xem ma giam gia");
             System.out.println("0. Quay lai");
             System.out.print("Chon chuc nang: ");
             int choice = Integer.parseInt(sc.nextLine());
@@ -517,6 +519,7 @@ public class Book extends Product
                     }
                     else
                     {
+                    applyDiscountAndDisplay(billManager, discountManager);
                     hienThiHoaDon(billManager); // Xuất giao diện hóa đơn
                     savePaymentHistory(billManager); // Lưu hóa đơn
                     updateInventory(billManager); // Cập nhật tồn kho
@@ -525,6 +528,8 @@ public class Book extends Product
                     }
                     keepShopping = false; // Thoát sau thanh toán
                     break;
+                case 5:              
+                    discountManager.displayDiscounts();
                 case 0:
                     keepShopping = false; // Thoát menu mua sách
                     break;
@@ -708,5 +713,46 @@ private void hienThiHoaDon(Bill billManager)
         }
         ghiLaiFile(); // Lưu lại dữ liệu sách sau cập nhật
     }
-    
+//--------------------------------------------------------------------------------------------------------------------
+    private void applyDiscountAndDisplay(Bill billManager, DiscountManager discountManager) {
+    Scanner sc = new Scanner(System.in);
+
+    // Hiển thị tổng tiền trước khi áp dụng mã giảm giá
+    System.out.printf("Tổng tiền trước khi giảm giá: %.2f VND\n", billManager.getThanhTien());
+
+    boolean validDiscountApplied = false;
+
+    while (!validDiscountApplied) {
+        System.out.print("Bạn có muốn áp dụng mã giảm giá không? (Y/N): ");
+        String choice = sc.nextLine().trim();
+
+        if (choice.equalsIgnoreCase("Y")) {
+            System.out.print("Nhập mã giảm giá: ");
+            String code = sc.nextLine().trim();
+
+            if (!code.isEmpty()) {
+                Discount discount = discountManager.getDiscount(code);
+                if (discount == null) {
+                    System.out.println("Mã giảm giá không tồn tại! Vui lòng nhập lại.");
+                } else if (billManager.getCart().size() < discount.getMinBooks() ||
+                           billManager.getThanhTien() < discount.getMinAmount()) {
+                    System.out.println("Hóa đơn không đủ điều kiện áp dụng mã giảm giá!");
+                } else {
+                    double finalAmount = billManager.getThanhTien() - discount.getDiscountAmount();
+                    System.out.println("Mã giảm giá hợp lệ! Bạn được giảm " + discount.getDiscountAmount() + " VND.");
+                    System.out.printf("Tổng tiền sau khi giảm giá: %.2f VND\n", finalAmount);
+                    billManager.setThanhTien(finalAmount);
+                    validDiscountApplied = true;
+                }
+            } else {
+                System.out.println("Không thể bỏ trống mã giảm giá!");
+            }
+        } else if (choice.equalsIgnoreCase("N")) {
+            validDiscountApplied = true; // Bỏ qua mã giảm giá
+        } else {
+            System.out.println("Lựa chọn không hợp lệ! Vui lòng chọn lại.");
+        }
+    }
+}
+
 }

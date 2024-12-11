@@ -45,64 +45,67 @@ public class SystemManager
            // Tìm kiếm người dùng
            User user = userManagement.findUserByInfo(employeeId, fullName);
 
-           if (user == null) 
-           {
-               System.out.println("Thong tin khong ton tai! Vui long kiem tra lai.");
-
-               // Hỏi người dùng có muốn đăng nhập lại không
-               System.out.print("Ban co muon thu lai khong (Y/N): ");
-               String choice = sc.nextLine();
-
-               if (!choice.equalsIgnoreCase("Y")) 
-               {
-                   System.out.println("Thoat chuong trinh.");
-                   keepRunning = false; // Thoát chương trình
-                   //break;
-               }
-           } 
-           else 
-           {
-               // Đăng nhập thành công
-               setCurrentUser(user);
-               System.out.println("\nXin chao, " + user.getFullname() + "!");
-               user.showPermissions();
-    //           showMenu(user); // Hiển thị menu chính
-    //           keepRunning = false; // Thoát sau khi xử lý menu
-
-               // Chuyển đến menu chính
-               boolean backToLogin = showMenu(user);
-               if(backToLogin)
-               {
-                   System.out.println("\nQuay lai man hinh dang nhap");
-               }
-               else
-               {
-                   keepRunning = false;//Thoát chương trình
-               }
-           }
+//           if (user == null) 
+//           {
+//               System.out.println("Thong tin khong ton tai! Vui long kiem tra lai.");
+//
+//               // Hỏi người dùng có muốn đăng nhập lại không
+//               System.out.print("Ban co muon thu lai khong (Y/N): ");
+//               String choice = sc.nextLine();
+//
+//               if (!choice.equalsIgnoreCase("Y")) 
+//               {
+//                   System.out.println("Thoat chuong trinh.");
+//                   keepRunning = false; // Thoát chương trình
+//                   //break;
+//               }
+//           } 
+//           else 
+//           {
+//               // Đăng nhập thành công
+//               setCurrentUser(user);
+//               System.out.println("\nXin chao, " + user.getFullname() + "!");
+//               user.showPermissions();
+//    //           showMenu(user); // Hiển thị menu chính
+//    //           keepRunning = false; // Thoát sau khi xử lý menu
+//
+//               // Chuyển đến menu chính
+//               boolean backToLogin = showMenu(user);
+//               if(backToLogin)
+//               {
+//                   System.out.println("\nQuay lai man hinh dang nhap");
+//               }
+//               else
+//               {
+//                   keepRunning = false;//Thoát chương trình
+//               }
+//           }
            
-//if (user != null) {
-//    // Đăng nhập thành công
-//    setCurrentUser(user); // Lưu trạng thái người dùng hiện tại
-//    System.out.println("\nXin chao, " + user.getFullname() + "!");
-//    user.showPermissions();
-//
-//    boolean backToLogin = showMenu(user); // Hiển thị menu chính
-//    if (backToLogin) {
-//        System.out.println("\nQuay lai man hinh dang nhap");
-//    } else {
-//        keepRunning = false; // Thoát chương trình
-//    }
-//} else {
-//    System.out.println("Thong tin khong ton tai! Vui long kiem tra lai.");
-//    System.out.print("Ban co muon thu lai khong(Y/N): ");
-//    String choice = sc.nextLine();
-//
-//    if (!choice.equalsIgnoreCase("Y")) {
-//        System.out.println("Thoat chuong trinh.");
-//        keepRunning = false;
-//    }
-//}
+            if (user != null) 
+            {
+                // Đăng nhập thành công
+                setCurrentUser(user); // Lưu trạng thái người dùng hiện tại
+                System.out.println("\nXin chao, " + user.getFullname() + "!");
+                user.showPermissions();
+
+                boolean backToLogin = showMenu(user); // Hiển thị menu chính
+                if (backToLogin) {
+                    System.out.println("\nQuay lai man hinh dang nhap");
+                } else {
+                    keepRunning = false; // Thoát chương trình
+                }
+            } 
+            else 
+            {
+                System.out.println("Thong tin khong ton tai! Vui long kiem tra lai.");
+                System.out.print("Ban co muon thu lai khong(Y/N): ");
+                String choice = sc.nextLine();
+
+                if (!choice.equalsIgnoreCase("Y")) {
+                    System.out.println("Thoat chuong trinh.");
+                    keepRunning = false;
+                }
+            }
         }
     }
     
@@ -209,6 +212,7 @@ public class SystemManager
                     }
                     else
                     {
+                        ((Admin) user).manageDiscounts(); // Quản lý mã giảm giá00
                     }
                     break;
                 case 4:

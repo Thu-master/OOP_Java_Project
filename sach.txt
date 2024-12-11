@@ -123,7 +123,7 @@ SB;1322;Einstein's Dreams;370000.0;40;Alan Lightman
 SB;1323;Superforecasting: The Art and Science of Prediction;320000.0;59;Philip Tetlock
 SB;1324;A Brief History of Life;450000.0;45;Andrew H. Knoll
 SB;1325;Chaos: Making a New Science;520000.0;35;James Gleick
-SB;1327;The Ocean of Life;400000.0;70;Callum Roberts
+SB;1327;The Ocean of Life;400000.0;69;Callum Roberts
 SB;1328;Superintelligence: Paths, Dangers, Strategies;350000.0;80;Nick Bostrom
 SB;1329;The Physicists;480000.0;55;C.P. Snow
 SB;1330;The Particle at the End of the Universe;430000.0;64;Sean Carroll
@@ -163,7 +163,7 @@ GK6;611;Tin hoc 6;18000.0;20;Bo Giao duc va Dao tao
 GK6;657;Hoat dong va trai nghiem 6;19000.0;53;Bo Giao duc va Dao tao
 GK6;618;Lich su va Dia ly 6;56000.0;25;Bo Giao duc va Dao tao
 GK6;606;Ngu van 6;15000.0;28;Bo Giao duc va Dao tao
-GK6;632;Toan 6;17000.0;21;Bo Giao duc va Dao tao
+GK6;632;Toan 6;17000.0;20;Bo Giao duc va Dao tao
 GK6;669;Am nhac 6;12000.0;43;Bo Giao duc va Dao tao
 GK6;679;Giao duc cong dan 6;28000.0;45;Bo Giao duc va Dao tao
 GK9;956;Am nhac 9;22000.0;55;Bo Giao duc va Dao tao

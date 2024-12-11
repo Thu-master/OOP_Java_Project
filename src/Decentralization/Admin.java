@@ -4,6 +4,7 @@
  */
 package Decentralization;
 
+import Funtion.DiscountManager;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -125,7 +126,7 @@ public class Admin extends User
             int choice = Integer.parseInt(sc.nextLine());
             switch (choice) {
                 case 1:
-                    //reportSales();
+                    reportSales();
                     break;
                 case 2:
                     topEmployeesByRevenue();
@@ -142,26 +143,48 @@ public class Admin extends User
         }
     }
 
-//    private void reportSales() {
-//        Map<String, int[]> salesReport = new HashMap<>();
-//
-//        // Đọc dữ liệu hóa đơn và tính toán
-//        readInvoices((book, quantity, price, employee) -> {
-//            salesReport.putIfAbsent(book, new int[2]);
-//            salesReport.get(book)[0] += quantity;         // Tổng số lượng
-//            salesReport.get(book)[1] += quantity * price; // Tổng doanh số
-//        });
-//
-//        // Hiển thị kết quả
-//        System.out.println("\n--- Thong ke doanh so sach ---");
-//        System.out.printf("%-30s %-15s %-15s\n", "Ten sach", "Se luong", "Doanh so (VND)");
-//        salesReport.forEach((book, stats) -> {
-//            String cleanBookName = book.replaceAll("[^\\p{L}\\p{N}\\p{Z}]", "").trim(); // Làm sạch tên sách
-//            double revenue = stats[1] >= 0 ? (double) stats[1] : 0.0; // Đảm bảo giá trị hợp lệ
-//            System.out.printf("%-30s %-15d %-15,.2f\n", cleanBookName, stats[0], revenue);
-//        });
-//    }
+private void reportSales() {
+    Map<String, int[]> salesReport = new HashMap<>();
+    String filePath = "invoices.txt"; // Đường dẫn file
 
+    try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
+        String line;
+        while ((line = br.readLine()) != null) {
+            line = line.trim();
+            if (line.startsWith("Ten sach:")) {
+                String[] parts = line.split(",");
+                if (parts.length >= 3) { // Kiểm tra đủ thông tin
+                    try {
+                        String bookName = parts[0].split(":")[1].trim();
+                        int quantity = Integer.parseInt(parts[1].split(":")[1].trim());
+                        double price = Double.parseDouble(parts[2].split(":")[1].trim().replace(",", "."));
+
+                        // Cập nhật vào report
+                        salesReport.putIfAbsent(bookName, new int[2]);
+                        salesReport.get(bookName)[0] += quantity;
+                        salesReport.get(bookName)[1] += (int) (quantity * price);
+                    } catch (Exception e) {
+                        System.out.println("Dòng bị lỗi: " + line);
+                        continue; // Bỏ qua dòng không hợp lệ
+                    }
+                }
+            }
+        }
+    } catch (IOException e) {
+        System.out.println("Loi khi doc file: " + e.getMessage());
+    }
+
+    // Hiển thị kết quả
+    System.out.println("\n--- Thong ke doanh so sach ---");
+    System.out.printf("%-30s %-11s %-15s\n", "Ten sach", "So luong", "Doanh so (VND)");
+    salesReport.forEach((bookName, stats) -> {
+        try {
+            System.out.printf("%-30s %-11d %-15s\n", bookName, stats[0], String.format("%,.2f", (double) stats[1])); // Định dạng giá tiền ngăn cách hàng nghìn
+        } catch (Exception e) {
+            System.out.println("Loi khi in dong: " + bookName);
+        }
+    });
+}
 
     private void topEmployeesByRevenue() {
         Map<String, Double> employeeRevenueReport = new HashMap<>();
@@ -205,9 +228,6 @@ public class Admin extends User
             );
     }
 
-
-
-
     private void bestSellingProduct() {
         Map<String, Integer> productReport = new HashMap<>();
         readInvoices((book, quantity, price, employee) -> {
@@ -245,4 +265,63 @@ public class Admin extends User
     private interface InvoiceProcessor {
         void process(String book, int quantity, double price, String employee);
     }
+//--------------------------------------------------------------------------------------------------------------------
+    public void manageDiscounts() {
+    DiscountManager discountManager = new DiscountManager();
+    Scanner sc = new Scanner(System.in);
+    boolean keepManaging = true;
+
+    while (keepManaging) {
+        System.out.println("\n--- QUAN LY MA GIAM GIA ---");
+        System.out.println("1. Them ma giam gia");
+        System.out.println("2. Xoa ma giam gia");
+        System.out.println("3. Sua ma giam gia");
+        System.out.println("4. Xem danh sach ma giam gia");
+        System.out.println("5. Quay lai");
+        System.out.print("Chon chuc nang: ");
+        int choice = Integer.parseInt(sc.nextLine());
+
+        switch (choice) {
+            case 1:
+                System.out.print("Nhap ma giam gia: ");
+                String code = sc.nextLine();
+                System.out.print("Nhap mo ta: ");
+                String description = sc.nextLine();
+                System.out.print("Nhap so luong sach toi thieu: ");
+                int minBooks = Integer.parseInt(sc.nextLine());
+                System.out.print("Nhap gia tri toi thieu: ");
+                double minAmount = Double.parseDouble(sc.nextLine());
+                System.out.print("Nhap so tien giam: ");
+                double discountAmount = Double.parseDouble(sc.nextLine());
+                discountManager.addDiscount(code, description, minBooks, minAmount, discountAmount);
+                break;
+            case 2:
+                System.out.print("Nhap ma giam gia can xoa: ");
+                discountManager.deleteDiscount(sc.nextLine());
+                break;
+            case 3:
+                System.out.print("Nhap ma giam gia can sua: ");
+                code = sc.nextLine();
+                System.out.print("Nhap mo ta moi: ");
+                description = sc.nextLine();
+                System.out.print("Nhap so luong sach toi thieu: ");
+                minBooks = Integer.parseInt(sc.nextLine());
+                System.out.print("Nhap gia tri toi thieu: ");
+                minAmount = Double.parseDouble(sc.nextLine());
+                System.out.print("Nhap so tien giam: ");
+                discountAmount = Double.parseDouble(sc.nextLine());
+                discountManager.modifyDiscount(code, description, minBooks, minAmount, discountAmount);
+                break;
+            case 4:
+                discountManager.displayDiscounts();
+                break;
+            case 5:
+                keepManaging = false;
+                break;
+            default:
+                System.out.println("Lua chon khong hop le!");
+        }
+    }
+}
+
 }
