@@ -193,7 +193,8 @@ public class Bill {
             for (Book book : cart) {
                 double subTotal = book.getPrice() * book.getQuantity();
                 totalAmount += subTotal; // Cộng dồn thành tiền cho từng cuốn sách
-                billDetails.append("Sach: ").append(book.getName())
+                billDetails.append("ID: ").append(book.getId())
+                           .append(", Sach: ").append(book.getName())
                            .append(", So luong: ").append(book.getQuantity())
                            .append(", Don gia: ").append(book.getPrice())
                            .append(", Thanh tien: ").append(subTotal)

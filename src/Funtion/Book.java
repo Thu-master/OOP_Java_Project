@@ -604,7 +604,7 @@ private void hienThiHoaDon(Bill billManager)
             if (itemName.length() > col1Width - 2) {
                 itemName = itemName.substring(0, col1Width - 5) + "..."; // Cắt tên nếu dài
             }
-            System.out.printf("| %-40s | %d      | %.0f       | %.0f      |\n",
+            System.out.printf("| %-40s | %d      | %.0f       | %.0f       |\n",
                     String.format("%-" + col1Width + "s", itemName), 
                     book.getQuantity(), 
                     book.getPrice(), 
@@ -718,39 +718,39 @@ private void hienThiHoaDon(Bill billManager)
     Scanner sc = new Scanner(System.in);
 
     // Hiển thị tổng tiền trước khi áp dụng mã giảm giá
-    System.out.printf("Tổng tiền trước khi giảm giá: %.2f VND\n", billManager.getThanhTien());
+    System.out.printf("Tong tien truoc khi giam gia: %.2f VND\n", billManager.getThanhTien());
 
     boolean validDiscountApplied = false;
 
     while (!validDiscountApplied) {
-        System.out.print("Bạn có muốn áp dụng mã giảm giá không? (Y/N): ");
+        System.out.print("Ban co muon ap dung ma giam gia khong? (Y/N): ");
         String choice = sc.nextLine().trim();
 
         if (choice.equalsIgnoreCase("Y")) {
-            System.out.print("Nhập mã giảm giá: ");
+            System.out.print("Nhap ma giam gia: ");
             String code = sc.nextLine().trim();
 
             if (!code.isEmpty()) {
                 Discount discount = discountManager.getDiscount(code);
                 if (discount == null) {
-                    System.out.println("Mã giảm giá không tồn tại! Vui lòng nhập lại.");
+                    System.out.println("Ma giam gia khong ton tai! Vui long nhap lai.");
                 } else if (billManager.getCart().size() < discount.getMinBooks() ||
                            billManager.getThanhTien() < discount.getMinAmount()) {
-                    System.out.println("Hóa đơn không đủ điều kiện áp dụng mã giảm giá!");
+                    System.out.println("Hoa don khong du dieu kien ap dung ma giam gia!");
                 } else {
                     double finalAmount = billManager.getThanhTien() - discount.getDiscountAmount();
-                    System.out.println("Mã giảm giá hợp lệ! Bạn được giảm " + discount.getDiscountAmount() + " VND.");
-                    System.out.printf("Tổng tiền sau khi giảm giá: %.2f VND\n", finalAmount);
+                    System.out.println("Ma giam gia hop le! Ban duoc giam " + discount.getDiscountAmount() + " VND.");
+                    System.out.printf("Tong tien sau khi giam gia: %.2f VND\n", finalAmount);
                     billManager.setThanhTien(finalAmount);
                     validDiscountApplied = true;
                 }
             } else {
-                System.out.println("Không thể bỏ trống mã giảm giá!");
+                System.out.println("Khong the bo trong ma giam gia!");
             }
         } else if (choice.equalsIgnoreCase("N")) {
             validDiscountApplied = true; // Bỏ qua mã giảm giá
         } else {
-            System.out.println("Lựa chọn không hợp lệ! Vui lòng chọn lại.");
+            System.out.println("Laa chon khong hop le! Vui lòng chọn lại.");
         }
     }
 }

@@ -16,3 +16,12 @@ Thue (8%): 1360,00
 Tong cong: 18360,00
 -----------------------------
 
+[2024-12-13 18:26:22]
+Ca: 2 - Thu ngan: a (ID: 002)
+--- Hoa don thanh toan ---
+Ten sach: A Brief History of Life, So luong: 1, Don gia: 450000.00, Thanh tien: 450000.00
+Tong tien: 450000.00
+Thue (8%): 36000.00
+Tong cong: 486000.00
+-----------------------------
+
