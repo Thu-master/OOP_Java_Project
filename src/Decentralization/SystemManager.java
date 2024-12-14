@@ -5,6 +5,7 @@
 package Decentralization;
 
 import Funtion.Book;
+import Funtion.DiscountManager;
 import java.util.Scanner;
 
 /**
@@ -232,10 +233,12 @@ public class SystemManager
                     } 
                     else if(user.getRole().equals("Manager")) 
                     { 
-                        break;
+                        DiscountManager discountManager = new DiscountManager();
+                        discountManager.displayDiscounts(); // Hiển thị danh sách mã giảm giá
                     } 
                     else 
                     {
+                        System.out.println("Chuc nang khong kha dung voi vai tro cua ban!!!");
                     }
                     break;
                 case 6:

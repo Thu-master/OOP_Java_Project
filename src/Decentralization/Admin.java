@@ -35,18 +35,6 @@ public class Admin extends User
     }
 
 //--------------------------------------------------------------------------------------------------------------------
-    // Phê duyệt yêu cầu thêm nhân viên
-    public void approveAddEmployeeRequest(User_Management userManagement) 
-    {
-       userManagement.approveRequest();
-    }
-
-    // Phê duyệt yêu cầu xóa nhân viên
-    public void approveDeleteEmployeeRequest(User_Management userManagement) 
-    {
-       userManagement.approveDeleteEmployee();
-    }
-    
     // Xem danh sách nhân viên hiện tại
     public void viewEmployeeList(User_Management userManagement) 
     {
@@ -87,15 +75,15 @@ public class Admin extends User
                     break;
                 case 1:
                     // Phê duyệt yêu cầu thêm nhân viên
-                    approveAddEmployeeRequest(userManagement);
+                    userManagement.approveRequest();
                     break;
                 case 2:
                     // Phê duyệt yêu cầu xóa nhân viên
-                    approveDeleteEmployeeRequest(userManagement);
+                    userManagement.approveDeleteEmployee();
                     break;
                 case 3:
                     // Xem lịch sử duyệt
-                    userManagement.viewApprovalHistory("[Employee Approval]");
+                    viewEmployeeList(userManagement);
                     break;
                 case 4:
                     // Xem danh sách nhân viên hiện tại

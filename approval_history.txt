@@ -11,3 +11,15 @@
 [2024-12-03 16:23:01] [Book Action] Them sach - Loai: sf, Ma so: 3, Ten: y, Gia: 300.0, So luong: 36, Tac gia: ghgf
 [2024-12-03 16:23:25] [Book Action] Xoa sach - Loai: sf, Ma so: 3, Ten: y, Gia: 300.0, So luong: 36, Tac gia: ghgf
 [2024-12-03 16:26:17] [Book Action] Sửa sách - Loai: NV, Ma so: 1929, Ten: Slaughterhouse-Five, Gia: 395000.0, So luong: 55, Tac gia: Kurt Vonnegut
+[2024-12-15 02:56:49] Admin da duyet nhan vien: Trinh van quyet (ID: 006)
+[2024-12-15 03:02:44] Admin da tu choi nhan vien:  (ID: Trinh Cong Son)
+[2024-12-15 03:03:00] Admin da duyet nhan vien: Trinh Cong Son (ID: 008)
+[2024-12-15 03:14:04] [Employee Approval] Admin da duyet nhan vien: Dang Van Quyet (ID: 009)
+[2024-12-15 03:14:26] [Employee Approval] Admin da duyet nhan vien: Dang Van Quyet (ID: 009)
+Admin da duyet nhan vien: Dang Van Quyet (ID: 009)
+Admin da duyet nhan vien: Nguyen Cong Tru (ID: 010)
+[2024-12-15 03:19:12] Admin da duyet nhan vien: Nguyen Chi Thanh (ID: 011)
+[2024-12-15 03:31:04] [Employee Action] [Thêm nhân viên] - ID: 012, Tên: Nguyen Thuong Hien, Chức vụ: Employee
+[2024-12-15 03:35:42] [Employee Approval] Admin da duyet nhan vien: Nguyen Van Cu (ID: 013)
+[2024-12-15 03:47:30] [Employee Action] Them nhân viên - ID: 013, Tên: Nguyen Chi Thanh, Chức vụ: Employee
+[2024-12-15 03:57:13] [Employee Action] Them nhân viên - ID: 011, Tên: Nguyen Thuong Hien, Chức vụ: Employee
