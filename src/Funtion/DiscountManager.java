@@ -16,6 +16,7 @@ import java.util.*;
  */
 public class DiscountManager 
 {
+    private static final String DISCOUNT_FILE = "discounts.txt";
     private Map<String, Discount> discountMap = new HashMap<>();
 
     public DiscountManager() {
@@ -64,10 +65,7 @@ public class DiscountManager
     }
 
     private void loadDiscounts() {
-        try {
-            File f = new File("discount.txt");
-            FileReader fr = new FileReader(f);
-            BufferedReader br = new BufferedReader(fr);
+        try (BufferedReader br = new BufferedReader(new FileReader(DISCOUNT_FILE))) {
             String line;
             while ((line = br.readLine()) != null) {
                 String[] parts = line.split(",");
@@ -88,16 +86,13 @@ public class DiscountManager
     }
 
     private void saveDiscounts() {
-        try{
-            File f = new File("discount.txt");
-            FileWriter fw = new FileWriter(f);
-            BufferedWriter bw = new BufferedWriter(fw);
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter(DISCOUNT_FILE))) {
             for (Discount discount : discountMap.values()) {
-                    bw.write(discount.toFileString());
-                    bw.newLine();
+                bw.write(discount.toFileString());
+                bw.newLine();
             }
-        } catch (Exception e) {
-            System.out.println("Khong the ghi file");
+        } catch (IOException e) {
+            System.out.println("Khong the ghi file ma giam gia: " + e.getMessage());
         }
     }
 }
