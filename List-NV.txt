@@ -9,5 +9,3 @@
 008-Trinh Cong Son-Employee
 009-Dang Van Quyet-Employee
 010-Nguyen Cong Tru-Employee
-011-Nguyen Chi Thanh-Employee
-011-Nguyen Thuong Hien-Employee

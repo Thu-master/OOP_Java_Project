@@ -6,11 +6,9 @@ package Decentralization;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
-import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -188,7 +186,7 @@ public class User_Management
         }
     }
 
-public void viewApprovalHistory(String actionType) {
+    public void viewApprovalHistory(String actionType) {
     try (BufferedReader reader = new BufferedReader(new FileReader("approval_history.txt"))) {
         String line;
         boolean hasResults = false;

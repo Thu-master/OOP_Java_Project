@@ -23,3 +23,4 @@ Admin da duyet nhan vien: Nguyen Cong Tru (ID: 010)
 [2024-12-15 03:35:42] [Employee Approval] Admin da duyet nhan vien: Nguyen Van Cu (ID: 013)
 [2024-12-15 03:47:30] [Employee Action] Them nhân viên - ID: 013, Tên: Nguyen Chi Thanh, Chức vụ: Employee
 [2024-12-15 03:57:13] [Employee Action] Them nhân viên - ID: 011, Tên: Nguyen Thuong Hien, Chức vụ: Employee
+[2024-12-16 00:34:30] [Employee Action] Xoa nhân viên - ID: 011, Tên: Nguyen Thuong Hien, Chức vụ: Employee

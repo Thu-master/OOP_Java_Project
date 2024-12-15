@@ -209,7 +209,7 @@ public class SystemManager
                     } 
                     else if (user.getRole().equals("Manager"))
                     {
-                        ((Manager) user).cancelAddRequest(userManagement); //Gọi menu quản lý yêu cầu xóa nhân viên.(Manager)
+                        ((Manager) user).requestDeleteEmployeesWithMenu(userManagement); //Gọi menu quản lý yêu cầu xóa nhân viên.(Manager)
                     }
                     else
                     {
