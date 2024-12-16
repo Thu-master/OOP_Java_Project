@@ -189,7 +189,7 @@ public class Bill {
         StringBuilder billDetails = new StringBuilder("Hoa don chi tiet:\n");
         double totalAmount = 0; // Biến cục bộ để tính tổng tiền
 
-        if (cart != null && !cart.isEmpty()) {
+        if (cart != null && !cart.isEmpty()) { //Dùng append để nối trực tiếp vào chuỗi, không như '+' sẽ tạo một đối tượng kiểu String để nối 
             for (Book book : cart) {
                 double subTotal = book.getPrice() * book.getQuantity();
                 totalAmount += subTotal; // Cộng dồn thành tiền cho từng cuốn sách
@@ -220,26 +220,26 @@ public class Bill {
         }
     }
 //--------------------------------------------------------------------------------------------------------------------         
-public void applyDiscount(DiscountManager discountManager) {
-    Scanner sc = new Scanner(System.in);
-    System.out.print("Nhap ma giam gia (hoac Enter de bo qua): ");
-    String code = sc.nextLine().trim();
+    public void applyDiscount(DiscountManager discountManager) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Nhap ma giam gia (hoac Enter de bo qua): ");
+        String code = sc.nextLine().trim();
 
-    if (!code.isEmpty()) {
-        Discount discount = discountManager.getDiscount(code);
-        if (discount == null) {
-            System.out.println("Ma giam gia khong ton tai!");
-            return;
-        }
+        if (!code.isEmpty()) {
+            Discount discount = discountManager.getDiscount(code);
+            if (discount == null) {
+                System.out.println("Ma giam gia khong ton tai!");
+                return;
+            }
 
-        if (this.getCart().size() >= discount.getMinBooks() && this.getThanhTien() >= discount.getMinAmount()) {
-            double finalAmount = this.getThanhTien() - discount.getDiscountAmount();
-            System.out.println("Ma giam gia hop le! Ban duoc giam " + discount.getDiscountAmount() + " VND.");
-            System.out.println("Tong tian sau khi giam: " + finalAmount);
-            this.setThanhTien(finalAmount);
-        } else {
-            System.out.println("Hoa don khong du dieu kien ap dung ma giam gia!");
-        }
+            if (this.getCart().size() >= discount.getMinBooks() && this.getThanhTien() >= discount.getMinAmount()) {
+                double finalAmount = this.getThanhTien() - discount.getDiscountAmount();
+                System.out.println("Ma giam gia hop le! Ban duoc giam " + discount.getDiscountAmount() + " VND.");
+                System.out.println("Tong tian sau khi giam: " + finalAmount);
+                this.setThanhTien(finalAmount);
+            } else {
+                System.out.println("Hoa don khong du dieu kien ap dung ma giam gia!");
+            }
     }
 }
     

@@ -218,7 +218,8 @@ public class Book extends Product
             FileWriter fw = new FileWriter(f, true);
             PrintWriter pw = new PrintWriter(fw);
             pw.println(newBook.toString());
-            booksByType.computeIfAbsent(type, k -> new ArrayList<>()).add(newBook);
+            booksByType.computeIfAbsent(type, k -> new ArrayList<>()).add(newBook); //Hàm sẽ add book vào một ArrayList cho từng loại (type)
+            //Nếu có sách trùng loại thì add vào ArrayList theo loại đó nếu không phải thì sẽ tạo một ArrayList mới để thêm sách vào ArrayList mới
             System.out.println("Da them sach va ghi vao file thanh cong.");
             ghiLichSu("Them sach", newBook);
         } catch (Exception e) {
@@ -312,33 +313,33 @@ public class Book extends Product
 
                     // Cập nhật thông tin sách
                     System.out.println("\nNhap thong tin moi (nhan Enter de giu nguyen gia tri cu):");
-                    System.out.print("Loai sach cu (" + book.getType() + "), nhap loai sach moi: ");
+                    System.out.print("Loai sach cu (" + book.getType() + "), hay nhap loai sach moi: ");
                     String newType = sc.nextLine().trim();
                     if (!newType.isEmpty()) book.setType(newType);
 
-                    System.out.print("Ma so cu (" + book.getId() + "), nhap ma so moi: ");
+                    System.out.print("Ma so cu (" + book.getId() + "), hay nhap ma so moi: ");
                     String newId = sc.nextLine().trim();
                     if (!newId.isEmpty()) book.setId(newId);
 
-                    System.out.print("Ten cu (" + book.getName() + "), nhap ten moi: ");
+                    System.out.print("Ten cu (" + book.getName() + "), hay nhap ten moi: ");
                     String newName = sc.nextLine().trim();
                     if (!newName.isEmpty()) book.setName(newName);
 
-                    System.out.print("Gia cu (" + book.getPrice() + "), nhap gia moi: ");
+                    System.out.print("Gia cu (" + book.getPrice() + "), hay nhap gia moi: ");
                     String newPriceStr = sc.nextLine().trim();
                     if (!newPriceStr.isEmpty()) {
                         double newPrice = Double.parseDouble(newPriceStr);
                         book.setPrice(newPrice);
                     }
 
-                    System.out.print("So luong cu (" + book.getQuantity() + "), nhap so luong moi: ");
+                    System.out.print("So luong cu (" + book.getQuantity() + "), hay nhap so luong moi: ");
                     String newQuantityStr = sc.nextLine().trim();
                     if (!newQuantityStr.isEmpty()) {
                         int newQuantity = Integer.parseInt(newQuantityStr);
                         book.setQuantity(newQuantity);
                     }
 
-                    System.out.print("Tac gia cu (" + book.getAuthor() + "), nhap tac gia moi: ");
+                    System.out.print("Tac gia cu (" + book.getAuthor() + "), hay nhap tac gia moi: ");
                     String newAuthor = sc.nextLine().trim();
                     if (!newAuthor.isEmpty()) book.setAuthor(newAuthor);
 
@@ -554,9 +555,9 @@ private void hienThiHoaDon(Bill billManager)
         // Định nghĩa độ rộng bảng
         int width = 83; // Tổng chiều rộng bảng
         int col1Width = 40; // Cột "Mặt hàng"
-        int col2Width = 6;  // Cột "SL"
-        int col3Width = 12; // Cột "Đơn giá"
-        int col4Width = 12; // Cột "Thành tiền"
+//        int col2Width = 6;  // Cột "SL"
+//        int col3Width = 12; // Cột "Đơn giá"
+//        int col4Width = 12; // Cột "Thành tiền"
         String border = "-".repeat(width);
 
         // Tính tổng tiền và thuế từ billManager
@@ -686,18 +687,18 @@ private void hienThiHoaDon(Bill billManager)
     }
     
     public void viewPaymentHistory() {
-    try (BufferedReader reader = new BufferedReader(new FileReader("invoices.txt"))) {
-        String line;
-        System.out.println("\n--- Lich su thanh toan ---");
-        while ((line = reader.readLine()) != null) {
-            System.out.println(line);
+        try (BufferedReader reader = new BufferedReader(new FileReader("invoices.txt"))) {
+            String line;
+            System.out.println("\n--- Lich su thanh toan ---");
+            while ((line = reader.readLine()) != null) {
+                System.out.println(line);
+            }
+        } catch (FileNotFoundException e) {
+            System.out.println("Khong co lich su thanh toan nao.");
+        } catch (IOException e) {
+            System.out.println("Loi khi doc lich su thanh toan: " + e.getMessage());
         }
-    } catch (FileNotFoundException e) {
-        System.out.println("Khong co lich su thanh toan nao.");
-    } catch (IOException e) {
-        System.out.println("Loi khi doc lich su thanh toan: " + e.getMessage());
     }
-}
 
 
     // Cập nhật tồn kho
@@ -715,44 +716,44 @@ private void hienThiHoaDon(Bill billManager)
     }
 //--------------------------------------------------------------------------------------------------------------------
     private void applyDiscountAndDisplay(Bill billManager, DiscountManager discountManager) {
-    Scanner sc = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
 
-    // Hiển thị tổng tiền trước khi áp dụng mã giảm giá
-    System.out.printf("Tong tien truoc khi giam gia: %.2f VND\n", billManager.getThanhTien());
+        // Hiển thị tổng tiền trước khi áp dụng mã giảm giá
+        System.out.printf("Tong tien truoc khi giam gia: %.2f VND\n", billManager.getThanhTien());
 
-    boolean validDiscountApplied = false;
+        boolean validDiscountApplied = false;
 
-    while (!validDiscountApplied) {
-        System.out.print("Ban co muon ap dung ma giam gia khong? (Y/N): ");
-        String choice = sc.nextLine().trim();
+        while (!validDiscountApplied) {
+            System.out.print("Ban co muon ap dung ma giam gia khong? (Y/N): ");
+            String choice = sc.nextLine().trim();
 
-        if (choice.equalsIgnoreCase("Y")) {
-            System.out.print("Nhap ma giam gia: ");
-            String code = sc.nextLine().trim();
+            if (choice.equalsIgnoreCase("Y")) {
+                System.out.print("Nhap ma giam gia: ");
+                String code = sc.nextLine().trim();
 
-            if (!code.isEmpty()) {
-                Discount discount = discountManager.getDiscount(code);
-                if (discount == null) {
-                    System.out.println("Ma giam gia khong ton tai! Vui long nhap lai.");
-                } else if (billManager.getCart().size() < discount.getMinBooks() ||
-                           billManager.getThanhTien() < discount.getMinAmount()) {
-                    System.out.println("Hoa don khong du dieu kien ap dung ma giam gia!");
+                if (!code.isEmpty()) {
+                    Discount discount = discountManager.getDiscount(code);
+                    if (discount == null) {
+                        System.out.println("Ma giam gia khong ton tai! Vui long nhap lai.");
+                    } else if (billManager.getCart().size() < discount.getMinBooks() ||
+                               billManager.getThanhTien() < discount.getMinAmount()) {
+                        System.out.println("Hoa don khong du dieu kien ap dung ma giam gia!");
+                    } else {
+                        double finalAmount = billManager.getThanhTien() - discount.getDiscountAmount();
+                        System.out.println("Ma giam gia hop le! Ban duoc giam " + discount.getDiscountAmount() + " VND.");
+                        System.out.printf("Tong tien sau khi giam gia: %.2f VND\n", finalAmount);
+                        billManager.setThanhTien(finalAmount);
+                        validDiscountApplied = true;
+                    }
                 } else {
-                    double finalAmount = billManager.getThanhTien() - discount.getDiscountAmount();
-                    System.out.println("Ma giam gia hop le! Ban duoc giam " + discount.getDiscountAmount() + " VND.");
-                    System.out.printf("Tong tien sau khi giam gia: %.2f VND\n", finalAmount);
-                    billManager.setThanhTien(finalAmount);
-                    validDiscountApplied = true;
+                    System.out.println("Khong the bo trong ma giam gia!");
                 }
+            } else if (choice.equalsIgnoreCase("N")) {
+                validDiscountApplied = true; // Bỏ qua mã giảm giá
             } else {
-                System.out.println("Khong the bo trong ma giam gia!");
+                System.out.println("Lua chon khong hop le! Vui long chon lai.");
             }
-        } else if (choice.equalsIgnoreCase("N")) {
-            validDiscountApplied = true; // Bỏ qua mã giảm giá
-        } else {
-            System.out.println("Laa chon khong hop le! Vui lòng chọn lại.");
         }
     }
-}
 
 }

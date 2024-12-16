@@ -168,7 +168,7 @@ public class User_Management
     {
         approvedNotifications.putIfAbsent(employeeId, new ArrayList<>());
         approvedNotifications.get(employeeId).add(message);
-        System.out.println("Thong bao da duoc luu cho nhân viên: " + employeeId);
+        System.out.println("Thong bao da duoc luu cho nhan vien: " + employeeId);
     }
 
     public void writeApprovalHistory(String actionType, User user) {
@@ -176,13 +176,13 @@ public class User_Management
             // Lấy thời gian hiện tại
             String timestamp = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
             // Tạo log với định dạng chuẩn
-            String logMessage = String.format("[%s] [Employee Action] %s nhân viên - ID: %s, Tên: %s, Chức vụ: %s", 
+            String logMessage = String.format("[%s] [Employee Action] %s nhan vien - ID: %s, Ten: %s, Chuc vu: %s", 
                 timestamp, actionType, user.getEmloyeeI(), user.getFullname(), user.getRole());
             writer.write(logMessage);
             writer.newLine();
-            System.out.println("Lịch sử đã được ghi: " + logMessage);
+            System.out.println("Lich su da duoc ghi: " + logMessage);
         } catch (IOException e) {
-            System.out.println("Lỗi khi ghi lịch sử: " + e.getMessage());
+            System.out.println("Loi khi ghi lich su: " + e.getMessage());
         }
     }
 
@@ -191,7 +191,7 @@ public class User_Management
         String line;
         boolean hasResults = false;
 
-        System.out.println("\n--- Lịch sử " + actionType + " ---");
+        System.out.println("\n--- Lich su " + actionType + " ---");
         while ((line = reader.readLine()) != null) {
             if (line.contains("[Employee Action]") && line.contains(actionType)) {
                 System.out.println(line);
@@ -199,10 +199,10 @@ public class User_Management
             }
         }
         if (!hasResults) {
-            System.out.println("Không tìm thấy lịch sử nào cho hành động: " + actionType);
+            System.out.println("Khong tim thay lich se nao cho hanh dong: " + actionType);
         }
     } catch (IOException e) {
-        System.out.println("Lỗi khi đọc file lịch sử: " + e.getMessage());
+        System.out.println("Loi khi doc file lich su: " + e.getMessage());
     }
 }
 
@@ -302,12 +302,12 @@ public class User_Management
                 users.removeIf(user -> user.getEmloyeeI().equals(userToDelete.getEmloyeeI()));
                 updateEmployeeFile();
                 writeApprovalHistory("Xoa", userToDelete);
-                System.out.println("Nhân viên đã được xóa thành công.");
+                System.out.println("Nhan vien da duoc xoa thanh cong.");
             } else {
-                System.out.println("Hủy thao tác xóa nhân viên.");
+                System.out.println("Huy thao tac xoa nhan vien.");
             }
         } else {
-            System.out.println("Lựa chọn không hợp lệ.");
+            System.out.println("Lua chon khong hop le.");
         }
     }
 
@@ -319,6 +319,5 @@ public class User_Management
        return users;
     }
     
-
 
 }
