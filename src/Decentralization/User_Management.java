@@ -6,7 +6,6 @@ package Decentralization;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -130,27 +129,15 @@ public class User_Management
         System.out.print("Ban co muon duyet (Y/N)? ");
         String choice = scanner.nextLine();
 
-        if (choice.equalsIgnoreCase("Y")) 
-        {
+        if (choice.equalsIgnoreCase("Y")) {
             pendingRequests.remove(requestIndex);
             users.add(pendingUser);
-            addApprovedNotification(pendingUser.getEmloyeeI(), "Yeu cau cua ban da duoc Admin duyet.");
             writeUserToFile(pendingUser, "List-NV.txt");
-
-            // Ghi lịch sử phê duyệt với thời gian thực
-            String approvalMessage = "Admin da duyet nhan vien: " + pendingUser.getFullname() + " (ID: " + pendingUser.getEmloyeeI() + ")";
-            writeApprovalHistory(approvalMessage);
-
+            writeApprovalHistory("Them", pendingUser);
             System.out.println("Yeu cau da duoc duyet thanh cong.");
-        } 
-        else 
-        {
+        } else {
             pendingRequests.remove(requestIndex);
-
-            // Ghi lịch sử từ chối với thời gian thực
-            String rejectionMessage = "Admin da tu choi nhan vien: " + pendingUser.getFullname() + " (ID: " + pendingUser.getEmloyeeI() + ")";
-            writeApprovalHistory(rejectionMessage);
-
+            writeApprovalHistory("tu choi", pendingUser);
             System.out.println("Yeu cau da bi tu choi.");
         }
     }
@@ -184,46 +171,40 @@ public class User_Management
         System.out.println("Thong bao da duoc luu cho nhân viên: " + employeeId);
     }
 
-    
-    public void writeApprovalHistory(String message) 
-    {
-        try(BufferedWriter writer = new BufferedWriter(new FileWriter("approval_history.txt", true))) 
-        {
-            // Thêm thời gian vào thông điệp
+    public void writeApprovalHistory(String actionType, User user) {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter("approval_history.txt", true))) {
+            // Lấy thời gian hiện tại
             String timestamp = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
-            writer.write("[" + timestamp + "] " + message);
+            // Tạo log với định dạng chuẩn
+            String logMessage = String.format("[%s] [Employee Action] %s nhân viên - ID: %s, Tên: %s, Chức vụ: %s", 
+                timestamp, actionType, user.getEmloyeeI(), user.getFullname(), user.getRole());
+            writer.write(logMessage);
             writer.newLine();
-            System.out.println("Lich su duyet da duoc luu lai.");
-        } 
-        catch(IOException e) 
-        {
-            System.out.println("Loi khi ghi lich su duyet: " + e.getMessage());
+            System.out.println("Lịch sử đã được ghi: " + logMessage);
+        } catch (IOException e) {
+            System.out.println("Lỗi khi ghi lịch sử: " + e.getMessage());
         }
     }
 
     public void viewApprovalHistory(String actionType) {
-        try (BufferedReader reader = new BufferedReader(new FileReader("approval_history.txt"))) {
-            String line;
-            boolean hasResults = false;
+    try (BufferedReader reader = new BufferedReader(new FileReader("approval_history.txt"))) {
+        String line;
+        boolean hasResults = false;
 
-            System.out.println("\n--- Lich su " + actionType + " ---");
-            while ((line = reader.readLine()) != null) {
-                if (line.toLowerCase().contains(actionType.toLowerCase())) { // Ignore case sensitivity
-                    System.out.println(line);
-                    hasResults = true;
-                }
+        System.out.println("\n--- Lịch sử " + actionType + " ---");
+        while ((line = reader.readLine()) != null) {
+            if (line.contains("[Employee Action]") && line.contains(actionType)) {
+                System.out.println(line);
+                hasResults = true;
             }
-
-            if (!hasResults) {
-                System.out.println("Khong tim thay lich su nao cho hanh dong: " + actionType);
         }
-        } catch (IOException e) {
-            System.out.println("Loi khi doc file lich su: " + e.getMessage());
+        if (!hasResults) {
+            System.out.println("Không tìm thấy lịch sử nào cho hành động: " + actionType);
         }
+    } catch (IOException e) {
+        System.out.println("Lỗi khi đọc file lịch sử: " + e.getMessage());
     }
-
-
-
+}
 
     public void cancelEmployeeRequest(String employeeId) 
     {
@@ -315,17 +296,18 @@ public class User_Management
 
             System.out.print("Ban co chac chan muon xoa nhan vien nay? (Y/N): ");
             String confirm = scanner.nextLine();
+            
             if (confirm.equalsIgnoreCase("Y")) {
                 deleteRequests.remove(choice);
                 users.removeIf(user -> user.getEmloyeeI().equals(userToDelete.getEmloyeeI()));
                 updateEmployeeFile();
-                writeApprovalHistory("Admin da xoa nhan vien: " + userToDelete.getFullname() + " (ID: " + userToDelete.getEmloyeeI() + ")");
-                System.out.println("Nhan vien da duoc xoa thanh cong.");
+                writeApprovalHistory("Xoa", userToDelete);
+                System.out.println("Nhân viên đã được xóa thành công.");
             } else {
-                System.out.println("Huy thao tac xoa nhan vien.");
+                System.out.println("Hủy thao tác xóa nhân viên.");
             }
         } else {
-            System.out.println("Lua chon khong hop le.");
+            System.out.println("Lựa chọn không hợp lệ.");
         }
     }
 

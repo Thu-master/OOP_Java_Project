@@ -16,7 +16,7 @@ import java.util.*;
  */
 public class DiscountManager 
 {
-   private static final String DISCOUNT_FILE = "discounts.txt";
+    private static final String DISCOUNT_FILE = "discounts.txt";
     private Map<String, Discount> discountMap = new HashMap<>();
 
     public DiscountManager() {

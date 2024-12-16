@@ -10,7 +10,7 @@ package Funtion;
  */
 public class Discount 
 {
-        private String code;
+    private String code;
     private String description;
     private int minBooks;
     private double minAmount;
