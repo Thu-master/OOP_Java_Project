@@ -130,7 +130,6 @@ Nếu bạn muốn đóng góp, hãy:
 Chúng tôi là một nhóm đam mê công nghệ, cùng nhau phát triển dự án này:
 - **Thu-master** (Leader, đóng góp nhiều nhất)
 - **Hà Hiệp Thanh**
-- **Trần Nguyễn Minh Quân**
 
 ---
 

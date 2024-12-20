@@ -25,3 +25,40 @@ Thue (8%): 36000.00
 Tong cong: 486000.00
 -----------------------------
 
+[2024-12-16 10:01:49]
+Ca: 1 - Thu ngan: Thanh (ID: 002)
+--- Hoa don thanh toan ---
+Ten sach: The Body Keeps the Score, So luong: 2, Don gia: 570000.00, Thanh tien: 1140000.00
+Ten sach: Cong nghe 9, So luong: 5, Don gia: 33000.00, Thanh tien: 165000.00
+Tong tien: 1305000.00
+Thue (8%): 104400.00
+Tong cong: 1409400.00
+-----------------------------
+
+[2024-12-16 10:03:07]
+Ca: 1 - Thu ngan: Thanh (ID: 002)
+--- Hoa don thanh toan ---
+Ten sach: The Universe in a Nutshell, So luong: 4, Don gia: 480000.00, Thanh tien: 1920000.00
+Tong tien: 1920000.00
+Thue (8%): 153600.00
+Tong cong: 2073600.00
+-----------------------------
+
+[2024-12-16 10:56:24]
+Ca: 1 - Thu ngan: Thanh (ID: 002)
+--- Hoa don thanh toan ---
+Ten sach: Someone Like You, So luong: 10, Don gia: 290000.00, Thanh tien: 2900000.00
+Tong tien: 2900000.00
+Thue (8%): 232000.00
+Tong cong: 3132000.00
+-----------------------------
+
+[2024-12-16 13:32:43]
+Ca: 1 - Thu ngan: Thanh (ID: 002)
+--- Hoa don thanh toan ---
+Ten sach: The Particle at the End of the Universe, So luong: 5, Don gia: 430000.00, Thanh tien: 2150000.00
+Tong tien: 2150000.00
+Thue (8%): 172000.00
+Tong cong: 2322000.00
+-----------------------------
+

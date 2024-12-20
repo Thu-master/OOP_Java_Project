@@ -41,14 +41,14 @@ RMB;1716;The Seven Husbands of Evelyn Hugo;460000.0;40;Taylor Jenkins Reid
 RMB;1717;Anna Karenina;500000.0;30;Leo Tolstoy
 RMB;1718;The Nightingale;420000.0;60;Kristin Hannah
 RMB;1719;Me, You, and Us;350000.0;80;Katy Regnery
-RMB;1720;Normal People;400000.0;70;Sally Rooney
+RMB;1799;Normal People;400000.0;70;Sally Rooney
 RMB;1721;Red, White & Royal Blue;460000.0;50;Casey McQuiston
 RMB;1722;Beach Read;390000.0;75;Emily Henry
 RMB;1723;Big Little Lies;450000.0;65;Liane Moriarty
 RMB;1724;Before We Were Strangers;370000.0;60;Renee Carlino
 RMB;1725;Eleanor Oliphant Is Completely Fine;400000.0;55;Gail Honeyman
 RMB;1726;The Sun Is Also a Star;330000.0;70;Nicola Yoon
-RMB;1727;Someone Like You;290000.0;80;Sarah Dessen
+RMB;1727;Someone Like You;290000.0;70;Sarah Dessen
 RMB;1728;After;480000.0;50;Anna Todd
 RMB;1729;Beautiful Disaster;430000.0;65;Jamie McGuire
 RMB;1731;The Wedding Date;395000.0;46;Jasmine Guillory
@@ -98,15 +98,6 @@ GK3;367;Tieng Viet 3 Tap 1;16000.0;60;Bo Giao duc va Dao tao
 GK3;388;Hoat dong va trai nghiem 3;19000.0;37;Bo Giao duc va Dao tao
 GK3;377;Toan 3 Tap 1;15000.0;58;Bo Giao duc va Dao tao
 GK3;378;Toan 3 Tap 2;17000.0;58;Bo Giao duc va Dao tao
-GK2;201;Tieng Viet 2 Tap 1;30000.0;60;Bo Giao duc va Dao tao
-GK2;202;Tieng Viet 2 Tap 2;29000.0;33;Bo Giao duc va Dao tao
-GK2;205;Toan 2 Tap 1;17000.0;73;Bo Giao duc va Dao tao
-GK2;206;Toan 2 Tap 2;16000.0;35;Bo Giao duc va Dao tao
-GK2;210;Dao Duc 2;12000.0;46;Bo Giao duc va Dao tao
-GK2;215;Tu nhien va xa hoi 2;21000.0;51;Bo Giao duc va Dao tao
-GK2;220;Giao duc the chat 2;16000.0;48;Bo Giao duc va Dao tao
-GK2;222;Am nhac va my thuat 2;11000.0;45;Bo Giao duc va Dao tao
-GK2;225;Hoat dong va trai nghiem 2;15000.0;37;Bo Giao duc va Dao tao
 SB;1301;A Brief History of Time;450000.0;50;Stephen Hawking
 SB;1302;Cosmos;500000.0;40;Carl Sagan
 SB;1303;The Selfish Gene;300000.0;70;Richard Dawkins
@@ -127,7 +118,7 @@ SB;1317;The Blind Watchmaker;370000.0;50;Richard Dawkins
 SB;1318;Genius: The Life and Science of Richard Feynman;580000.0;25;James Gleick
 SB;1319;The Man Who Knew Infinity;620000.0;35;Robert Kanigel
 SB;1320;Quantum Reality;470000.0;60;Nick Herbert
-SB;1321;The Universe in a Nutshell;480000.0;50;Stephen Hawking
+SB;1321;The Universe in a Nutshell;480000.0;46;Stephen Hawking
 SB;1322;Einstein's Dreams;370000.0;40;Alan Lightman
 SB;1323;Superforecasting: The Art and Science of Prediction;320000.0;59;Philip Tetlock
 SB;1324;A Brief History of Life;450000.0;44;Andrew H. Knoll
@@ -135,7 +126,16 @@ SB;1325;Chaos: Making a New Science;520000.0;35;James Gleick
 SB;1327;The Ocean of Life;400000.0;69;Callum Roberts
 SB;1328;Superintelligence: Paths, Dangers, Strategies;350000.0;80;Nick Bostrom
 SB;1329;The Physicists;480000.0;55;C.P. Snow
-SB;1330;The Particle at the End of the Universe;430000.0;64;Sean Carroll
+SB;1330;The Particle at the End of the Universe;430000.0;59;Sean Carroll
+GK2;201;Tieng Viet 2 Tap 1;30000.0;60;Bo Giao duc va Dao tao
+GK2;202;Tieng Viet 2 Tap 2;29000.0;33;Bo Giao duc va Dao tao
+GK2;205;Toan 2 Tap 1;17000.0;73;Bo Giao duc va Dao tao
+GK2;206;Toan 2 Tap 2;16000.0;35;Bo Giao duc va Dao tao
+GK2;210;Dao Duc 2;12000.0;46;Bo Giao duc va Dao tao
+GK2;215;Tu nhien va xa hoi 2;21000.0;51;Bo Giao duc va Dao tao
+GK2;220;Giao duc the chat 2;16000.0;48;Bo Giao duc va Dao tao
+GK2;222;Am nhac va my thuat 2;11000.0;45;Bo Giao duc va Dao tao
+GK2;225;Hoat dong va trai nghiem 2;15000.0;37;Bo Giao duc va Dao tao
 GK5;522;Cong nghe 5;17000.0;66;Bo Giao duc va Dao tao
 GK5;501;Tin hoc 5;18000.0;46;Bo Giao duc va Dao tao
 GK5;567;Hoat dong va trai nghiem 5;19000.0;71;Bo Giao duc va Dao tao
@@ -167,7 +167,7 @@ GK6;632;Toan 6;17000.0;20;Bo Giao duc va Dao tao
 GK6;669;Am nhac 6;12000.0;43;Bo Giao duc va Dao tao
 GK6;679;Giao duc cong dan 6;28000.0;45;Bo Giao duc va Dao tao
 GK9;956;Am nhac 9;22000.0;55;Bo Giao duc va Dao tao
-GK9;935;Cong nghe 9;33000.0;61;Bo Giao duc va Dao tao
+GK9;935;Cong nghe 9;33000.0;56;Bo Giao duc va Dao tao
 GK9;979;Ngu Van 9 Tap 1;46000.0;57;Bo Giao duc va Dao tao
 GK9;990;Toan 9 Tap 1;42000.0;34;Bo Giao duc va Dao tao
 GK9;951;Hoat dong va trai nghiem 9;41000.0;21;Bo Giao duc va Dao tao
@@ -205,4 +205,4 @@ PSB;1526;Rework;350000.0;77;Jason Fried, David Heinemeier Hansson
 PSB;1527;You Are Not So Smart;400000.0;70;David McRaney
 PSB;1528;Thinking in Bets;450000.0;50;Annie Duke
 PSB;1529;The Willpower Instinct;480000.0;60;Kelly McGonigal
-PSB;1530;The Body Keeps the Score;570000.0;40;Bessel van der Kolk
+PSB;1530;The Body Keeps the Score;570000.0;38;Bessel van der Kolk

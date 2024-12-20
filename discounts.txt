@@ -1,3 +1,4 @@
-MO,Giam 50K cho don tren 200K ,4,200000.0,50000.0
-DIS001,Giam 50K cho don tren 200K va >=4 sach,4,200000,50000
-DIS002,Giam 100K cho don tren 500K va >=10 sach,10,500000,100000
+DIS002,Giam 100K cho don tren 500K va >=10 sach,10,500000.0,100000.0
+MO,Giam 50K cho don tren 200K,4,200000.0,50000.0
+MOU,giam 20K,1,10000.0,20000.0
+DIS001,Giam 50K cho don tren 200K va >=4 sach,4,200000.0,50000.0

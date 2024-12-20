@@ -95,7 +95,7 @@ public void requestAddEmployeesWithMenu(User_Management userManagement) {
                 keepManaging = false;
                 break;
             default:
-                System.out.println("Lựa chọn không hợp lệ! Vui lòng chọn lại.");
+                System.out.println("Lua chon khong hop le! Vui long chon lai.");
         }
     }
 }
@@ -166,7 +166,7 @@ public void requestAddEmployeesWithMenu(User_Management userManagement) {
                 keepManaging = false;
                 break;
             default:
-                System.out.println("Lựa chọn không hợp lệ! Vui lòng chọn lại.");
+                System.out.println("Lua chon khong hop le! Vui long chon lai.");
         }
     }
 }
