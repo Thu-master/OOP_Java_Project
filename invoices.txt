@@ -62,3 +62,12 @@ Thue (8%): 172000.00
 Tong cong: 2322000.00
 -----------------------------
 
+[2024-12-20 15:33:15]
+Ca: 2 - Thu ngan: Thanh (ID: 002)
+--- Hoa don thanh toan ---
+Ten sach: You Are Not So Smart, So luong: 2, Don gia: 400000.00, Thanh tien: 800000.00
+Tong tien: 800000.00
+Thue (8%): 64000.00
+Tong cong: 864000.00
+-----------------------------
+

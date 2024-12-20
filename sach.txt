@@ -98,6 +98,15 @@ GK3;367;Tieng Viet 3 Tap 1;16000.0;60;Bo Giao duc va Dao tao
 GK3;388;Hoat dong va trai nghiem 3;19000.0;37;Bo Giao duc va Dao tao
 GK3;377;Toan 3 Tap 1;15000.0;58;Bo Giao duc va Dao tao
 GK3;378;Toan 3 Tap 2;17000.0;58;Bo Giao duc va Dao tao
+GK2;201;Tieng Viet 2 Tap 1;30000.0;60;Bo Giao duc va Dao tao
+GK2;202;Tieng Viet 2 Tap 2;29000.0;33;Bo Giao duc va Dao tao
+GK2;205;Toan 2 Tap 1;17000.0;73;Bo Giao duc va Dao tao
+GK2;206;Toan 2 Tap 2;16000.0;35;Bo Giao duc va Dao tao
+GK2;210;Dao Duc 2;12000.0;46;Bo Giao duc va Dao tao
+GK2;215;Tu nhien va xa hoi 2;21000.0;51;Bo Giao duc va Dao tao
+GK2;220;Giao duc the chat 2;16000.0;48;Bo Giao duc va Dao tao
+GK2;222;Am nhac va my thuat 2;11000.0;45;Bo Giao duc va Dao tao
+GK2;225;Hoat dong va trai nghiem 2;15000.0;37;Bo Giao duc va Dao tao
 SB;1301;A Brief History of Time;450000.0;50;Stephen Hawking
 SB;1302;Cosmos;500000.0;40;Carl Sagan
 SB;1303;The Selfish Gene;300000.0;70;Richard Dawkins
@@ -127,15 +136,6 @@ SB;1327;The Ocean of Life;400000.0;69;Callum Roberts
 SB;1328;Superintelligence: Paths, Dangers, Strategies;350000.0;80;Nick Bostrom
 SB;1329;The Physicists;480000.0;55;C.P. Snow
 SB;1330;The Particle at the End of the Universe;430000.0;59;Sean Carroll
-GK2;201;Tieng Viet 2 Tap 1;30000.0;60;Bo Giao duc va Dao tao
-GK2;202;Tieng Viet 2 Tap 2;29000.0;33;Bo Giao duc va Dao tao
-GK2;205;Toan 2 Tap 1;17000.0;73;Bo Giao duc va Dao tao
-GK2;206;Toan 2 Tap 2;16000.0;35;Bo Giao duc va Dao tao
-GK2;210;Dao Duc 2;12000.0;46;Bo Giao duc va Dao tao
-GK2;215;Tu nhien va xa hoi 2;21000.0;51;Bo Giao duc va Dao tao
-GK2;220;Giao duc the chat 2;16000.0;48;Bo Giao duc va Dao tao
-GK2;222;Am nhac va my thuat 2;11000.0;45;Bo Giao duc va Dao tao
-GK2;225;Hoat dong va trai nghiem 2;15000.0;37;Bo Giao duc va Dao tao
 GK5;522;Cong nghe 5;17000.0;66;Bo Giao duc va Dao tao
 GK5;501;Tin hoc 5;18000.0;46;Bo Giao duc va Dao tao
 GK5;567;Hoat dong va trai nghiem 5;19000.0;71;Bo Giao duc va Dao tao
@@ -202,7 +202,7 @@ PSB;1523;Dare to Lead;420000.0;60;Brené Brown
 PSB;1524;The Social Animal;520000.0;30;Elliot Aronson
 PSB;1525;The Confidence Code;390000.0;45;Katty Kay, Claire Shipman
 PSB;1526;Rework;350000.0;77;Jason Fried, David Heinemeier Hansson
-PSB;1527;You Are Not So Smart;400000.0;70;David McRaney
+PSB;1527;You Are Not So Smart;400000.0;68;David McRaney
 PSB;1528;Thinking in Bets;450000.0;50;Annie Duke
 PSB;1529;The Willpower Instinct;480000.0;60;Kelly McGonigal
 PSB;1530;The Body Keeps the Score;570000.0;38;Bessel van der Kolk
