@@ -78,7 +78,7 @@ public class Book extends Product
         return getType() + ";" + getId() + ";" + getName() + ";" + getPrice() + ";" + getQuantity() + ";" + author;
     }
     
-    //Test lại GitHub desktop lan 4
+    //Test lại GitHub desktop lan 5
     // Đọc file và tự động phân loại sách
     public void docFile() {
         booksByType.clear(); // Xóa dữ liệu cũ
